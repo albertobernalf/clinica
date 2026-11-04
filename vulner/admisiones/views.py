@@ -43,7 +43,7 @@ from tarifarios.models import TiposHonorarios
 
 # Create your views here.
 
-def menuAcceso(request):
+def menuAccesoCli(request):
     print("Ingreso a acceso")
 
     #miConexion = MySQLdb.connect(host='CMKSISTEPC07', user='sa', passwd='75AAbb??', db='vulnerable')
@@ -63,7 +63,7 @@ def menuAcceso(request):
 
     context['Sedes'] = sedes
 
-    return render(request, "inicio/accesoPrincipal1.html", context)
+    return render(request, "inicio/accesoPrincipal1Cli.html", context)
 
 def validaAcceso(request):
     print("Hola Entre a validar el acceso Principal")
@@ -270,7 +270,7 @@ def validaAcceso(request):
 
                 print (perfil[0])
 
-    return render(request, "inicio/PantallaPrincipal.html", context)
+    return render(request, "inicio/PantallaPrincipalCli.html", context)
 
 
 def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, escogeModulo ):
@@ -7752,11 +7752,8 @@ def GuardaConvenioAdmision(request):
             print ("hayLiquidacion =", hayLiquidacion )
 
             if (hayLiquidacion==0):
-
-
                 print ("Entre por hayliquidacion= 0, O sea creo liquidacion ")
                 comando2 = 'INSERT INTO facturacion_liquidacion ("sedesClinica_id", "tipoDoc_id", documento_id, "consecAdmision", fecha, "totalCopagos", "totalCuotaModeradora", "totalProcedimientos" , "totalSuministros" , "totalLiquidacion", "valorApagar", anticipos, "fechaRegistro", "estadoRegistro", convenio_id,  "usuarioRegistro_id", "totalAbonos",anulado) VALUES (' + "'" + str(sede) + "'," +  "'" + str(registroId.tipoDoc_id) + "','" + str(registroId.documento_id) + "','" + str(registroId.consec) + "','" + str(fechaRegistro) + "'," + '0,0,0,0,0,0,0,' + "'" + str(fechaRegistro) + "','" + str(estadoReg) + "'," + str(convenio) + ',' + "'" + str(username_id) + "',0,'N') RETURNING id "
-
             else:
                 comando2 = 'UPDATE facturacion_Liquidacion SET convenio_id = ' + "'" + str(convenio) + "' WHERE id =" + str(hayLiquidacion)
 
@@ -7766,11 +7763,10 @@ def GuardaConvenioAdmision(request):
             cur3.execute(comando2)
             miConexion3.commit()
             cur3.close()
-            datos = {'success': True, 'Mensaje': 'Convenio Actualizado satisfactoriamente!'}
+            datos = {'success': True, 'Mensaje': 'Convenio Creado satisfactoriamente!'}
             return JsonResponse(datos, safe=False)
 
             #return JsonResponse({'success': True, 'Mensaje': 'Convenio Actualizado satisfactoriamente!'})
-
 
     except psycopg2.DatabaseError as error:
         print ("Entre por rollback" , error)
@@ -8000,7 +7996,7 @@ def PostDeleteConveniosAdmision(request):
         print("Cantidad Registros liquidacion Detalle = ", cantidadRegistros)
 
         if (cantidadRegistros>=1):
-            return JsonResponse({'success': False, 'Mensaje': 'Convenio con registros de liqudacion Activos No es posible borrarlo!'})
+            return JsonResponse({'success': False, 'Mensaje': 'Convenio con registros de liquidacion Activos No es posible borrarlo!'})
 
     except Exception as e:
         # Aquí ya se hizo rollback automáticamente
@@ -8029,7 +8025,7 @@ def PostDeleteConveniosAdmision(request):
         post = ConveniosPacienteIngresos.objects.get(id=id)
         post.delete()
 
-        return JsonResponse({'success': True, 'Mensaje': 'Convenio borrado!'})
+        return JsonResponse({'success': True, 'Mensaje': 'Convenio borrado satisfactoriamente!'})
 
 
     except Exception as e:

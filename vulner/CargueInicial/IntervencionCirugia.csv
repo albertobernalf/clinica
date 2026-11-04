@@ -1,0 +1,6 @@
+id;nombre;fechaRegistro;estadoReg
+1;Cirugía Mayor Ambulatoria;NULL;A
+2;Cirugía invasiva;NULL;A
+3;Cirugía laparoscópica;NULL;A
+4;Trasplantes;NULL;A
+5;Cirugía láser;NULL;A

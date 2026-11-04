@@ -1,0 +1,6 @@
+"id","nombre","fechaRegistro","estadoReg","usuarioRegistro_id"
+1,"Honorarios de cirujano",NULL,"A",NULL
+2,"Honorarios de anestesiología",NULL,"A",NULL
+3,"Honorarios de ayudantía",NULL,"A",NULL
+4,"Derechos de Sala",NULL,"A",NULL
+5,"Material de sutura y curación",NULL,"A",NULL

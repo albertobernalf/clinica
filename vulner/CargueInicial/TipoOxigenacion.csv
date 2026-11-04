@@ -1,0 +1,19 @@
+id;nombre;flujoLtsOxigeno;flujoLtsAire;codFacturar;fechaRegistro;estadoReg;usuarioRegistro_id
+3;Canula Nasal;3;3;S55201;NULL;A;NULL
+4;Ventury al 24%;12;12;S55204;NULL;A;NULL
+5;Ventury al 28%;12;12;S55204;NULL;A;NULL
+6;Ventury al 31%;12;12;S55205;NULL;A;NULL
+7;Ventury al 35%;12;12;S55205;NULL;A;NULL
+8;Ventury al 40%;12;12;S55206;NULL;A;NULL
+9;Ventury al 50%;15;15;S55206;NULL;A;NULL
+10;Ventilación Mecanica Invasiva;15;15;S55208;NULL;A;NULL
+11;Ventilación Mecanica NO Invasiva;15;15;S55208;NULL;A;NULL
+12;Tienda Traqueostomia Fi02 al 24%;12;12;S55204;NULL;A;NULL
+13;Tienda Traqueostomia Fi02 al 28%;12;12;S55204;NULL;A;NULL
+14;Tienda Traqueostomia Fi02 al 31%;12;12;S55204;NULL;A;NULL
+15;Tienda Traqueostomia Fi02 al 35%;12;12;S55204;NULL;A;NULL
+16;Tienda Traqueostomia Fi02 al 40%;12;12;S55204;NULL;A;NULL
+17;Tienda Traqueostomia Fi02 al 50%;12;12;S55204;NULL;A;NULL
+18;Bolsa de NO Reinhalación;15;15;S55204;NULL;A;NULL
+19;Mascara Simple;3;3;S55201;NULL;A;NULL
+20;Cánula de Alto Flujo;70;0;S55201;NULL;A;NULL

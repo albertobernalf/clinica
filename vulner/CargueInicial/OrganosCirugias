@@ -1,0 +1,6 @@
+"id","nombre","fechaRegistro","estadoReg"
+1,"Cirugía plástica",NULL,"A"
+2,"Cirugía maxilofacial",NULL,"A"
+3,"Cirugía torácica",NULL,"A"
+4,"Neurocirugía",NULL,"A"
+5,"Cirugía ortopédica o traumatol",NULL,"A"

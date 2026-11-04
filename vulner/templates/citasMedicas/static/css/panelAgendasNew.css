@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  #background-color: #f2f2f2;
+  
+
+}
+
+
+body {
+  /*	background: #D4D4D4;*/
+  background: #fcfcfc;
+  font-family: "Open sans";
+}
+
+
+#men
+{
+  height: 50px;
+  margin: 10;
+  background-color: #d3efeb;
+  padding: 15px;
+  border: 2px solid #38cfb8;
+
+}
+
+#footer
+{
+  margin: 5;
+  height: 50px;
+  background-color: #d3efeb;
+  padding: 10x;
+  border: 2px solid #38cfb8;
+
+}
+
+#contenido
+{
+  height: 560px;
+  margin: 10;
+  background-color: #f9fafa;
+  padding: 21px;
+  border: 2px solid #87b3cd;
+
+}
+
+#mensajeria
+{
+  margin: 30;
+  background-color: #d3efeb;
+  padding: 10px;
+  border: 2px solid #f60a0a;
+}
+
+#mensajes {
+   background-color: lightgray; 
+   color: navy;
+   width:45%;     
+   size:100px;
+}
+
+#mensajesError {
+     background-color: rgb(211, 211, 211); 
+   color: navy;
+   width: 45%;     
+   size:200px;
+}
+
+span { 
+   color: navy;
+   margin:80px  ;
+   padding: 0;
+}
+
+
+.table-responsive {
+  height: 200px;
+  overflow: scroll;
+}
+
+.button {
+  border: none;
+  width: 580%;
+  height: 90%;
+  padding: 15px 32px;
+  display: inline-block;
+}
+
+.button1 {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  width: 300%;
+  height: 50%;
+  display: inline-block;
+}
+
+.marco {
+
+margin-left:10px;
+margin-right:10px;
+padding:3px;
+font-family:courier;
+color:blue;
+font-size:10px;
+text-align:center;
+border-width:5px;
+border-color: blue;
+border-style: solid;
+border-width: thin;
+}
+
+.wrap{
+width:100%;
+margin-left:50px;
+margin-right:50px;
+margin-bottom:0px;
+margin-top:0px;
+padding:0px;
+}
+
+ul.tabs{
+	width: 99%;
+	background: #363636;
+	list-style: none;
+	/*  display: flex; */
+  height: 40px;
+}
+
+ul.tabs li{
+	width: 18%;
+  height: 20px;
+}
+
+ul.tabs li a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	text-align: center;
+  display: block; 
+/*	padding: 20px 0px; */
+	padding:0;
+  height: 20px;
+
+}
+
+.active{
+	background: #0984CC;
+  height: 20px;
+}
+
+ul.tabs li a .tab-text{
+	margin-left: 8px;
+}

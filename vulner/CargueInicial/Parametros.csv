@@ -1,0 +1,9 @@
+id;nombre;parametro1;fechaRegistro;estadoReg
+1;RUTAS RIPS;c:\C:\\EntornosPython\\Pos3\\vulner\\JSONCLINICA;11/04/2025 7:16;A
+2;RUTA CARGA PROCEDIMIENTOS;C:\\EntornosPython\\Pos3\\vulner\\JSONCLINICA\\CargaProcedimientos;11/04/2025 7:16;A
+3;RUTA CARGA SUMINISTROS;C:\\EntornosPython\\Pos3\\vulner\\JSONCLINICA\\CargaSuministros;11/04/2025 7:17;A
+4;Factura_1;AUTORETENEDOR EN RENTA RESOLUCION 151 DEL 14-01-2016;15/08/2025 4:24;A
+5;Factura_2;Gran Contribuyente Res. 0012220 de 26-12-2022 - Actividad económica 8610;15/08/2025 4:24;A
+6;Factura_3;Favor NO efectuar retención de Industria y Comercio e IVA - Somos agentes retenedores de IVA;15/08/2025 4:25;A
+7;Factura_4;Resolución DIAN # 18764069407849 del 22/04/2024 al 22/10/2025 de la CME342.410,00 a la CME500.000,00;15/08/2025 4:25;A
+8;RUTA JSON RESPUESTAS;C:\\EntornosPython\\Pos3\\vulner\\JSONCLINICA\Respuestas;14/10/2025 8:41;A

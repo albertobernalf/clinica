@@ -1,0 +1,11 @@
+id;nombre;fechaRegistro;estadoReg
+1;Neurocirugía:;NULL;A
+2;Cirugía ginecológica;NULL;A
+3;Cirugía urológica;NULL;A
+4;Cirugía dermatológica;NULL;A
+5;Cirugía traumatológica;NULL;A
+6;Cirugía oncológica;NULL;A
+7;Cirugía general;NULL;A
+8;Cirugía oftalmológica;NULL;A
+9;Cirugía otorrinolaringológica;NULL;A
+10;Cirugía odontológica y maxilo-;NULL;A

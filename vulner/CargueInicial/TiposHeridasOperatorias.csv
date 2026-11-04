@@ -1,0 +1,5 @@
+id;nombre;fechaRegistro;estadoReg
+1;Heridas limpias;NULL;A
+2;Heridas limpias-contaminadas;NULL;A
+3;Heridas contaminadas;NULL;A
+4;Heridas sucias;NULL;A

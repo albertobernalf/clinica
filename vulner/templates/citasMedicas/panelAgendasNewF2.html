@@ -1,0 +1,402 @@
+{% extends "citasMedicas/menuAgendasNewF2.html" %} 
+{% load static %}
+
+<div id="head" xmlns="http://www.w3.org/1999/html">
+{% block head %} 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- DataTable -->
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.3/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.bootstrap5.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.html5.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.print.min.js"></script>
+  <!-- Bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href={% static 'css/panelAgendasNew2.css' %}>
+<link rel="stylesheet" type="text/css" href={% static 'css/fontawesome.css' %}>
+<link rel="stylesheet" type="text/css"  href ={% static 'css/litle.css' %}>
+<script src="{% static 'js/panelTabsAgendasNew.js' %}">         </script>
+
+<!-- <div class="marco">  -->
+    <ul class="tabs">
+        <li><a href="#programacionagendasmedicas"><span class="tab-text">  </span> Programacion Agendas Medicas  </a></li>
+        <li><a href="#consultorios"> <span class="tab-text"></span>  Consultorio  </a></li>
+    </ul>
+ <!-- </div> -->
+
+<script>
+function RefrescarPantalla() {
+ 	 
+    	var sedeSeleccionada = document.getElementById("sedeSeleccionada").value;
+        var username = document.getElementById("username").value;
+        var nombreSede = document.getElementById("nombreSede").value;
+    	var sede = document.getElementById("sede").value;
+        var username_id = document.getElementById("username_id").value;
+         var data =  {}   ;
+        data['username'] = username;
+        data['sedeSeleccionada'] = sedeSeleccionada;
+        data['nombreSede'] = nombreSede;
+        data['sede'] = sede;
+        data['username_id'] = username_id;
+ 	    data = JSON.stringify(data);
+
+        arrancaAgendasMedicas(1,data);
+	    dataTableAgendasMedicasInitialized = true;
+}
+</script>
+{% endblock %} 
+ </div>
+
+{% block encabezado %} 
+{% endblock %} 
+
+
+{% block content %}
+
+
+<article id="programacionagendasmedicas">
+    <form action="/enviosAgendasMedicas/" method="get" id="FormAgendasMedicas">
+
+        <input type="hidden" id="username" name="username" value="{{Username}}">
+        <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value="{{SedeSeleccionada}}">
+        <input type="hidden" id="numreporte" name="numreporte" value="{{numreporte}}">
+        <input type="hidden" id="grupo" name="grupo" value="{{Grupo}}">
+        <input type="hidden" id="subGrupo" name="subGrupo" value="{{SubGrupo}}">
+        <!--  Estos si de la Aplixcacion base -->
+        <input type="hidden" id="sede" name="sede" value="{{Sede}}">
+        <input type="hidden" id="documento" name="documento" value="{{Documento}}">
+        <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+        <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}">
+        <input type="hidden" id="permisosGrales" name="permisosGrales" value="{{PermisosGrales}}">
+        <input type="hidden" id="permisosDetalle" name="permisosDetalle" value="{{PermisosDetalle}}">
+        <input type="hidden" id="escogeModulo" name="escogeModulo" value="{{EscogeModulo}}">
+        <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
+
+        <input type="hidden" id="tipoDocId" name="tipoDocId" value="">
+        <input type="hidden" id="nombreTipoDoc" name="nombreTipoDoc" value="">
+        <input type="hidden" id="documentoId" name="documentoId" value="">
+        <input type="hidden" id="documento2" name="documento2" value="">
+        <input type="hidden" id="consec" name="consec" value="">
+        <input type="hidden" id="tipoIng" name="tipoIng" value="{{tipoIng}}">
+        <input type="hidden" id="convenioId" name="convenioId" value="{{convenioId}}">
+        <input type="hidden" id="autorizacionId" name="autorizacionId" value="" readonly> </input>
+
+    </form>
+    {% csrf_token %}
+
+    <!-- INICIO TABLE DE  EL DATATABLE  -->
+
+
+    <!-- <div class="container my-2"> -->
+    <!-- <input type="button" class="btn btn-info btn-xs" id="btnRefrescar" name="btnRefrescar" value="Refrescar" onclick="RefrescarPantalla()">  -->
+
+    <!--  <div class="row">  -->
+    <table id="tablaAgendasMedicas" class=" display nowrap table table-striped">
+        <thead>
+        <tr>
+            <bold>
+                <th><img src="{% static 'img/icons8-impresora-50.png' %}" alt="Imprimir" width="15" height="15">
+                </th>
+                <th>Id</th>
+                <th>Estado</th>
+                <th>Fecha Registro</th>
+                <th>estadoReg</th>
+                <th>Especialidad</th>
+                <th>EspecialidadMedico</th>
+                <th>Sede</th>
+                <th>UsuariosRegistro</th>
+            </bold>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <!-- Espacio Modales Agendas -->
+
+    <!-- Estructura de la Ventana Modal -->
+
+    <div id="miModal" class="modal">
+        <span id="cerrarModal" class="btn-cerrar">&times;</span>
+        <div class="modal-contenido">
+            <form id="guardaAdmisionModal" method="POST">
+
+                <div class="modal-header">
+                    <h2>Editar Admision</h2>
+                    <div class="modal-title" id="exampleModalLabel"></div>
+
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="ingresoIdActualizar" name="ingresoIdActualizar" value="" readonly>
+
+                    <label for="paciente">Paciente</label>
+                    <input type="text" id="paciente" name="paciente" value="" readonly>
+
+                    <label for="empresaE">Empresa:</label>
+                    <select id="empresaE" name="empresaE">
+                        {% for empresas in Empresas %}
+                        <option value="{{empresas.id}}"> {{empresas.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="busServicio2">Servicio:</label>
+                    <input type="text" id="busServicio2" name="busServicio2" value=""
+                           readonly>
+
+
+                    <label for="busSubServicio2">SubServ:</label>
+                    <input type="text" id="busSubServicio2" name="busSubServicio2"
+                           value="" readonly>
+
+
+                    <label for="dependenciasIngreso">Dependenc:</label>
+                    <input type="text" id="dependenciasIngreso"
+                           name="dependenciasIngreso" value="" readonly>
+
+                    <label for="tipoDoc">TipoDoc:</label>
+                    <input type="text" id="tipoDoc" name="tipoDoc" value="" readonly>
+
+                    <label for="busDocumentoSel">Documento:</label>
+                    <input type="text" id="busDocumentoSel" name="busDocumentoSel" disabled="disabled">
+
+                    <label for="dxIngresoPX">Diagnosticos:</label>
+                    <select id="dxIngresoPX" name="dxIngresoPX" required>
+                        {% for diagnosticos in Diagnosticos %}
+                        <option value="{{diagnosticos.id}}"> {{diagnosticos.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="busEspecialidadP">Especialidad: </label>
+                    <select id="busEspecialidadP" name="busEspecialidadP" required>
+                        {% for especialidades in Especialidades %}
+                        <option value="{{especialidades.id}}">
+                            {{especialidades.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="medicoIngresoPPX">Medico: </label>
+                    <select id="medicoIngresoPPX" name="medicoIngresoPPX" required>
+                        {% for medicos in Medicos %}
+                        <option value="{{medicos.id}}"> {{medicos.nombre}}</option>
+                        {% endfor %}
+                    </select>
+
+
+                    <label for="viasIngresoP">ViasDeIngreso:</label>
+                    <select id="viasIngresoP" name="viasIngresoP" required>
+                        {% for viasIngreso in ViasIngreso %}
+                        <option value="{{viasIngreso.id}}"> {{viasIngreso.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                    <label for="causasExternaP">CausaExterna:</label>
+                    <select id="causasExternaP" name="causasExternaP"
+                            required>
+                        {% for causasExterna in CausasExterna %}
+                        <option value="{{causasExterna.id}}"> {{causasExterna.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+
+                    <label for="regimenesP">Regimen: </label>
+                    <select id="regimenesP" name="regimenesP" required>
+                        {% for regimenes in Regimenes %}
+                        <option value="{{regimenes.id}}"> {{regimenes.nombre}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="tiposCotizanteP">Tipos Cotizante:</label>
+                    <select id="tiposCotizanteP" name="tiposCotizanteP" required>
+                        {% for tiposCotizante in TiposCotizante %}
+                        <option value="{{tiposCotizante.id}}">
+                            {{tiposCotizante.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="acompanantesP">TiposAcompañante: </label>
+                    <select id="acompanantesP" name="acompanantesP" required>
+                        {% for acompanantes in Acompanantes %}
+                        <option value="{{acompanantes.id}}"> {{acompanantes.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+
+                    <label for="responsablesP"> Responsable: </label>
+                    <select class="form-select  h-40 w-100" aria-label="" id="responsablesP" name="responsablesP"
+                            required>
+                        {% for responsables in Responsables %}
+                        <option value="{{responsables.id}}"> {{responsables.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="remitidoP">remitido:</label>
+                    <input type="text" id="remitidoP" name="remitidoP" value="">
+
+
+                    <label for="ipsP">IPS</label>
+                    <select id="ipsP" name="ipsP" required>
+                        {% for ips in Ips %}
+                        <option value="{{ips.id}}"> {{ips.nombre}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="numManillaP">NumeroManilla:</label>
+                    <input type="text" id="numManillaP" name="numManillaP" value="">
+
+
+                    <label for="ripsDestinoUsuarioEgresoRecienNacidoX">DestEgreso:
+                    </label>
+
+                    <select id="ripsDestinoUsuarioEgresoRecienNacidoX" tabindex="0"
+                            name="ripsDestinoUsuarioEgresoRecienNacidoX"
+                            required>
+                        {% for ripsDestinoUsuarioEgresoRecienNacido in RipsDestinoUsuarioEgresoRecienNacido %}
+                        <option value="{{ripsDestinoUsuarioEgresoRecienNacido.id}}">
+                            {{ripsDestinoUsuarioEgresoRecienNacido.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+
+                    <label for="ripsEdadGestacionalX">RN Edad Gestacional:</label>
+
+                    <input type="text" id="ripsEdadGestacionalX" tabindex="0"
+                           name="ripsEdadGestacionalX" value="">
+
+
+                    <label for="ripsNumConsultasCPrenatalX">NumeroConsultaPrenatal:</label>
+
+                    <input type="text" class="form-control form-control-sm" id="ripsNumConsultasCPrenatalX"
+                           tabindex="0"
+                           name="ripsNumConsultasCPrenatalX" value="">
+
+
+                    <label for="ripsPesoRecienNacidoX">RN peso:</label>
+
+                    <input type="text" id="ripsPesoRecienNacidoX" tabindex="0"
+                           name="ripsPesoRecienNacidoX" value="">
+
+
+                    <label for="ripsRecienNacidoX">Recien Nacido:</label>
+                    <input type="text" id="ripsRecienNacidoX" tabindex="0"
+                           name="ripsRecienNacidoX" value="">
+
+                    <label for="ripsCausaMotivoAtencionX">CausaAtencion:
+                    </label>
+                    <select id="ripsCausaMotivoAtencionX" tabindex="0" name="ripsCausaMotivoAtencionX"
+                            required>
+                        {% for ripsCausaMotivoAtencion in RipsCausaMotivoAtencion %}
+                        <option value="{{ripsCausaMotivoAtencion.id}}"> {{ripsCausaMotivoAtencion.nombre}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="ripsCondicionDestinoUsuarioEgresoX">UsuarioDestinoegreso:
+                    </label>
+
+                    <select id="ripsCondicionDestinoUsuarioEgresoX" tabindex="0"
+                            name="ripsCondicionDestinoUsuarioEgresoX"
+                            required>
+                        {% for ripsCondicionDestinoUsuarioEgreso in RipsCondicionDestinoUsuarioEgreso %}
+                        <option value="{{ripsCondicionDestinoUsuarioEgreso.id}}">
+                            {{ripsCondicionDestinoUsuarioEgreso.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="ripsGrupoServiciosX">GrupoDeServicios:</label>
+
+                    <select id="ripsGrupoServiciosX" tabindex="0" name="ripsGrupoServiciosX"
+                            required>
+                        {% for ripsGrupoServicios in RipsGrupoServicios %}
+                        <option value="{{ripsGrupoServicios.id}}"> {{ripsGrupoServicios.nombre}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="ripsViaIngresoServicioSaludX">ViaIngreso:
+                    </label>
+
+
+                    <select id="ripsViaIngresoServicioSaludX" tabindex="0" name="ripsViaIngresoServicioSaludX"
+                            required>
+                        {% for ripsViaIngresoServicioSalud in RipsViaIngresoServicioSalud %}
+                        <option value="{{ripsViaIngresoServicioSalud.id}}"> {{ripsViaIngresoServicioSalud.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+
+                    <label for="ripsmodalidadGrupoServicioTecSalX">ModalidadGrupoServ:
+                    </label>
+
+                    <select id="ripsmodalidadGrupoServicioTecSalX" tabindex="0"
+                            name="ripsmodalidadGrupoServicioTecSalX"
+                            required>
+                        {% for ripsmodalidadGrupoServicioTecSal in RipsmodalidadGrupoServicioTecSal %}
+                        <option value="{{ripsmodalidadGrupoServicioTecSal.id}}">
+                            {{ripsmodalidadGrupoServicioTecSal.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+
+                    <label for="ripsFinalidadConsultaX">FinalidadConsulta:
+                    </label>
+
+
+                    <select id="ripsFinalidadConsultaX" tabindex="0" name="ripsFinalidadConsultaX"
+                            required>
+                        {% for ripsFinalidadConsulta in RipsFinalidadConsulta %}
+                        <option value="{{ripsFinalidadConsulta.id}}"> {{ripsFinalidadConsulta.nombre}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="ripsServiciosIngX">ServicioIngreso:
+                    </label>
+                    |
+
+                    <select id="ripsServiciosIngX" tabindex="0" name="ripsServiciosIngX"
+                            required>
+                        {% for ripsServiciosIng in RipsServiciosIng %}
+                        <option value="{{ripsServiciosIng.id}}"> {{ripsServiciosIng.nombre}}</option>
+                        {% endfor %}
+                    </select>
+
+
+                </div>
+                <div class="modal-footer">
+                    <textarea id="mensajesErrorModalEdicionAdmisiones"
+                              name="mensajesErrorModalEdicionAdmisiones"></textarea>
+
+                    <button id="btnAceptar" class="btn-accion">Aceptar</button>
+                    <button id="btnCancelar" class="btn-secundario">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- FIN Espacio Modales  -->
+</article>
+
+<article id="consultorios">
+
+    novo
+</article>
+
+
+{% endblock %}
+
+

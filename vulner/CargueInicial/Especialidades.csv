@@ -1,0 +1,9 @@
+id;nombre;cExterna;agenda;interconsulta;quirurgica;citaDeControl;estadoReg;examen_id;examenCita_id;valoracionInicial
+1;ORTOPEDIA; ; ; ; ; ;A;2;2; 
+2;NEUROCIRUGIA; ; ; ; ; ;A;2;2; 
+3;ENDOCRINO; ; ; ; ; ;A;2;2; 
+4;MEDICO GENERAL; ; ; ; ; ;A;2;2; 
+5;GINECOLOGIA; ; ; ; ; ;A;2;2; 
+7;MEDICINA INTERNA;S;S;S; ; ;A;2;2; 
+6;PSIQUIATRIA;S;S;S; ; ;A;2;2; 
+8;ENFERMERIA; ; ; ; ; ;A;2;2; 

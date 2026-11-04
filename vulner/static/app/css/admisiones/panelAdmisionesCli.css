@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  #background-color: #f2f2f2;
+}
+
+body {
+  /*	background: #D4D4D4;*/
+  background: #fcfcfc;
+  font-family: "Open sans";
+}
+
+#men
+{ box-sizing: border-box;
+  height: 40px;
+  margin: 8px;
+  background-color: #d3efeb;
+  padding: 5px;
+  border: 2px solid #38cfb8;
+}
+
+#head
+{ box-sizing: border-box;
+  height: 40px;
+    border-radius: 10px;
+  /* margin: 10px; */
+  margin: 0  8px 0 8px       ;
+  background-color: #d3efeb;
+  padding: 5px;
+  border: 2px solid #38cfb8;
+  width: auto;
+
+}
+
+#footer
+{
+  margin: 8px;
+  height: 50px;
+  background-color: #d3efeb;
+  padding: 10px;
+  border: 2px solid #38cfb8;
+
+}
+
+#contenido
+{
+  height: 480px;
+    border-radius: 10px;
+  margin: 10px;
+  background-color: #f9fafa;
+  padding: 11px;
+  border: 2px solid #87b3cd;
+
+}
+
+#indicadores
+{
+ box-sizing: border-box;
+  height: 40px;
+    border-radius: 10px;
+  /* margin: 10px; */
+  margin: 4px  4px 0 4px       ;
+  background-color: #d3efeb;
+  padding: 0;
+  border: 2px solid #38cfb8;
+  width: auto;
+}
+
+#mensajeria
+{
+  margin:0  8px 8px 8px;
+    border-radius: 10px;
+  /* box-sizing: border-box; */
+  background-color: #d3efeb;
+  padding: 0;
+  border: 2px solid #38cfb8;
+
+}
+
+#mensajes {
+   background-color: lightgray;
+   /*  box-sizing: border-box; */
+   color: green;
+   width:40%;
+   margin:8px;
+}
+
+#mensajesError {
+     background-color: rgb(211, 211, 211);
+      /* box-sizing: border-box;*/
+   color: red;
+   width: 40%;
+   margin:8px;
+}
+
+
+#mensajesErrorModalEdicionAdmisiones {
+     background-color: rgb(211, 211, 211);
+      /* box-sizing: border-box;*/
+   color: red;
+   width: 65%;
+   margin:1px;
+    height:60%;
+
+}
+
+span { 
+   color: navy;
+   margin:60px  ;
+   padding: 0;
+}
+
+.table-responsive {
+  height: 200px;
+  overflow: scroll;
+}
+
+ul.tabs{
+	width: 100%;
+	background: #363636;
+	list-style: none;
+	display: flex;
+    height: 80%;
+}
+
+ul.tabs li{
+	width: 14%;
+    height: 100%;
+    padding:0;
+}
+
+ul.tabs li a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+	text-align: center;
+	display: block;
+/*	padding: 20px 0px; */
+	padding:0;
+}
+
+.active{
+	background: #0984CC;
+}
+
+ul.tabs li a .tab-text{
+	margin-left: 8px;
+}
+
+/* ul.tabs li a .tab-text */
+.tab-text {
+	margin-left: 8px;
+    color:#f60a0a;
+    /* height: 80%; */
+}
+
+table {
+    width:100%;
+    border-spacing: 4px;
+     border-collapse: collapse;
+    max-width:500px;
+    margin:auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #0002;
+    padding-top: 0;
+}
+
+td, th
+{
+    text-align: center;
+    padding: 0;
+    font-family:sans-serif;
+    border:none;
+    height:2px;
+
+    /* border-bottom: 1px solid #000;*/
+
+}
+
+td {
+    color: #444;
+    font-size: 0.75em;
+}
+
+tr {
+height: 2px;
+}
+
+textarea
+{
+    resize:vertical;
+    min-height:30px;
+    max-height:60px;
+    font-family:sans-serif;
+}
+
+
+/********************* DESDE AQUI LABORATORIOcss de VENTANAS MODA */
+
+
+#grabacionForma {
+    background-color: #ededed;
+    padding: 30px;
+    max-width: 2500px;
+    margin:20px;
+    box-shadow: 0px 0px 35px  #0006;
+}
+
+
+.grupo-input-CrearAdmision {
+  width: 100%;
+ height: 70%;
+   gap: 6px;
+}
+
+.grupo-input-CrearAdmision label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+    margin: 5px;
+}
+
+.grupo-input-CrearAdmision input[type="text"] {
+  width:20%;
+  padding: 10px 12px;
+  font-size: 12px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+    margin: 5px;
+}
+
+.grupo-input-CrearAdmision input[type="select"] {
+  width:70%;
+  padding: 10px 12px;
+  font-size: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#FormaConvenioPaciente {
+    background-color: #ededed;
+    padding: 30px;
+    width:98%;
+    /* max-width: 7500px;*/
+    margin:20px;
+    box-shadow: 0px 0px 35px  #0006;
+}
+
+.input_crearConvenios {
+  width:15%;
+  margin:3px;
+  padding: 10px 12px;
+  font-size: 12px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.tablaConveniosAdmisiones
+{
+    width:100%;
+}
+
+.divisionResponsable {
+    width:100%;
+    text-align: center;
+    /* margin: 0 auto;*/
+    padding-bottom: 16px;
+}
+

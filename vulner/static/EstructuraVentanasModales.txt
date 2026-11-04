@@ -1,0 +1,26 @@
+    <!-- Espacio Modales Agendas -->
+
+    <!-- Estructura de la Ventana Modal -->
+
+    <div id="miModal" class="modal">
+        <span id="cerrarModal" class="btn-cerrar">&times;</span>
+        <div class="modal-contenido">
+            <form id="guardaAdmisionModal" method="POST">
+
+                <div class="modal-header">
+                    <h2>Editar Admision</h2>
+                    <div class="modal-title" id="exampleModalLabel"></div>
+
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+
+                    <button id="btnAceptar" class="btn-accion">Aceptar</button>
+                    <button id="btnCancelar" class="btn-secundario">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- FIN Espacio Estructura ventanas Modales  -->

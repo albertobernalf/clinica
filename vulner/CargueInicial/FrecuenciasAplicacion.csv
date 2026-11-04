@@ -1,0 +1,6 @@
+id;descripcion;fechaRegistro;estadoReg;numeroHoras
+1;CADA HORA;NULL;A;1
+3;CADA 6 HORAS;NULL;A;6
+4;CADA 12 HORAS;NULL;A;12
+5;CADA 24 HORAS;NULL;A;24
+2;CADA 3 HORAS;NULL;A;3

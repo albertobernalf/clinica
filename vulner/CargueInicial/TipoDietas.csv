@@ -1,0 +1,15 @@
+id;nombre;fechaRegistro;estadoReg
+1;Normal;NULL;A
+2;Hipoglucida;NULL;A
+3;Hiposodica;NULL;A
+4;Hipograsa;NULL;A
+5;Nada via oral;NULL;A
+6;Liquida clara;NULL;A
+7;Liquida total;NULL;A
+8;Refrigerio sencillo;NULL;A
+9;Refrigerio Forzado;NULL;A
+10;Compota fonoaudiología (adici;NULL;A
+11;Gelatina fonoaudiología (adic;NULL;A
+12;Blanda;NULL;A
+13;Semiblanda;NULL;A
+14;Todo pure;NULL;A

@@ -1,0 +1,5 @@
+id;año;valorModeradora;valorCopago;valorTopeMaximoCopagoEvento;valorTopeMaximoCopagoCalendario;fechaRegistro;estadoReg;regimen_id;salarioLegal_id
+1;2024;455000;1150;33799900;67715500;NULL;A;1;1
+2;2024;1819900;1730;135435100;270870000;NULL;A;1;2
+3;2024;4771800;2300;270870000;541740000;NULL;A;1;3
+4;2024;0;1000;58884700;58884700;NULL;A;2;1

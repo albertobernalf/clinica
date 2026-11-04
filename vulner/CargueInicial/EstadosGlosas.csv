@@ -1,0 +1,7 @@
+id;tipo;nombre
+1;RECEPCION;Pendiente por detallar
+2;RECEPCION;Detallado Parcial
+3;RECEPCION;Detallado Total
+4;RADICACION;Pendiente Respuesta
+5;RADICACION;Respuesta Parcial
+6;RADICACION;Respuesta Total

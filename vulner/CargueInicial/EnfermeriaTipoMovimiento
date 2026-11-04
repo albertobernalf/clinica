@@ -1,0 +1,4 @@
+"id","nombre","fechaRegistro","estadoReg","usuarioRegistro_id"
+2,"PEDIDOS ENFERMERIA",NULL,"A",NULL
+3,"DEVOLUCION ENFERMERIA",NULL,"A",NULL
+1,"DESPACHO",NULL,"A",NULL

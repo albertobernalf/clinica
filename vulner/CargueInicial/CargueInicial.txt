@@ -1,0 +1,227 @@
+-- de postgres se genera archivo texto
+-- se importat a excel--> datos--> desde csv/texto
+-- se guarca como CSV delimitado por comas
+-- Ojo CSV delimitado por comas
+-- en excel 65001 encode UTF8
+
+
+-- Servicios:
+
+    file_path = request.GET["file_path"]
+    print("file_path", file_path)
+
+    with open(file_path,  'r') as f:
+        reader = csv.reader(f, delimiter=';')
+        next(reader)
+
+        for row in reader:
+            try:
+                print("row nombre = ", row[1])
+                servicios = Servicios.objects.create(
+                    nombre=row[1]
+                                                     )
+            except (valueError, IndexError) as e:
+
+                print("Error al crear : {e}")
+
+
+
+       return JsonResponse({'success': True, 'Mensaje': 'Los datos se importaron correctamente ¡'})
+
+-- EstadoCivil
+fechaRegistro = timezone.now()
+
+    file_path = request.GET["file_path"]
+    print("file_path", file_path)
+
+    with open(file_path,  'r') as f:
+        reader = csv.reader(f, delimiter=';')
+        next(reader)
+
+        for row in reader:
+            try:
+                print("row nombre = ", row[1])
+                estadoCivil = EstadoCivil.objects.create(
+                    nombre=row[1],
+                    #fechaRegistro=row[2],
+                    estadoReg=row[3],
+                                                     )
+            except (valueError, IndexError) as e:
+
+                print("Error al crear : {e}")
+                return JsonResponse({'success': False, 'Mensaje': e})
+
+        return JsonResponse({'success': True, 'Mensaje': 'Los datos se importaron correctamente ¡'})
+
+
+-- Ocupaciones
+
+    with open(file_path,  'r') as f:
+        reader = csv.reader(f, delimiter=';')
+        next(reader)
+
+        for row in reader:
+            try:
+                print("row nombre = ", row[1])
+                ocupaciones = Ocupaciones.objects.create(
+                    nombre=row[1],
+                    #fechaRegistro=row[2],
+                    estadoReg=row[3],
+                                                     )
+            except (valueError, IndexError) as e:
+
+                print("Error al crear : {e}")
+                return JsonResponse({'success': False, 'Mensaje': e})
+
+        return JsonResponse({'success': True, 'Mensaje': 'Los datos se importaron correctamente ¡'})
+
+-- centroscosto
+    with open(file_path,  'r') as f:
+        reader = csv.reader(f, delimiter=';')
+        next(reader)
+
+        for row in reader:
+            try:
+                print("row nombre = ", row[1])
+                centroCosto = CentrosCosto.objects.create(
+                    nombre=row[1],
+                    #fechaRegistro=row[2],
+                    estadoReg=row[3],
+                                                     )
+            except (valueError, IndexError) as e:
+
+                print("Error al crear : {e}")
+                return JsonResponse({'success': False, 'Mensaje': e})
+
+        return JsonResponse({'success': True, 'Mensaje': 'Los datos se importaron correctamente ¡'})
+
+
+-- tiposprofesional
+    with open(file_path,  'r') as f:
+        reader = csv.reader(f, delimiter=';')
+        next(reader)
+
+        for row in reader:
+            try:
+                print("row nombre = ", row[1])
+                tiposProfesional = TiposProfesional.objects.create(
+                    nombre=row[1],
+                    #fechaRegistro=row[2],
+                    estadoReg=row[3],
+                                                     )
+            except (valueError, IndexError) as e:
+
+                print("Error al crear : {e}")
+                return JsonResponse({'success': False, 'Mensaje': e})
+
+        return JsonResponse({'success': True, 'Mensaje': 'Los datos se importaron correctamente ¡'})
+
+-- tiposContacto
+   with open(file_path,  'r') as f:
+        reader = csv.reader(f, delimiter=';')
+        next(reader)
+
+        for row in reader:
+            try:
+                print("row nombre = ", row[1])
+                tiposContacto = TiposContacto.objects.create(
+                    nombre=row[1],
+                    #fechaRegistro=row[2],
+                    estadoReg=row[3],
+                                                     )
+            except (valueError, IndexError) as e:
+
+                print("Error al crear : {e}")
+                return JsonResponse({'success': False, 'Mensaje': e})
+
+        return JsonResponse({'success': True, 'Mensaje': 'Los datos se importaron correctamente ¡'})
+
+-- furupslista
+   with open(file_path,  'r') as f:
+        reader = csv.reader(f, delimiter=';')
+        next(reader)
+
+        for row in reader:
+            try:
+                print("row nombre = ", row[1])
+                furipsLista = FuripsLista.objects.create(
+                    nombre=row[1],
+                    #fechaRegistro=row[2],
+                    estadoReg=row[2],
+                                                     )
+            except (valueError, IndexError) as e:
+
+                print("Error al crear : {e}")
+                return JsonResponse({'success': False, 'Mensaje': e})
+
+        return JsonResponse({'success': True, 'Mensaje': 'Los datos se importaron correctamente ¡'})
+
+-- furipsparametro
+
+    with open(file_path,  'r') as f:
+        reader = csv.reader(f, delimiter=';')
+        next(reader)
+
+        for row in reader:
+            try:
+                print("row nombre = ", row[1])
+                furipsParametro = FuripsParametro.objects.create(
+                    nombre=row[1],
+                    #fechaRegistro=row[2],
+                    estadoReg=row[2],
+                    furipsLista_id=row[3],
+
+                                                     )
+            except (valueError, IndexError) as e:
+
+                print("Error al crear : {e}")
+                return JsonResponse({'success': False, 'Mensaje': e})
+
+        return JsonResponse({'success': True, 'Mensaje': 'Los datos se importaron correctamente ¡'})
+
+-- archivos
+
+  with open(file_path,  'r') as f:
+        reader = csv.reader(f, delimiter=';')
+        next(reader)
+
+        for row in reader:
+            try:
+                print("row nombre = ", row[1])
+                archivos = Archivos.objects.create(
+                    tipo= row[1],
+                    nombre=row[2],
+                    #fechaRegistro=row[2],
+                    estadoReg=row[3]
+
+                                                     )
+            except (valueError, IndexError) as e:
+
+                print("Error al crear : {e}")
+                return JsonResponse({'success': False, 'Mensaje': e})
+
+        return JsonResponse({'success': True, 'Mensaje': 'Los datos se importaron correctamente ¡'})
+
+-- parametros
+
+    with open(file_path,  'r') as f:
+        reader = csv.reader(f, delimiter=';')
+        next(reader)
+
+        for row in reader:
+            try:
+                print("row nombre = ", row[1])
+                parametros = Parametros.objects.create(
+                    nombre=row[1],
+                    parametro1=row[2],
+                    # fechaRegistro=row[3],
+                    estadoReg=row[4]
+
+                                                     )
+            except (valueError, IndexError) as e:
+
+                print("Error al crear : {e}")
+                return JsonResponse({'success': False, 'Mensaje': e})
+
+        return JsonResponse({'success': True, 'Mensaje': 'Los datos se importaron correctamente ¡'})
+

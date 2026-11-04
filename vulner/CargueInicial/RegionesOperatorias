@@ -1,0 +1,7 @@
+"id","region","organos","fechaRegistro","estadoReg"
+1,"CABEZA Y CUELLO","Oídos, nariz, senos paranasales, laringe",NULL,"A"
+2,"TORAX","Pulmones, corazón, pleura",NULL,"A"
+3,"ABDOMEN Y RETROPERITONEO","Estómago, intestinos, peritoneo",NULL,"A"
+4,"PELVIS","Útero, vejiga, próstata",NULL,"A"
+5,"EXTREMIDADES","Brazos, piernas, manos",NULL,"A"
+6,"COLUMNA VERTEBRAL","Cervical, torácica, lumbar",NULL,"A"

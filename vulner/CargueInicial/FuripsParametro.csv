@@ -1,0 +1,40 @@
+id;nombre;estadoReg;furipsLista_id
+1;Accidente de transito;A;1
+2;Sismo;A;1
+3;Maremoto;A;1
+4;Erupcion Volcanica;A;1
+5;Deslizamiento de tierra;A;1
+6;Inundacion;A;1
+7;Avalancha;A;1
+8;Incendio Natural;A;1
+9;Explosion Terrorista;A;1
+10;Incendio Terorista;A;1
+11;Combate;A;1
+12;Ataques a Municipios;A;1
+13;Masacre;A;1
+14;Desplazados;A;1
+15;Mina Antipersonal;A;1
+16;Huracan;A;1
+17;Rayo;A;1
+18;Vendaval;A;1
+19;Tornado;A;1
+20;Asegurado;A;2
+21;No Asegurado;A;2
+22;Vehiculo Fantasma;A;2
+23;Polica Falsa;A;2
+24;Vehiculo en Fuga;A;2
+25;Automovil;A;3
+26;Bus;A;3
+27;Buseta;A;3
+28;Camion;A;3
+29;Camioneta;A;3
+30;Campero;A;3
+31;Microbus;A;3
+32;TractoCamion;A;3
+33;Motocicleta;A;3
+34;MotoCarro;A;3
+35;Mototriciclo;A;3
+36;Cuatrimoto;A;3
+37;Mote Extranjera;A;3
+38;Vehiculo Extranjero;A;3
+39;Volqueta;A;3
