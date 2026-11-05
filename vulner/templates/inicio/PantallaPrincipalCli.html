@@ -24,31 +24,35 @@
 <input type="hidden" id="permisosDetalle" name="permisosDetalle" value = "{{PermisosDetalle}}">
 
 
-<div class="row" style="height: 300px;">
+<div class="elemento">
 
+    <p>   <img src="{% static '/img/ClinicaAlb2.png' %}" alt="Imagen de la clínica" width="80" height="80">  Sede: {{NombreSede}} Usuario: {{Profesional}}
 
-      {% for permisosGrales in PermisosGrales %}
-  <div class="col-xl-1"></div>
-      <div class="col-xl-3" style="width:100px;height:100px;">
+    <span>
+      <a href="/retornarMen/{{Sede}}, {{Username}}, {{Documento}}, {{NombreSede}}, {{Profesional}} ">RETORNO</a>
+        <i class="fa-solid fa-arrow-rotate-left"></i>
 
-        <figure class="figure">
+      </span>
 
-            <img src="{% static permisosGrales.logo %}" class="figure-img img-fluid rounded"
-                 style="width:30px;height:30px;" alt="...">
-            <figcaption class="figure-caption text-center">
-                <a href="/escoge/{{Sede}}, {{Username}}, {{Profesional}}, {{Documento}} ,{{NombreSede}} ,{{permisosGrales.modulo_nombre}} ">
-                    <button type="button" class="btn btn-primary"  style="background-color:#244FA3"><H6>{{permisosGrales.nombre}}</H6></button>
-                     </a>
-            </figcaption>
-        </figure>
+    </p>
 
-        </div>
+</div>
+
+<div class="contenido">
+    {% for permisosGrales in PermisosGrales %}
+
+    <figure class="figure">
+        <img src="{% static permisosGrales.logo %}"
+             style="width:50px;height:50px;" alt="...">
+        <figcaption>
+            <a href="/escoge/{{Sede}}, {{Username}}, {{Profesional}}, {{Documento}} ,{{NombreSede}} ,{{permisosGrales.modulo_nombre}} ">
+                <button type="button" class="btn btn-info" style="background-color:#424d63"><H6>
+                    {{permisosGrales.nombre}}</H6></button>
+            </a>
+        </figcaption>
+    </figure>
 
     {% endfor %}
+</div>
 
-    <div class="col-xl-2"></div>
- </div>
-<br>
-<br>
-<br>
 {% endblock %}

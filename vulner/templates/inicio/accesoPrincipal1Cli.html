@@ -1,12 +1,8 @@
 {% extends "Reportes/cabezaCli.html" %}
-
 {% load static %}
-
 {% block content %}
 
-
-<!-- Container -->
-    <!-- INICIA MODAL -->
+<!-- INICIA MODAL -->
 
 <div class="card">
     <div class="myForm">
@@ -67,66 +63,64 @@
     </div>
 </div>
 
-
 <!-- TERMINA MODAL -->
 
-<!-- Header -->
+    <div class="contenedor">
 
+        <div class="elemento">
+            CLINICA MEDICA SOCIAL
+            <img src="{% static '/img/ClinicaAlb2.png' %}" alt="Imagen de la clínica" width="80" height="80">
 
-    <h1 id="site-name"><a href="/admin/">Acceso Clinico </a></h1>
-
-
-    <!-- END Header -->
-
-
-    <form action="/validaAcceso/" method="post" id="login-form"><input type="hidden"
-                                                                       name="csrfmiddlewaretoken"
-                                                                       value="MJ1CwN7LHRoBZUnyQoPpHBnb4M3PwGYmsLJeNsN92l41zY9ZaUPztrhcMWyUTHxc">
-        <div class="form-row">
-
-            <label class="required" for="id_username">Username:</label> <input type="text"
-                                                                               name="username"
-                                                                               autofocus=""
-                                                                               autocapitalize="none"
-                                                                               autocomplete="username"
-                                                                               maxlength="150"
-                                                                               required=""
-                                                                               id="id_username">
         </div>
-        <div class="form-row">
+        <div class="elemento2">
 
-            <label class="required" for="id_password">Password:</label> <input type="password"
-                                                                               name="password"
-                                                                               autocomplete="current-password"
-                                                                               required=""
-                                                                               id="id_password">
-            <input type="hidden" name="next" value="/admin/">
+            <form action="/validaAcceso/" method="post" id="login-form"><input type="hidden" name="csrfmiddlewaretoken"
+                    value="MJ1CwN7LHRoBZUnyQoPpHBnb4M3PwGYmsLJeNsN92l41zY9ZaUPztrhcMWyUTHxc">
+                <div class="form-row">
+
+                    <label class="required" for="id_username">Username:</label> <input type="text" name="username"
+                        autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required=""
+                        id="id_username">
+                </div>
+                <div class="form-row">
+
+                    <label class="required" for="id_password">Password:</label> <input type="password" name="password"
+                        autocomplete="current-password" required="" id="id_password">
+                    <input type="hidden" name="next" value="/admin/">
+                </div>
+
+                <div class="form-row">
+
+
+                    <label for="seleccion2" class="col-form-label">Sede:</label>
+                    <select id="seleccion2" name="seleccion2">
+                        {% for sedes in Sedes %}
+                        <option value="{{sedes.id}}"> {{sedes.nombre}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <!--  <label class="required" for="id_perfil">Perfil:</label> <input type="text" name="perfil" autofocus="" autocapitalize="none" autocomplete="perfil" maxlength="150" required="" id="id_perfil">  -->
+                </div>
+
+
+                <span id="error" name="error" style="color:blue">{{Error}}</span>
+
+
+                <div  class="log">
+                    <input type="submit"  value="Log in">
+                </div>
+            </form>
+
+
         </div>
 
-        <div class="form-row">
 
 
-            <label for="seleccion2" class="col-form-label">Sede:</label>
-            <select id="seleccion2" name="seleccion2">
-                {% for sedes in Sedes %}
-                <option value="{{sedes.id}}"> {{sedes.nombre}}</option>
-                {% endfor %}
-            </select>
-
-            <!--  <label class="required" for="id_perfil">Perfil:</label> <input type="text" name="perfil" autofocus="" autocapitalize="none" autocomplete="perfil" maxlength="150" required="" id="id_perfil">  -->
-        </div>
 
 
-        <span id="error" name="error" style="color:blue">{{Error}}</span>
 
 
-        <div class="submit-row">
-            <input type="submit" value="Log in">
-        </div>
-    </form>
 
-
-<!-- END Container -->
 
 <script>
 
