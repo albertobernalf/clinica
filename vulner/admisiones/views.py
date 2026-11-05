@@ -146,7 +146,7 @@ def validaAcceso(request):
 
         context['Error'] = "Personal invalido ! "
         print("Entre por personal No encontrado")
-        return render(request, "inicio/accesoPrincipal1.html", context)
+        return render(request, "inicio/accesoPrincipal1Cli.html", context)
 
     else:
 
@@ -175,7 +175,7 @@ def validaAcceso(request):
             #miConexion1.close()
             print("Entre contraseña invalida")
             context['Error'] = "Contraseña invalida ! "
-            return render(request, "inicio/accesoPrincipal1.html", context)
+            return render(request, "inicio/accesoPrincipal1Cli.html", context)
         else:
             print("OJOOO CONTRASENA ok")
             #Aqui ya se valido username y contraseña OK
@@ -198,7 +198,7 @@ def validaAcceso(request):
 
                 print ("Entre Perfil No autorizado para la sede!")
                 context['Error'] = "Perfil No autorizado para la sede! "
-                return render(request, "inicio/accesoPrincipal1.html", context)
+                return render(request, "inicio/accesoPrincipal1Cli.html", context)
 
             else:
 
@@ -229,7 +229,7 @@ def validaAcceso(request):
                 miConexiont = psycopg2.connect(host="192.168.133.128", database="vulner7Particionado", port="5432", user="postgres", password="123456")
                 curt = miConexiont.cursor()
 
-                comando = 'select m.id id, m.nombre nombre , m.nomenclatura nomenclatura, m.logo logo ,perfcli."modulosId_id" modulo_id , m.nombre modulo_nombre from seguridad_modulos m, seguridad_perfilesgralusu gral, planta_planta planta, seguridad_perfilesclinica perfcli where planta.id = gral."plantaId_id" and  gral."perfilesClinicaId_id" = perfcli.id and perfcli."modulosId_id" = m.id and planta.documento =' + "'" + str(username) + "'" + ' and planta."sedesClinica_id" =' + "'" + str(sede) + "'" + ' AND gral."plantaId_id"=planta.id AND planta."sedesClinica_id"=' + "'" + str(sede) + "'"
+                comando = 'select m.id id, m.nombre nombre , m.nomenclatura nomenclatura, m.logo logo ,perfcli."modulosId_id" modulo_id , m.nombre modulo_nombre from seguridad_modulos m, seguridad_perfilesgralusu gral, planta_planta planta, seguridad_perfilesclinica perfcli where planta.id = gral."plantaId_id" and  gral."perfilesClinicaId_id" = perfcli.id and perfcli."modulosId_id" = m.id and planta.documento =' + "'" + str(username) + "'" + ' and planta."sedesClinica_id" =' + "'" + str(sede) + "'" + ' AND gral."plantaId_id"=planta.id AND planta."sedesClinica_id"=' + "'" + str(sede) + "' ORDER BY m.nombre"
 
                 curt.execute(comando)
                 print(comando)
@@ -302,7 +302,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
     curt = miConexiont.cursor()
 
     # comando = 'select m.id id, m.nombre nombre , m.nomenclatura nomenclatura, m.logo logo from seguridad_modulos m, seguridad_perfilesgralusu gral, planta_planta planta, seguridad_perfilesclinica perfcli where planta.id = gral."plantaId_id" and gral."perfilesClinicaId_id" = perfcli.id and perfcli."modulosId_id" = m.id and planta.documento =' + "'" + username + "'" + ' and  perfcli."sedesClinica_id" = ' + "'" + str(Sede) + "'"
-    comando = 'select m.id id, m.nombre nombre , m.nomenclatura nomenclatura, m.logo logo ,perfcli."modulosId_id" modulo_id , m.nombre modulo_nombre from seguridad_modulos m, seguridad_perfilesgralusu gral, planta_planta planta, seguridad_perfilesclinica perfcli where planta.id = gral."plantaId_id" and  gral."perfilesClinicaId_id" = perfcli.id and perfcli."modulosId_id" = m.id and planta.documento =' + "'" + str(username) + "'" + ' AND gral."plantaId_id"=planta.id AND planta."sedesClinica_id"=' + "'" + str(sede) + "'"
+    comando = 'select m.id id, m.nombre nombre , m.nomenclatura nomenclatura, m.logo logo ,perfcli."modulosId_id" modulo_id , m.nombre modulo_nombre from seguridad_modulos m, seguridad_perfilesgralusu gral, planta_planta planta, seguridad_perfilesclinica perfcli where planta.id = gral."plantaId_id" and  gral."perfilesClinicaId_id" = perfcli.id and perfcli."modulosId_id" = m.id and planta.documento =' + "'" + str(username) + "'" + ' AND gral."plantaId_id"=planta.id AND planta."sedesClinica_id"=' + "'" + str(sede) + "' ORDER BY m.nombre"
 
     curt.execute(comando)
     print(comando)
@@ -320,6 +320,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
     # Fin Combo PermisosGrales
 
     print("permisosGrales= ", permisosGrales)
+
 
     context = {}
     context['PermisosGrales'] = permisosGrales
@@ -4271,7 +4272,7 @@ def retornarAdmision(request, Sede, Perfil, Username, Username_id, NombreSede):
         print ("Entre por dende ERA")
         return render(request, "admisiones/panelAdmisiones.html", context)
 
-    return render(request, "admisiones/panelAdmisiones.html", context)
+    return render(request, "admisiones/panelAdmisionesCli.html", context)
 
 
 def RetornarMen(request, Sede, Username,  Documento, NombreSede, Profesional):
@@ -4448,7 +4449,7 @@ def RetornarMen(request, Sede, Username,  Documento, NombreSede, Profesional):
 
     print ("Voy de Regreso Context = ", context)
 
-    return render(request, "inicio/PantallaPrincipal.html", context)
+    return render(request, "inicio/PantallaPrincipalCli.html", context)
 
 
 def validaPassword(request, username, contrasenaAnt,contrasenaNueva,contrasenaNueva2):
@@ -5871,7 +5872,8 @@ def crearAdmisionDef(request):
             print("Se hizo rollback por:", e)
             datosMensaje = {'success': False, 'Mensaje': e}
             json_data = json.dumps(datosMensaje, default=str)
-            return HttpResponse(json_data, content_type='application/json')
+            return render(request, "admisiones/panelAdmisionesCli.html", json_data)
+            #return HttpResponse(json_data, content_type='application/json')
 
 
 
@@ -6904,13 +6906,10 @@ def crearAdmisionDef(request):
     # FIN RUTINA ARMADO CONTEXT
 
 
-    return render(request, "admisiones/panelAdmisiones.html", context)
-
+    return render(request, "admisiones/panelAdmisionesCli.html", context)
 
 
 # fin nuevo mcodigo crear admison DEF
-
-
 
 def crearResponsables(request):
     print("Entre crear Responsables")
