@@ -1095,7 +1095,7 @@ def crearTriage(request):
                 if (estaElPaciente.id >0):
                     context['Mensajes'] = 'Paciente se encuentra eh Clinica. Verificar.!'
 
-                    return render(request, "triage/panelTriage.html", context)
+                    return render(request, "triage/panelTriageCli.html", context)
 
         except Exception as e:
             print ("todo bien")
@@ -1237,7 +1237,7 @@ def crearTriage(request):
 
         
 
-            return render(request, "triage/panelTriage.html", context)
+            return render(request, "triage/panelTriageCli.html", context)
 
         finally:
             print("nada")
@@ -1281,7 +1281,7 @@ def crearTriage(request):
         context['PermisoCrearTriage'] = 'True'
 
 
-        return render(request, "triage/panelTriage.html", context)
+        return render(request, "triage/panelTriageCli.html", context)
 
 
 def buscarTriage(request):
@@ -1741,7 +1741,7 @@ def buscarTriage(request):
 
     context['Triage'] = triage1
 
-    return render(request, "triage/panelTriage.html", context)
+    return render(request, "triage/panelTriageCli.html", context)
 
 
 def buscarSubServiciosTriage(request):

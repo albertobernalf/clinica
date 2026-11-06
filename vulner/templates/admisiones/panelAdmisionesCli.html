@@ -1675,374 +1675,288 @@ function cargarTablaAbonosPaciente()
                  <!-- <div class="container my-2"> -->
 
                  <!-- Fila 1 -->
-                 <div class="form-row mb-1">
-                     <div class="col">
                          <input type="hidden" id="admision" name="admision" value="" readonly>
                          <input type="hidden" id="sedesClinica" name="sedesClinica" value="" readonly>
                          <input type="hidden" id="id" name="id" readonly>
                          <input type="hidden" id="ingresoIdFurips" name="ingresoIdFurips" value="" readonly>
-
-                     </div>
-                     <div class="col">
                          tipoDocVictima:
-                         <div class="form-group-sm">
+
                              <input type="text" id="tipoDocVictima" name="tipoDocVictima"
-                                    class="form-control form-control-sm" value="" readonly>
-                         </div>
-                     </div>
+                                     value="" readonly>
 
-                     <div class="col"> documentoVictima:
-                         <div class="form-group-sm">
                              <input type="text" id="documentoVictima" name="documentoVictima"
-                                    class="form-control form-control-sm"
+
                                     value="" readonly>
-                         </div>
 
-                     </div>
-
-                     <div class="col"> fechaRadicado:
-                         <div class="form-group-sm">
                              <input type="datetime-local" id="fechaRadicado" name="fechaRadicado"
-                                    class="form-control form-control-sm" value="{{furips.fechaRadicado}}">
-                         </div>
-                     </div>
-                     <div class="col"> numeroRadicacion:
-                         <div class="form-group-sm">
+                                    value="{{furips.fechaRadicado}}">
+                         numeroRadicacion:
+
                              <input type="text" id="numeroRadicacion" name="numeroRadicacion"
-                                    class="form-control form-control-sm" value="">
-                         </div>
-                     </div>
-                     <div class="col">
+                                     value="">
                          numeroFactura:
-                         <div class="form-group-sm">
+
                              <input type="text" id="numeroFactura" name="numeroFactura"
-                                    class="form-control form-control-sm" value="">
-                         </div>
-                     </div>
-                     <div class="col"> primerNombreVictima:
-                         <div class="form-group-sm">
+                                    value="">
                              <input type="text" id="primerNombreVictima"
-                                    name="primerNombreVictima" class="form-control form-control-sm" value="">
-                         </div>
-                     </div>
-                     <div class="col"> segundoNombreVictima:
-                         <div class="form-group-sm">
+                                    name="primerNombreVictima"  value="">
+                         segundoNombreVictima:
+
                              <input type="text" id="segundoNombreVictima"
-                                    name="segundoNombreVictima" class="form-control form-control-sm" value="">
-                         </div>
+                                    name="segundoNombreVictima"  value="">
+                         primerApellidoVictima:
 
-                     </div>
-                     <div class="col"> primerApellidoVictima:
-                         <div class="form-group-sm">
                              <input type="text" id="primerApellidoVictima"
-                                    name="primerApellidoVictima" class="form-control form-control-sm" value="">
-                         </div>
-                     </div>
-                     <div class="col"> segundoApellidoVictima:
-                         <div class="form-group-sm">
+                                    name="primerApellidoVictima"  value="">
+                          segundoApellidoVictima:
+
                              <input type="text" id="segundoApellidoVictima"
-                                    name="segundoApellidoVictima" class="form-control form-control-sm" value="">
-                         </div>
-                     </div>
-
-                 </div>
+                                    name="segundoApellidoVictima"  value="">
                  <!-- Fila 2 -->
-                 <div class="form-row mb-1">
-
-                     <div class="col">consecVictima:
-                         <input type="text" id="consecVictima" name="consecVictima" class="form-control form-control-sm"
+                         consecVictima:
+                         <input type="text" id="consecVictima" name="consecVictima"
                                 value="1">
-                     </div>
-                     <div class="col"> condicionAccidentado:
+                         condicionAccidentado:
                          <input type="text" id="condicionAccidentado"
-                                name="condicionAccidentado" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> evento:
-                         <input type="text" id="evento" name="evento" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> direccionEvento:
+                                name="condicionAccidentado"  value="">
+                         evento:
+                         <input type="text" id="evento" name="evento"  value="">
+                         direccionEvento:
                          <input type="text" id="direccionEvento" name="direccionEvento"
-                                class="form-control form-control-sm"
+
                                 value="">
-                     </div>
-                     <div class="col"> departamentoEvento:
+                         departamentoEvento:
                          <input type="text" id="departamentoEvento" name="departamentoEvento"
-                                class="form-control form-control-sm"
+
                                 value="">
-                     </div>
-                     <div class="col"> municipioEvento:
+                         municipioEvento:
                          <input type="text" id="municipioEvento" name="municipioEvento"
-                                class="form-control form-control-sm"
+
                                 value="">
-                     </div>
-                     <div class="col"> localidadEvento:
+                          localidadEvento:
                          <input type="text" id="localidadEvento" name="localidadEvento"
-                                class="form-control form-control-sm"
+
                                 value="">
-                     </div>
-                     <div class="col"> zonaEvento:
-                         <input type="text" id="zonaEvento" name="zonaEvento" class="form-control form-control-sm"
+                        zonaEvento:
+                         <input type="text" id="zonaEvento" name="zonaEvento"
                                 value="">
-                     </div>
-                     <div class="col"> fechaEvento:
+                         fechaEvento:
                          <input type="datetime-local" id="fechaEvento" name="fechaEvento"
-                                class="form-control form-control-sm">
-                     </div>
-                 </div>
+
                  <!-- Fila 3 -->
-                 <div class="form-row mb-1">
-
-                     <div class="col"> eventoDescripcion:
+                             eventoDescripcion:
                          <input type="text" id="eventoDescripcion" name="eventoDescripcion"
-                                class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> estado:
+                         value="">
+                         estado:
                          <input type="text" id="estado" name="estado" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> marcaVehiculo:
-                         <input type="text" id="marcaVehiculo" name="marcaVehiculo" class="form-control form-control-sm"
+                        marcaVehiculo:
+                         <input type="text" id="marcaVehiculo" name="marcaVehiculo"
                                 value="">
-                     </div>
-                     <div class="col"> placaVehiculo:
-                         <input type="text" id="placaVehiculo" name="placaVehiculo" class="form-control form-control-sm"
+                         placaVehiculo:
+                         <input type="text" id="placaVehiculo" name="placaVehiculo"
                                 value="">
-                     </div>
-                     <div class="col"> tipoServicioVehiculo:
+                         tipoServicioVehiculo:
                          <input type="text" id="tipoServicioVehiculo"
-                                name="tipoServicioVehiculo" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> tipoVehiculo:
-                         <input type="text" id="tipoVehiculo" name="tipoVehiculo" class="form-control form-control-sm"
+                                name="tipoServicioVehiculo"  value="">
+                         tipoVehiculo:
+                         <input type="text" id="tipoVehiculo" name="tipoVehiculo"
                                 value="">
-                     </div>
-                     <div class="col"> codigoaseguradora:
+                         codigoaseguradora:
                          <input type="text" id="codigoaseguradora" name="codigoaseguradora"
-                                class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> numeroPoliza:
-                         <input type="text" id="numeroPoliza" name="numeroPoliza" class="form-control form-control-sm"
+                                 value="">
+                         numeroPoliza:
+                         <input type="text" id="numeroPoliza" name="numeroPoliza"
                                 value="">
-                     </div>
-                     <div class="col"> fechaIniPoliza:
+                         fechaIniPoliza:
                          <input type="datetime-local" id="fechaIniPoliza" name="fechaIniPoliza"
-                                class="form-control form-control-sm"
-                                value="">
-                     </div>
 
-                 </div>
-                 <!-- Fila 4 -->
-                 <div class="form-row mb-1">
-                     <div class="col"> fechaFinPoliza:
-                         <input type="datetime-local" id="fechaFinPoliza" name="fechaFinPoliza"
-                                class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> intervencionAutoridad:
-                         <input type="text" id="intervencionAutoridad"
-                                name="intervencionAutoridad" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> cobroExcedentePoliza:
-                         <input type="text" id="cobroExcedentePoliza"
-                                name="cobroExcedentePolizad" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> primerNombrePropietario:
-                         <input type="text" id="primerNombrePropietario"
-                                name="primerNombrePropietario" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> segundoNombrePropietario:
-                         <input type="text" id="segundoNombrePropietario"
-                                name="segundoNombrePropietario" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> primerApellidoPropietario:
-                         <input type="text" id="primerApellidoPropietario"
-                                name="primerApellidoPropietario" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> segundoApellidoPropietario:
-                         <input type="text" id="segundoApellidoPropietario"
-                                name="segundoApellidoPropietario" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> tipoDocPropietario:
-                         <input type="text" id="tipoDocPropietario" name="tipoDocPropietario"
-                                class="form-control form-control-sm"
                                 value="">
-                     </div>
-                     <div class="col"> documentoPropietario:
+                 <!-- Fila 4 -->
+
+                        fechaFinPoliza:
+                         <input type="datetime-local" id="fechaFinPoliza" name="fechaFinPoliza"
+                                value="">
+                            intervencionAutoridad:
+                         <input type="text" id="intervencionAutoridad"
+                                name="intervencionAutoridad" value="">
+                         cobroExcedentePoliza:
+                         <input type="text" id="cobroExcedentePoliza"
+                                name="cobroExcedentePolizad"  value="">
+                         primerNombrePropietario:
+                         <input type="text" id="primerNombrePropietario"
+                                name="primerNombrePropietario"  value="">
+                         segundoNombrePropietario:
+                         <input type="text" id="segundoNombrePropietario"
+                                name="segundoNombrePropietario"  value="">
+                         primerApellidoPropietario:
+                         <input type="text" id="primerApellidoPropietario"
+                                name="primerApellidoPropietario"  value="">
+                        segundoApellidoPropietario:
+                         <input type="text" id="segundoApellidoPropietario"
+                                name="segundoApellidoPropietario" value="">
+                         tipoDocPropietario:
+                         <input type="text" id="tipoDocPropietario" name="tipoDocPropietario"
+
+                                value="">
+                         documentoPropietario:
                          <input type="text" id="documentoPropietario" name="documentoPropietario"
-                                class="form-control form-control-sm" value="">
-                     </div>
-                 </div>
+                        value="">
+
                  <!-- Fila 5 -->
-                 <div class="form-row mb-1">
-                     <div class="col"> departamentoPropietario:
+                         departamentoPropietario:
                          <input type="text" id="departamentoPropietario"
                                 name="departamentoPropietario" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col"> municipioPropietario:
+                         municipioPropietario:
                          <input type="text" id="municipioPropietario"
-                                name="municipioPropietario" class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col">localidadPropietario<input type="text" id="localidadPropietario"
+                                name="municipioPropietario" value="">
+                            localidadPropietario<input type="text" id="localidadPropietario"
                                                                  name="localidadPropietario"
-                                                                 class="form-control form-control-sm" value=""></div>
-                     <div class="col">direccionPropietario
+                                                             value="">
+                            direccionPropietario
                          <input type="text" id="direccionPropietario"
-                                name="direccionPropietario" class="form-control form-control-sm" value=""></div>
+                                name="direccionPropietario"  value="">
 
-                     <div class="col">primerNombreInvolucrado<input type="text" id="primerNombreInvolucrado"
+                     primerNombreInvolucrado<input type="text" id="primerNombreInvolucrado"
                                                                     name="primerNombreInvolucrado"
-                                                                    class="form-control form-control-sm" value=""></div>
-                     <div class="col">segundoNombreInvolucrado<input type="text" id="segundoNombreInvolucrado"
+                                                             value="">
+                     segundoNombreInvolucrado<input type="text" id="segundoNombreInvolucrado"
                                                                      name="segundoNombreInvolucrado"
-                                                                     class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col">primerApellidoInvolucrado<input type="text" id="primerApellidoInvolucrado"
+                                                             value="">
+                     primerApellidoInvolucrado<input type="text" id="primerApellidoInvolucrado"
                                                                       name="primerApellidoInvolucrado"
-                                                                      class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col">segundoApellidoInvolucrado<input type="text" id="segundoApellidoInvolucrado"
+                                                             value="">
+                     segundoApellidoInvolucrado<input type="text" id="segundoApellidoInvolucrado"
                                                                        name="segundoApellidoInvolucrado"
-                                                                       class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col">tipoDocInvolucrado<input type="text" id="tipoDocInvolucrado"
+                                                             value="">
+                     tipoDocInvolucrado<input type="text" id="tipoDocInvolucrado"
                                                                name="tipoDocInvolucrado"
-                                                               class="form-control form-control-sm" value=""></div>
+                                                             value="">
 
-                 </div>
+
                  <!-- Fila 6 -->
-                 <div class="row mb-1">
-                     <div class="col">documentoInvolucrado<input type="text" id="documentoInvolucrado"
+                    documentoInvolucrado<input type="text" id="documentoInvolucrado"
                                                                  name="documentoInvolucrado"
-                                                                 class="form-control form-control-sm" value=""></div>
-                     <div class="col">departamentoInvolucrado<input type="text" id="departamentoInvolucrado"
+                                                               value="">
+                    departamentoInvolucrado<input type="text" id="departamentoInvolucrado"
                                                                     name="departamentoInvolucrado"
-                                                                    class="form-control form-control-sm" value=""></div>
-                     <div class="col">municipioInvolucrado<input type="text" id="municipioInvolucrado"
+                                                               value="">
+                    municipioInvolucrado<input type="text" id="municipioInvolucrado"
                                                                  name="municipioInvolucrado"
-                                                                 class="form-control form-control-sm" value=""></div>
-                     <div class="col">localidadInvolucrado<input type="text" id="localidadInvolucrado"
+                                                               value="">
+                    localidadInvolucrado<input type="text" id="localidadInvolucrado"
                                                                  name="localidadInvolucrado"
-                                                                 class="form-control form-control-sm" value=""></div>
-                     <div class="col">direccionInvolucrado<input type="text" id="direccionInvolucrado"
+                                                               value="">
+                    direccionInvolucrado<input type="text" id="direccionInvolucrado"
                                                                  name="direccionInvolucrado"
-                                                                 class="form-control form-control-sm" value=""></div>
-                     <div class="col">tipoReferencia<input type="text" id="tipoReferencia"
-                                                           name="tipoReferencia" class="form-control form-control-sm"
-                                                           value=""></div>
-                     <div class="col">fechaRemision<input type="datetime-local" id="fechaRemision"
-                                                          name="fechaRemision" value=""></div>
-                     <div class="col">prestadorRemite<input type="text" id="prestadorRemite"
-                                                            name="prestadorRemite" class="form-control form-control-sm"
-                                                            value=""></div>
-                     <div class="col">codigoInscripcion<input type="text" id="codigoInscripcion"
+                                                               value="">
+                    tipoReferencia<input type="text" id="tipoReferencia"
+                                                           name="tipoReferencia"
+                                                           value="">
+                    fechaRemision<input type="datetime-local" id="fechaRemision"
+                                                          name="fechaRemision" value="">
+                    prestadorRemite<input type="text" id="prestadorRemite"
+                                                            name="prestadorRemite"
+                                                            value="">
+                    codigoInscripcion<input type="text" id="codigoInscripcion"
                                                               name="codigoInscripcion"
-                                                              class="form-control form-control-sm" value=""></div>
+                                                               value="">
 
-                 </div>
+
                  <!-- Fila 7 -->
 
-                 <div class="row mb-1">
-                 </div>
+
                  <!-- Fila 8 -->
-                 <div class="row mb-2">
-                     <div class="col">profesionalRemite<input type="text" id="profesionalRemite"
+                    profesionalRemite<input type="text" id="profesionalRemite"
                                                               name="profesionalRemite"
-                                                              class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col">fechaAceptacion<input type="datetime-local"
+                                                               value="">
+                     fechaAceptacion<input type="datetime-local"
                                                             id="fechaAceptacion"
-                                                            name="fechaAceptacion" class="form-control form-control-sm"
-                                                            value=""></div>
-                     <div class="col">prestadorRecibe<input type="text" id="prestadorRecibe"
-                                                            name="prestadorRecibe" class="form-control form-control-sm"
-                                                            value=""></div>
-                     <div class="col">codigoInscripcionRecibe<input type="text"
+                                                            name="fechaAceptacion"
+                                                            value="">
+                     prestadorRecibe<input type="text" id="prestadorRecibe"
+                                                            name="prestadorRecibe"
+                                                            value="">
+                     codigoInscripcionRecibe<input type="text"
                                                                     id="codigoInscripcionRecibe"
                                                                     name="codigoInscripcionRecibe"
-                                                                    class="form-control form-control-sm"
-                                                                    value=""></div>
-                     <div class="col">profesionalRecibe<input type="text" id="profesionalRecibe"
+
+                                                                    value="">
+                     profesionalRecibe<input type="text" id="profesionalRecibe"
                                                               name="profesionalRecibe"
-                                                              class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col">numeroPlacaTranporto<input type="text"
+                                                               value="">
+                     numeroPlacaTranporto<input type="text"
                                                                  id="numeroPlacaTranporto"
                                                                  name="numeroPlacaTranporto"
-                                                                 class="form-control form-control-sm"
-                                                                 value=""></div>
-                     <div class="col">trasportoVictimaDesde<input type="text"
+
+                                                                 value="">
+                     trasportoVictimaDesde<input type="text"
                                                                   id="trasportoVictimaDesde"
                                                                   name="trasportoVictimaDesde"
-                                                                  class="form-control form-control-sm"
-                                                                  value=""></div>
-                     <div class="col">trasportoVictimaHasta<input type="text"
+
+                                                                  value="">
+                     trasportoVictimaHasta<input type="text"
                                                                   id="trasportoVictimaHasta"
                                                                   name="trasportoVictimaHasta"
-                                                                  class="form-control form-control-sm"
-                                                                  value=""></div>
-                     <div class="col">tipoTransporteTransporto<input type="text"
+
+                                                                  value="">
+                     tipoTransporteTransporto<input type="text"
                                                                      id="tipoTransporteTransporto"
                                                                      name="tipoTransporteTransporto"
-                                                                     class="form-control form-control-sm"
-                                                                     value=""></div>
 
-                 </div>
+                                                                     value="">
+
+
                  <!-- Fila 9 -->
 
-                 <div class="row mb-1">
-                     <div class="col">lugarRecogeVictima<input type="text" id="lugarRecogeVictima"
+                    lugarRecogeVictima<input type="text" id="lugarRecogeVictima"
                                                                name="lugarRecogeVictima"
-                                                               class="form-control form-control-sm" value=""></div>
-                     <div class="col">certificacionIngreso<input type="datetime-local" id="certificacionIngreso"
+                                                               value="">
+                    certificacionIngreso<input type="datetime-local" id="certificacionIngreso"
                                                                  name="certificacionIngreso"
-                                                                 class="form-control form-control-sm" value=""></div>
-                     <div class="col">certificacionEgreso<input type="datetime-local" id="certificacionEgreso"
+                                                               value="">
+                    certificacionEgreso<input type="datetime-local" id="certificacionEgreso"
                                                                 name="certificacionEgreso"
-                                                                class="form-control form-control-sm" value=""></div>
-                     <div class="col">dxPrincIngreso<input type="text" id="dxPrincIngreso"
-                                                           name="dxPrincIngreso" class="form-control form-control-sm"
-                                                           value=""></div>
-                     <div class="col">dxRel1Ingreso<input type="text" id="dxRel1Ingreso"
-                                                          name="dxRel1Ingreso" class="form-control form-control-sm"
-                                                          value=""></div>
-                     <div class="col">dxRel2Ingreso<input type="text" id="dxRel2Ingreso"
-                                                          name="dxRel2Ingreso" class="form-control form-control-sm"
-                                                          value=""></div>
-                     <div class="col">dxPrincEgreso<input type="text" id="dxPrincEgreso"
-                                                          name="dxPrincEgreso" class="form-control form-control-sm"
-                                                          value=""></div>
-                     <div class="col">dxRel1Egreso<input type="text" id="dxRel1Egreso"
-                                                         name="dxRel1Egreso" class="form-control form-control-sm"
-                                                         value=""></div>
-                     <div class="col">dxRel2Egreso<input type="text" id="dxRel2Egreso"
-                                                         name="dxRel2Egreso" class="form-control form-control-sm"
-                                                         value=""></div>
+                                                              value="">
+                    dxPrincIngreso<input type="text" id="dxPrincIngreso"
+                                                           name="dxPrincIngreso"
+                                                           value="">
+                    dxRel1Ingreso<input type="text" id="dxRel1Ingreso"
+                                                          name="dxRel1Ingreso"
+                                                          value="">
+                    dxRel2Ingreso<input type="text" id="dxRel2Ingreso"
+                                                          name="dxRel2Ingreso"
+                                                          value="">
+                    dxPrincEgreso<input type="text" id="dxPrincEgreso"
+                                                          name="dxPrincEgreso"
+                                                          value="">
+                    dxRel1Egreso<input type="text" id="dxRel1Egreso"
+                                                         name="dxRel1Egreso"
+                                                         value="">
+                    dxRel2Egreso<input type="text" id="dxRel2Egreso"
+                                                         name="dxRel2Egreso"
+                                                         value="">
 
-                 </div>
+
                  <!-- Fila 10 -->
-                 <div class="row mb-1">
-                     <div class="col">tipoDocProfesionalAtendio<input type="text" id="tipoDocProfesionalAtendio"
+                    tipoDocProfesionalAtendio<input type="text" id="tipoDocProfesionalAtendio"
                                                                       name="tipoDocProfesionalAtendio"
-                                                                      class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col">documentoProfesionalAtendio<input type="text" id="documentoProfesionalAtendio"
+                                                                       value="">
+                     documentoProfesionalAtendio<input type="text" id="documentoProfesionalAtendio"
                                                                         name="documentoProfesionalAtendio"
-                                                                        class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col">amparoReclamaFacturadoQx<input type="text" id="amparoReclamaFacturadoQx"
+                                                                      value="">
+                    amparoReclamaFacturadoQx<input type="text" id="amparoReclamaFacturadoQx"
                                                                      name="amparoReclamaFacturadoQx"
-                                                                     class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col">amparoReclamaAFosygaQx<input type="text" id="amparoReclamaAFosygaQx"
+                                                                     value="">
+
+                    amparoReclamaAFosygaQx<input type="text" id="amparoReclamaAFosygaQx"
                                                                    name="amparoReclamaAFosygaQx"
-                                                                   class="form-control form-control-sm" value=""></div>
-                     <div class="col">amparoReclamaFacturadoGastos<input type="text" id="amparoReclamaFacturadoGastos"
+                                                                   value="">
+                     amparoReclamaFacturadoGastos<input type="text" id="amparoReclamaFacturadoGastos"
                                                                          name="amparoReclamaFacturadoGastos"
-                                                                         class="form-control form-control-sm" value="">
-                     </div>
-                     <div class="col">amparoReclamaAFosygaGastos<input type="text" id="amparoReclamaAFosygaGastos"
+                                                                        value="">
+                     amparoReclamaAFosygaGastos<input type="text" id="amparoReclamaAFosygaGastos"
                                                                        name="amparoReclamaAFosygaGastos"
-                                                                       class="form-control form-control-sm" value="">
-                     </div> <!-- Cierra ultimo col -->
-                 </div> <!-- Cierra ultimo row -->
+                                                                        value="">
 
              </form> <!-- Cierra form -->
 

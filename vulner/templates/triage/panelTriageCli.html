@@ -1,0 +1,143 @@
+{% extends "triage/menuTriageCli.html" %}
+{% load static %}
+
+{% block head %}
+
+<!-- <link rel="stylesheet" type="text/css" href={% static 'app/css/triage/panelTriageCli.css' %}> -->
+<!-- <link rel="stylesheet" type="text/css" href={% static 'app/css/triage/Modal_crearConvenioModelCli.css' %}>  -->
+<!-- <link rel="stylesheet" type="text/css" href={% static 'app/css/triage/Modal_crearAbonosModelCli.css' %}> -->
+<link rel="stylesheet" type="text/css" href={% static 'css/fontawesome.css' %}>
+<script type="application/javascript" src={% static 'app/js/triage/panelTabsTriage.js' %} defer>         </script>
+<!-- <script src="https://kit.fontawesome.com/5d0337a043.js" crossorigin="anonymous"></script> -->
+<!-- <script src={% static 'app/js/triage/styleTab.js' %} defer> </script>  -->
+
+<div class="marco">
+<!-- <div class="wrap">  -->
+    <ul class="tabs">
+        <li><a href="#Triage"><span class="tab-text"> </span>
+            Ingresos Triage </a></li>
+{{PermisoTriage}}
+	{% if PermisoTriage == "True" %}
+      		  <li><a href="#crearTriage"><span class="tab-text"> </span>
+	            Creacion Triage</a></li>
+
+	{% else %}
+
+	{% endif %}
+
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="marco">
+    <div class="secciones">
+
+        <article id="crearTriage">
+            <h3>Creacion Triage</h3>
+        </article>
+
+
+        <article id="Triage">
+            <form action="/buscarTriage/" method="POST" id="formBuscarTriage">
+
+                <input type="hidden" id="username" name="username" value="{{Username}}">
+                <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
+                <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value="{{SedeSeleccionada}}">
+                <input type="hidden" id="numreporte" name="numreporte" value="{{numreporte}}">
+                <input type="hidden" id="grupo" name="grupo" value="{{Grupo}}">
+                <input type="hidden" id="subGrupo" name="subGrupo" value="{{SubGrupo}}">
+                <input type="hidden" id="sede" name="sede" value="{{Sede}}">
+                <input type="hidden" id="documento" name="documento" value="{{Documento}}">
+                <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+                <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}">
+                <input type="hidden" id="permisosGrales" name="permisosGrales" value="{{PermisosGrales}}">
+                <input type="hidden" id="permisosDetalle" name="permisosDetalle" value="{{PermisosDetalle}}">
+                <input type="hidden" id="escogeModulo" name="escogeModulo" value="{{EscogeModulo}}">
+                <input type="hidden" id="PermisoCrearTriage" name="PermisoCrearTriage" value="{{PermisoCrearTriage}}">
+
+            </form>
+
+
+            <!-- Fin  Filtros de busqueda -->
+
+
+            <!-- INICIO TABLE DE  EL DATATABLE  -->
+
+            <table id="tablaDatosTriage" class="display table table-striped table-sm fs-6 nowrap" style="width: 100%" ;>
+                <thead>
+                <tr>
+                    <bold>
+                        <th>Imprimir <img src="{% static 'img/icons8-impresora-50.png' %}" alt="Imprimir" width="20"
+                                          height="20"></th>
+                        <th>id</th>
+                        <th>Tipo Doc</th>
+                        <th>Documento</th>
+                        <th>Paciente</th>
+                        <th>Consec</th>
+                        <th>Cama</th>
+                        <th>Solicita</th>
+                        <th>Motivo</th>
+                        <th>Triage</th>
+
+                        {% if PermisoCrearTriage == "True" %}
+
+                        <th>Crear Admision</th>
+                        {% else %}
+
+                        {% endif %}
+
+                        <th>Editar</th>
+
+                    </bold>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+
+            <!-- Crear Modal CrearAdmisionTriage  -->
+            <!-- Estructura de la Ventana Modal -->
+
+            <div id="crearAdmTriage" class="modal">
+                <span id="cerrarModal" class="btn-cerrar">&times;</span>
+                <form id="AdmisionTriage" method="POST">
+                    <div class="modal-contenido">
+                        <div class="modal-header">
+                            <h2>Creacion Admision desde Triage</h2>
+                            <div class="modal-title" id="exampleModalLabel"></div>
+                            <input type="button" class="btn btn-primary" value="save" onclick="guardarAdmisionTriage()">
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                        <div class="modal-footer">
+                            <input type="text" id="mensajesModalCreaAdmisionTriage"
+                                   name="mensajesModalCreaAdmisionTriage"></input>
+                            <input type="text" id="mensajesErrorModalCreaAdmisionTriage"
+                                   name="mensajesErrorModalCreaAdmisionTriage"></input>
+                            <button id="btnAceptar" class="btn-accion">Aceptar</button>
+                            <button id="btnCancelar" class="btn-secundario">Cancelar</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <!-- FIN MODAL CrearAdmisiontriage                              -->
+            <!-- FIN Espacio Estructura ventanas Modales  -->
+        </article>
+
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+
+{% block footer %}
+{% endblock %}

@@ -2093,8 +2093,11 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
         context['PermisoTriage'] = 'True'
         context['PermisoCrearTriage'] = 'True'
 
+
+        print("Voy a cargar el TRIAGE")
+
         ## FIN CONTEXTO
-        return render(request, "triage/panelTriage.html", context)
+        return render(request, "triage/panelTriageCli.html", context)
 
     if (escogeModulo == 'AUTORIZACIONES'):
         print ("ENTRE PERMSISO AUTORIZACIONES")
@@ -3842,7 +3845,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
 
 
 
-def retornarAdmision(request, Sede, Perfil, Username, Username_id, NombreSede):
+def retornarAdmision(request, Sede, Username, Documento,NombreSede, Profesional):
 
 
     print ("Entre Retornar Admision")
@@ -4254,7 +4257,7 @@ def retornarAdmision(request, Sede, Perfil, Username, Username_id, NombreSede):
     # Fin combo ocupaciones
 
 
-
+    print("voy de vuelta al login")
 
     # Fin combo Medicos
 
@@ -4270,9 +4273,9 @@ def retornarAdmision(request, Sede, Perfil, Username, Username_id, NombreSede):
         return render(request, "facturacion/menuFacturacion.html", context)
     if (Perfil == 6):
         print ("Entre por dende ERA")
-        return render(request, "admisiones/panelAdmisiones.html", context)
+        return render(request, "accesoPrincipalCli.html", context)
 
-    return render(request, "admisiones/panelAdmisionesCli.html", context)
+    return render(request, "accesoPrincipalCli.html", context)
 
 
 def RetornarMen(request, Sede, Username,  Documento, NombreSede, Profesional):
@@ -5693,11 +5696,20 @@ def crearAdmisionDef(request):
         context['TiposCotizante'] = tiposCotizante
         ipsRemite = request.POST["ips"]
         numManilla = request.POST["numManilla"]
-        remitido = request.POST["remitido"]
+
+        remitido = 'remitido' in request.POST
+
+        if (remitido == True):
+            remitido='S'
+        else:
+            remitido='N'
+
+        #remitido = request.POST["remitido"]
         #print("empresaId= ", empresaId)
         print("numManilla = ", numManilla)
         print("ipsRemite = ", ipsRemite)
         print("remitido = ", remitido)
+
 
         # DATOS DE RIPS
         ripsServiciosIng = request.POST['ripsServiciosIng']

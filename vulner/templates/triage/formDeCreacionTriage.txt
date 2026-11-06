@@ -1,0 +1,140 @@
+<h3>Creacion Triage</h3>
+
+            <form action="/crearTriage/" method="POST" id="grabacionAdmision">
+
+
+                {% if crearTriageForm.errors %}
+                <p style="color:Red;"> Revizar estos camos</p>
+
+                {% endif %}
+
+                <label for="busServicioT">Servicio:</label>
+                <select id="busServicioT" name="busServicioT">
+                    {% for servicios in Servicios %}
+                    <option value="{{servicios.id}}"> {{servicios.nombre}}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="busSubServicioT">SubServicio:</label>
+                <select id="busSubServicioT" name="busSubServicioT">
+                    {% for subServicios in SubServicios %}
+                    <option value="{{subServicios.id}}"> {{subServicios.nombre}}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="dependenciasT">Hab:</label>
+                <select id="dependenciasT" name="dependenciasT">
+                    {% for dependencias in dependencias %}
+                    <option value="{{dependencias.id}}"> {{dependencias.nombre}}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="tipoDocTriage">TipoDoc:</label>
+                <select id="tipoDocTriage" name="tipoDocTriage">
+                    {% for tiposDocumento in TiposDocumento %}
+                    <option value="{{tiposDocumento.id}}"> {{tiposDocumento.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                <label for="busDocumentoSelTriage">Documento:</label>
+                <input type="text" id="busDocumentoSelTriage"
+                       name="busDocumentoSelTriage" required>
+                <label for="serviciosAdministrativos">ServiciosAdmon:</label>
+                <select id="serviciosAdministrativos" tabindex="0"
+                        name="serviciosAdministrativos"
+                        required>
+                    {% for serviciosAdministrativos in ServiciosAdministrativos %}
+                    <option value="{{serviciosAdministrativos.id}}"> {{serviciosAdministrativos.nombre}}</option>
+                    {% endfor %}
+                </select>
+
+                <!-- desde aui empresas convenios -->
+
+
+                <label for="empresasTE">Empresas:</label>
+
+                <select id="empresasTE" name="empresasTE" required>
+                    {% for empresas in Empresas %}
+                    <option value="{{empresas.id}}"> {{empresas.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+
+
+                <label for="conveniosTE">Convenio:</label>
+
+
+                <select autofocus tabindex="0" id="conveniosTE" name="conveniosTE" required>
+                    {% for conveniosEmpresas in ConveniosEmpresas %}
+                    <option value="{{conveniosEmpresas.id}}"> {{conveniosEmpresas.nombre}}</option>
+                    {% endfor %}
+                </select>
+                <!-- hasta aquip -->
+
+                <label for="motivo">Motivo:</label>
+                <input type="text" id="motivo" name="motivo" required>
+                <label for="examenFisico">ExamenFisico:</label>
+                <input type="text" id="examenFisico" name="examenFisico" required>
+
+                <label for="frecCardiaca">Frecuencia cardiaca:</label>
+                <input type="text" id="frecCardiaca"
+                       name="frecCardiaca" required>
+
+                <label for="frecRespiratoria">Frecuencia
+                    Respiratoria:</label>
+                <input type="text" id="frecRespiratoria"
+                       name="frecRespiratoria" required>
+                <label for="taSist">TensionArterialSistolica:</label>
+                <input type="text" id="taSist" name="taSist">
+
+
+                <label for="taDiast">TensionArterialDiastolica:</label>
+                <input type="text" id="taDiast" name="taDiast">
+
+                <label
+                        for="taMedia">TensionArterialMedia:</label>
+                <input type="text" id="taMedia" name="taMedia">
+
+                <label for="glasgow">Glasgow:</label>
+                <input type="text" id="glasgow" name="glasgow">
+
+
+                <label for="peso">Peso:</label>
+                <input type="text" id="peso" name="peso">
+
+
+                <label for="temperatura">Temperatura:</label>
+                <input type="text" id="temperatura" name="temperatura">
+
+
+                <label for="estatura">Estatura:</label>
+                <input type="text" id="estatura" name="estatura">
+
+
+                <label for="glucometria">Glucometria:</label>
+                <input type="text" id="glucometria" name="glucometria">
+
+                <label for="saturacion">Saturacion:</label>
+                <input type="text" id="saturacion" name="saturacion">
+
+                <label for="escalaDolor">EscalaDolor:</label>
+                <input type="text" id="escalaDolor" name="escalaDolor">
+
+                <label for="tipoIngreso">TipoIngreso:</label>
+                <input type="text" id="tipoIngreso" name="tipoIngreso">
+
+                <label for="observaciones">Observaciones:</label>
+                <input type="text" id="observaciones" name="observaciones">
+
+
+                <label for="clasificacionTriage">ClasificacionTriage:</label>
+                <select id="clasificacionTriage" name="clasificacionTriage" required>
+                    {% for tiposTriage in TiposTriage %}
+                    <option value="{{tiposTriage.id}}"> {{tiposTriage.nombre}}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" id="guardarTriage" name="guardarTriage"
+                       value="Guardar Informacion"></input>
+
+            </form>

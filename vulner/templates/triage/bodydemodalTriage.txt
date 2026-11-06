@@ -1,0 +1,237 @@
+
+                        <label for="servicioAdmTriage">ServicioAdmon:</label>
+
+                        <select id="servicioAdmTriage" name="servicioAdmTriage">
+                            {% for serviciosAdministrativos in ServiciosAdministrativos %}
+                            <option value="{{serviciosAdministrativos.id}}"> {{serviciosAdministrativos.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+                        <label for="busServicio2">Servicio:</label>
+
+                        <select id="busServicio2" name="busServicio2">
+                            {% for servicios in Servicios2 %}
+                            <option value="{{servicios.id}}"> {{servicios.nombre}}</option>
+                            {% endfor %}
+                        </select>
+
+                        <label for="busSubServicio2">SubServicios:</label>
+
+                        <select id="busSubServicio2" name="busSubServicio2">
+                            {% for subservicios in SubServicios %}
+                            <option value="{{subservicios.id}}"> {{subservicios.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+                        <label for="dependenciasIngreso">Dependencia:</label>
+
+                        <select id="dependenciasIngreso" name="dependenciasIngreso">
+                            {% for habitaciones in Habitaciones %}
+                            <option value="{{habitaciones.id}}"> {{habitaciones.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <label for="tiposDoc2">TipoDoc:</label>
+
+                        <input type="text" id="tiposDoc2"
+                               name="tiposDoc2" readOnly>
+                        <label for="busDocumentoSel2">DocNo:</label>
+                        <input type="text" id="busDocumentoSel2"
+                               name="busDocumentoSel2" readOnly>
+
+                        <label for="dxIngreso">Diagnostico:</label>
+
+                        <select id="dxIngreso" name="dxIngreso">
+                            {% for diagnosticos in Diagnosticos %}
+                            <option value="{{diagnosticos.id}}"> {{diagnosticos.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <label for="busEspecialidad">Especialidad:</label>
+
+                        <select id="busEspecialidad" name="busEspecialidad">
+                            {% for especialidades in Especialidades %}
+                            <option value="{{especialidades.id}}">
+                                {{especialidades.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+                        <label for="medicoIngreso">MedicoIng:</label>
+                        <select id="medicoIngreso" name="medicoIngreso">
+                            {% for medicos in Medicos %}
+                            <option value="{{medicos.id}}"> {{medicos.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="viasIngreso">ViasDeIng:</label>
+
+                        <select id="viasIngreso" name="viasIngreso">
+                            {% for viasIngreso in ViasIngreso %}
+                            <option value="{{viasIngreso.id}}"> {{viasIngreso.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+                        <label for="causasExterna">CausaExterna:</label>
+
+                        <select id="causasExterna" name="causasExterna">
+                            {% for causasExterna in CausasExterna %}
+                            <option value="{{causasExterna.id}}"> {{causasExterna.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+
+                        <input type="text" id="empresasT" name="empresasT" readonly>
+                        <input type="text" id="conveniosT" name="conveniosT" readonly>
+
+                        <label for="nombreEmpresasT">Empresa:</label>
+                        <input type="text" id="nombreEmpresasT"
+                               name="nombreEmpresasT" readonly>
+                        <label for="nombreConveniosT">Convenio:</label>
+                        <input type="text" id="nombreConveniosT"
+                               name="nombreConveniosT" readonly>
+
+                        <label for="regimenes">Regimen:</label>
+
+                        <select id="regimenes" name="regimenes" required>
+                            {% for regimenes in Regimenes %}
+                            <option value="{{regimenes.id}}"> {{regimenes.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <label for="tiposCotizante">TipoCotizante:</label>
+
+                        <select id="tiposCotizante"
+                                name="tiposCotizante" required>
+                            {% for tiposCotizante in TiposCotizante %}
+                            <option value="{{tiposCotizante.id}}">
+                                {{tiposCotizante.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+                        <!-- Aquip el espacio para las tablas           -->
+
+                        <label for="remitido">Remitido:</label>
+                        <input type="checkbox" id="remitido"  name="remitido">
+                        <label for="ips">Ips:</label>
+
+                        <select id="ips" name="ips" required>
+                            {% for ips in Ips %}
+                            <option value="{{ips.id}}"> {{ips.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <label for="numManilla">Manilla:</label>
+                        <input type="text" id="numManilla"
+                               name="numManilla">
+                        <label for="autHospitalizacion">AutorizacionHosp:</label>
+                        <input type="text"  id="autHospitalizacion"
+                               name="autHospitalizacion">
+
+                        I N F O R M A C I O N RIPS:
+
+                        <label for="ripsDestinoUsuarioEgresoRecienNacido">DestinoRecienNacido:
+                            &nbsp;&nbsp;&nbsp;</label>
+
+                        <select id="ripsDestinoUsuarioEgresoRecienNacido"
+                                name="ripsDestinoUsuarioEgresoRecienNacido" required>
+                            {% for ripsDestinoUsuarioEgresoRecienNacido in RipsDestinoUsuarioEgresoRecienNacido
+                            %}
+                            <option value="{{ripsDestinoUsuarioEgresoRecienNacido.id}}">
+                                {{ripsDestinoUsuarioEgresoRecienNacido.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+
+                        <label for="ripsEdadGestacional">RN Edad Gestacional:</label>
+                        <input type="text"
+                               id="ripsEdadGestacional"
+                               name="ripsEdadGestacional" value="">
+
+
+                        <label for="ripsNumConsultasCPrenatal">NumeroConsultaPrenatal:</label>
+
+                        <input type="text"
+                               id="ripsNumConsultasCPrenatal"
+                               name="ripsNumConsultasCPrenatal" value="">
+                        <label for="ripsPesoRecienNacido">RN peso:</label>
+
+                        <input type="text" id="ripsPesoRecienNacido"
+                               name="ripsPesoRecienNacido" value="">
+                        <label for="ripsRecienNacido">Recien
+                            Nacido:&nbsp;&nbsp;</label>
+
+                        <input type="text" id="ripsRecienNacido"
+                               name="ripsRecienNacido" value="">
+
+                        <label for="ripsCausaMotivoAtencion">CausaAtencion:
+                            &nbsp;&nbsp;&nbsp;</label>
+
+                        <select id="ripsCausaMotivoAtencion"
+                                name="ripsCausaMotivoAtencion" required>
+                            {% for ripsCausaMotivoAtencion in RipsCausaMotivoAtencion %}
+                            <option value="{{ripsCausaMotivoAtencion.id}}">
+                                {{ripsCausaMotivoAtencion.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+
+                        <label for="ripsCondicionDestinoUsuarioEgreso">UsuarioDestinoegreso:
+                            &nbsp;&nbsp;&nbsp;</label>
+
+                        <select id="ripsCondicionDestinoUsuarioEgreso"
+                                name="ripsCondicionDestinoUsuarioEgreso" required>
+                            {% for ripsCondicionDestinoUsuarioEgreso in RipsCondicionDestinoUsuarioEgreso %}
+                            <option value="{{ripsCondicionDestinoUsuarioEgreso.id}}">
+                                {{ripsCondicionDestinoUsuarioEgreso.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <label for="ripsGrupoServicios">GrupoDeServicios:
+                            &nbsp;&nbsp;&nbsp;</label>
+
+                        <select id="ripsGrupoServicios" name="ripsGrupoServicios" required>
+                            {% for ripsGrupoServicios in RipsGrupoServicios %}
+                            <option value="{{ripsGrupoServicios.id}}">
+                                {{ripsGrupoServicios.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+
+                        <label for="ripsViaIngresoServicioSalud">ViaIngreso:</label>
+
+                        <select id="ripsViaIngresoServicioSalud" name="ripsViaIngresoServicioSalud"
+                                required>
+                            {% for ripsViaIngresoServicioSalud in RipsViaIngresoServicioSalud %}
+                            <option value="{{ripsViaIngresoServicioSalud.id}}">
+                                {{ripsViaIngresoServicioSalud.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+                        <label for="ripsmodalidadGrupoServicioTecSal">ModalidadGrupoServ:</label>
+
+                        <select id="ripsmodalidadGrupoServicioTecSal"
+                                name="ripsmodalidadGrupoServicioTecSal" required>
+                            {% for ripsmodalidadGrupoServicioTecSal in RipsmodalidadGrupoServicioTecSal %}
+                            <option value="{{ripsmodalidadGrupoServicioTecSal.id}}">
+                                {{ripsmodalidadGrupoServicioTecSal.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+                        <label for="ripsServiciosIng">ServicioIngreso:</label>
+                        <select id="ripsServiciosIng" name="ripsServiciosIng" required>
+                            {% for ripsServiciosIng in RipsServiciosIng %}
+                            <option value="{{ripsServiciosIng.id}}">
+                                {{ripsServiciosIng.nombre}}
+                            </option>
+                            {% endfor %}
+                        </select>
