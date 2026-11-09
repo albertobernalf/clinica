@@ -8,6 +8,7 @@
 
 
     <script type="application/javascript" src={% static 'app/main/triage/mainTriageCli.js' %} defer> </script>
+
     <!-- <script type="application/javascript" src={% static 'app/main/triage/main_crearConvenioModelCli.js' %} defer> </script> -->
     <!-- <script type="application/javascript" src={% static 'app/main/triage/main_crearAbonosModelCli.js' %} defer> </script> -->
 
@@ -19,6 +20,10 @@
     <link rel="stylesheet" type="text/css"  href = {% static 'css/login.css' %} >
    <!-- <link rel="stylesheet" type="text/css" href={% static 'app/css/triage/menuTriageCli.css' %} > -->
     <link rel="stylesheet" type="text/css" href={% static 'app/css/triage/panelTriageCli.css' %} >
+    <link rel="stylesheet" type="text/css" href={% static 'app/css/triage/ModalActualizaTriageCli.css' %} >
+
+
+
     <link rel="stylesheet" type="text/css"  href = {% static 'nav_sidebar.css' %} >
     <link rel="stylesheet" type="text/css"  href = {% static 'css/base.css' %} >
     <link rel="stylesheet" type="text/css"  href = {% static 'css/responsive.css' %} >
@@ -55,7 +60,7 @@
     <!-- <link rel="stylesheet" type="text/css"  href = {% static 'app/css/triage/styleTab.css' %} > -->
 
 <!--      <script src={% static 'app/js/triage/styleTab.js' %} defer> </script> -->
-<script type="application/javascript" src={% static 'app/js/triage/panelTabsTriage.js' %} defer>         </script>
+<script type="application/javascript" src={% static 'app/js/triage/panelTabsTriageCli.js' %} defer>         </script>
     <!-- Fin Custom css -->
 
     <script type="application/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
@@ -82,7 +87,7 @@
   <!-- <form class="form-inline"> -->
   <form>
 
-	 <span> <img src="{% static 'img/ClinicaAlb2.png' %}" alt="Clinica" width="70" height="30"> </span>
+	 <span> <img src="{% static 'app/img/accesoPrincipal/ClinicaAlb2.png' %}" alt="Clinica" width="70" height="30"> </span>
 
     <span> Sede: {{NombreSede}} </span>
 
@@ -113,11 +118,11 @@
 Alta Medica:  <span id="alta" name="alta" style='color:red'>{{altaMedica}} </span>
 Hospitalizados:  <span id="hosp" name="hosp" style='color:red'>{{Hospitalizados}} </span> <img class="manImg" src={% static 'img/iloveimg-converted/icons8-enfermera-48_X.JPG' %}></img>
 Urgencias:  <span id="urg" name="urg" style='color:red'>{{Urgencias}} </span> <img class="manImg" src={% static 'img/iloveimg-converted/icons8-enfermera-48_X.JPG' %}></img>
-Triage:  <span id="tria" name="tria" style='color:red'>{{Triage}} </span> <img class="manImg" src={% static 'img/iloveimg-converted/icons8-enfermera-48_X.JPG' %}></img>
+Triage: <!-- <span id="tria" name="tria" style='color:red'>{{Triage}} </span> <img class="manImg" src={% static 'img/iloveimg-converted/icons8-enfermera-48_X.JPG' %}></img>  -->
 Ambulatorios:  <span id="amb" name="amb" style='color:red'>{{Ambulatorios}} </span> <img class="manImg" src={% static 'img/iloveimg-converted/icons8-enfermera-48_X.JPG' %}></img>
 </span>
 
-<button type="button" id="btnRefrescar" name="btnRefrescar" class="btn btn-info btn-xs" onclick="RefrescarPantalla()">Refresccar</button>
+
 
 {% endblock %}
 </div>
@@ -129,7 +134,7 @@ Mensajes
     <textarea id= "mensajes" name="mensajes" rows="1" cols="260"></textarea>
       Notificacion
     <textarea id= "mensajesError" name="mensajesError" rows="1" cols="260"></textarea>
-
+<button type="button" id="btnRefrescar" name="btnRefrescar" class="btn btn-info btn-xs" onclick="RefrescarPantalla()">Refresccar</button>
 {% endblock %}
   </div>
 
@@ -192,7 +197,10 @@ Mensajes
     <!-- Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src={% static 'app/js/triage/menuTriageCli.js' %} defer >         </script>
+mainModalActualizaTriage
 
+    <script type="application/javascript" src={% static 'app/main/triage/mainCrearAdmTriageCli.js' %} defer> </script>
+    <script type="application/javascript" src={% static 'app/main/triage/mainModalActualizaTriageCli.js' %} defer> </script>
 </body>
 
 </html>

@@ -436,76 +436,6 @@ $(document).on('change', '#busDocumentoSelTriage', function(event) {
 
 });
 
-$('#tablaDatosTriage tbody').on('click', '.miEditaTriage', function() {
-
-	 var post_id = $(this).data('pk');
-	var row = $(this).closest('tr'); // Encuentra la fila
-	// alert("post_id=" + post_id);
-	// alert("row=" + row);
-	var triageId= post_id;
-	 var sede =  document.getElementById("sede").value;
-	 var username =  document.getElementById("username").value;
-
-
-	var table = $('#tablaDatosTriage').DataTable();  // Inicializa el DataTable jquery 	      
-        var rowindex = table.row(row).data(); // Obtiene los datos de la fila
-        dato1 = Object.values(rowindex);
-	console.log(" fila seleccionad d evuelta dato1 = ",  dato1);
-        dato3 = dato1[2];
-	console.log(" fila selecciona de vuelta dato3 = ",  dato3);
-	console.log(" fila selecciona de vuelta dato3 = ",  dato3);
-	// alert(" fila selecciona de vuelta dato3  glosaId= " +   dato3.Documento);
-	// alert(" fila selecciona de vuelta dato3 factura = " + dato3.tipoDoc);
-	// alert("Voy ajax editar Triage");
-	
-
-      $.ajax({
-		type: 'POST',
-    	url: '/encuentraTriageModal/',
-		data: {'triageId':triageId,'sede':sede,'tiposDoc':dato3.tipoDoc,'documento':dato3.Documento},
-		success: function (response_data) {
-
-       
-		var dato =   JSON.parse(response_data['Triage'].servicioSedes);
-		// alert("REGRESE dato = " + dato);
-
-                $('#busServicioT').val(response_data['Triage'].servicioSedes);
- 
-          	    $('#busSubServicioP').val(response_data['Triage'].subServiciosSedes);
-				$('#dependenciasP').val(response_data['Triage'].dependencias);
-          		$('#tiposDoc').val(response_data['Triage'].tiposDoc);
-				$('#busDocumentoSel').val(response_data['Triage'].documento);
-				$('#motivo').val(response_data['Triage'].motivo);
-				$('#examenFisico').val(response_data['Triage'].examenFisico);
-				$('#frecCardiaca').val(response_data['Triage'].frecCardiaca);
-				$('#frecRespiratoria').val(response_data['Triage'].frecRespiratoria);
-				$('#taSist').val(response_data['Triage'].taSist);
-				$('#taDiast').val(response_data['Triage'].taDiast);
-				$('#taMedia').val(response_data['Triage'].taMedia);
-				$('#glasgow').val(response_data['Triage'].glasgow);
-				$('#peso').val(response_data['Triage'].peso);
-				$('#temperatura').val(response_data['Triage'].temperatura);
-				$('#estatura').val(response_data['Triage'].estatura);
-				$('#glucometria').val(response_data['Triage'].glucometria);
-				$('#saturacion').val(response_data['Triage'].saturacion);
-				$('#escalaDolor').val(response_data['Triage'].escalaDolor);
-				$('#tipoIngreso').val(response_data['Triage'].tipoIngreso);
-				$('#observaciones').val(response_data['Triage'].observaciones);
-				$('#clasificacionTriage').val(response_data['Triage'].clasificacionTriage);
-				// alert("Voy a abrit la modal = ");
-		
-				 $('#modalActualizaTriage').modal('show');
-
-		//	$('#modalActualizaTriage').modal({show:true});
-			$('#clasificacionTriage').val(response_data['Triage'].clasificacionTriage);
-                    },
-   		   			 error: function(data){
-		       		document.getElementById("mensajesError").innerHTML =  data.responseText
-
-	   	    	}
-	});
-	});
-
 
 
 $('#tablaDatosTriage tbody').on('click', '.miTriage', function() {
@@ -534,6 +464,9 @@ $('#tablaDatosTriage tbody').on('click', '.miTriage', function() {
 
 	var table = $('#tablaDatosTriage').DataTable();  // Inicializa el DataTable jquery 	      
         var rowindex = table.row(row).data(); // Obtiene los datos de la fila
+
+		
+
         dato1 = Object.values(rowindex);
 	console.log(" fila seleccionad d evuelta dato1 = ",  dato1);
         dato3 = dato1[2];
@@ -623,9 +556,11 @@ $('#tablaDatosTriage tbody').on('click', '.miTriage', function() {
 				$('#nombreEmpresasT').val(response_data['NombreEmpresasT']);
 				$('#nombreConveniosT').val(response_data['NombreConveniosT']);
 
-				// alert("listo todo voy a abrir la modal");
+				 alert("listo todo voy a abrir la modal");
 
-			 $('#crearAdmTriage').modal('show');
+//			 $('#crearAdmTriage').modal('show');
+			const miModal = document.getElementById('crearAdmTriage');
+			 miModal.style.display = 'flex';
 
                     },
    		   			 error: function(data){

@@ -44,26 +44,13 @@ body {
 
 #contenido
 {
-  height: 480px;
+  height: 570px;
     border-radius: 10px;
   margin: 10px;
   background-color: #f9fafa;
   padding: 11px;
   border: 2px solid #87b3cd;
 
-}
-
-#indicadores
-{
- box-sizing: border-box;
-  height: 40px;
-    border-radius: 10px;
-  /* margin: 10px; */
-  margin: 4px  4px 0 4px       ;
-  background-color: #d3efeb;
-  padding: 0;
-  border: 2px solid #38cfb8;
-  width: auto;
 }
 
 #mensajeria
@@ -106,7 +93,7 @@ body {
 
 span { 
    color: navy;
-   margin:60px  ;
+   margin:70px  ;
    padding: 0;
 }
 
@@ -120,7 +107,7 @@ ul.tabs{
 	background: #363636;
 	list-style: none;
 	display: flex;
-    height: 80%;
+
 }
 
 ul.tabs li{
@@ -194,13 +181,161 @@ textarea
     font-family:sans-serif;
 }
 
+
+/********************* DESDE AQUI LABORATORIOcss de VENTANAS MODA */
+
+
+/* Reseteo básico y fuentes */
+
+
+/* Botón principal */
+.btn-abrir {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-abrir:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* Fondo oscuro de la modal (Overlay) */
+.modal {
+    display: none; /* Oculta por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: 95%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px); /* Efecto difuminado moderno */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+    margin: 40px;
+}
+
+/* Caja de la ventana modal */
+.modal-contenido {
+    background-color: #fff;
+    width: 90%;
+    height: 95%;
+   /* max-width: 450px; */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    animation: slideDown 0.3s ease;
+}
+
+/* Botón de cierre (X) */
+.btn-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #888;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-cerrar:hover {
+    color: #333;
+}
+
+/* Encabezado, cuerpo y pie de la modal */
+.modal-header {
+    padding: 20px 24px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    color: #333;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.modal-body {
+    padding: 20px 24px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.modal-footer {
+   /*  padding: 15px 24px; */
+    padding: 5px 14px;
+    background-color: #f9fafb;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #eee;
+}
+
+/* Botones del pie */
+.btn-accion {
+    background-color: #667eea;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-accion:hover {
+    background-color: #5a6fd6;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-secundario:hover {
+    background-color: #e5e7eb;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+#guardaAdmisionModal {
+    background-color: #ededed;
+    padding: 30px;
+    max-width: 2500px;
+    margin:20px;
+    box-shadow: 0px 0px 35px  #0006;
+}
+
 input
 {
-    #width:100%;
+    width: auto;
     box-sizing: border-box;
-    padding: 10px 8px;
-    border: none;
-    border: 1px solid #666;
-    box-shadow: 0px 0px 15px #0002;
-
+    padding: 6px 8px;
+    border:none;
+    box-shadow: 0px 0px 15px #0003;
+    margin:5px;
 }
