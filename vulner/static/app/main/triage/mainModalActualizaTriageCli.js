@@ -1,13 +1,13 @@
 
 //const abrirModal = document.getElementById('abrirModal');
 const miModal1 = document.getElementById('modalActualizaTriage');
-//const cerrarModal1 = document.getElementById('cerrarModal1');
-const btnAceptar1 = document.getElementById('btnAceptar1');
-const btnCancelar1 = document.getElementById('btnCancelar1');
+const cerrarModal1 = document.getElementById('cerrarModal');
+const btnAceptar1 = document.getElementById('btnAceptar');
+const btnCancelar1 = document.getElementById('btnCancelar');
 
 // Abrir modal
 //abrirModal.addEventListener('click', () => {
-//    miModal.style.display = 'flex';
+//    miModal.style.display = 'flex';       
 //});
 
 // Cerrar modal con la 'X'
@@ -21,19 +21,22 @@ btnAceptar1.addEventListener('click', () => {
     miModal1.style.display = 'none';
 });
 
-btnCancelar1.addEventListener('click', () => {
+btnCancelar1.addEventListener('click', (e) => {
+    e.preventDefault(); // 👈 Esto evita que la página se recargue
+
     miModal1.style.display = 'none';
 });
 
 // Cerrar al hacer clic fuera del contenido de la modal
 window.addEventListener('click', (e) => {
     if (e.target === miModal1) {
+    e.preventDefault(); // 👈 Esto evita que la página se recargue
         miModal1.style.display = 'none';
     }
 });
 
 
-$('#tablaDatosTriage tbody').on('click', '.miEditaTriage', function() {
+$('#tablaDatosTriage tbody').on('click', '.miEditaTriage', function(e) {
 
 	 var post_id = $(this).data('pk');
 	var row = $(this).closest('tr'); // Encuentra la fila
@@ -90,12 +93,14 @@ $('#tablaDatosTriage tbody').on('click', '.miEditaTriage', function() {
 				$('#observaciones').val(response_data['Triage'].observaciones);
 				$('#clasificacionTriage').val(response_data['Triage'].clasificacionTriage);
 				// alert("Voy a abrit la modal = ");
-		
-				 // $('#modalActualizaTriage').modal('show');
 
 			alert("Voy a abrir la  ventana");
+  e.preventDefault(); // 👈 Esto evita que la página se recargue		
+				//  $('#modalActualizaTriage').modal('show');
 
-			const miModal1 = document.getElementById('modalActualizaTriage');
+			alert("ya abri la vengtana .. Modal ...");
+			 const miModal1 = document.getElementById('modalActualizaTriage');
+			  
 			 miModal1.style.display = 'flex';
 
 

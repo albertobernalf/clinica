@@ -6,7 +6,7 @@
 
 
 /* Botón principal */
-.btn-abrir1 {
+.btn-abrir {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
@@ -19,13 +19,13 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn-abrir1:hover {
+.btn-abrir:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 
 /* Fondo oscuro de la modal (Overlay) */
-.modal1 {
+.modal {
     display: none; /* Oculta por defecto */
     position: fixed;
     z-index: 1000;
@@ -42,7 +42,7 @@
 }
 
 /* Caja de la ventana modal */
-.modal-contenido1 {
+.modal-contenido {
     background-color: #fff;
     width: 90%;
     height: 95%;
@@ -55,7 +55,7 @@
 }
 
 /* Botón de cierre (X) */
-.btn-cerrar1 {
+.btn-cerrar {
     position: absolute;
     top: 15px;
     right: 20px;
@@ -71,25 +71,25 @@
 }
 
 /* Encabezado, cuerpo y pie de la modal */
-.modal-header1 {
+.modal-header {
     padding: 20px 24px 10px;
     border-bottom: 1px solid #eee;
 }
 
-.modal-header1 h2 {
+.modal-header h2 {
     color: #333;
     font-size: 20px;
     justify-content: center;
 }
 
-.modal-body1 {
+.modal-body {
     padding: 20px 24px;
     color: #555;
     font-size: 15px;
     line-height: 1.5;
 }
 
-.modal-footer1 {
+.modal-footer {
    /*  padding: 15px 24px; */
     padding: 5px 14px;
     background-color: #f9fafb;
@@ -100,7 +100,7 @@
 }
 
 /* Botones del pie */
-.btn-accion1 {
+.btn-accion {
     background-color: #667eea;
     color: white;
     border: none;
@@ -110,11 +110,11 @@
     font-weight: 600;
 }
 
-.btn-accion1:hover {
+.btn-accion:hover {
     background-color: #5a6fd6;
 }
 
-.btn-secundario1 {
+.btn-secundario {
     background-color: transparent;
     color: #666;
     border: 1px solid #ccc;
@@ -124,7 +124,7 @@
     font-weight: 600;
 }
 
-.btn-secundario1:hover {
+.btn-secundario:hover {
     background-color: #e5e7eb;
 }
 

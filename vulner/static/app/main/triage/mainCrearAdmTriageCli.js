@@ -1,7 +1,7 @@
 
 //const abrirModal = document.getElementById('abrirModal');
 const miModal = document.getElementById('crearAdmTriage');
-// const cerrarModal = document.getElementById('cerrarModal');
+const cerrarModal = document.getElementById('cerrarModal');
 const btnAceptar = document.getElementById('btnAceptar');
 const btnCancelar = document.getElementById('btnCancelar');
 
