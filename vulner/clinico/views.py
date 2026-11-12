@@ -3422,9 +3422,9 @@ def crearHistoriaClinica(request):
 
         # FIN Combo enfermedades
 
-        print("A RENDERIZAR navegacionClinicaF.html")
+        print("A RENDERIZAR navegacionClinicaFCli.html")
 
-        return render(request, 'clinico/navegacionClinicaF.html', context);
+        return render(request, 'clinico/navegacionClinicaFCli.html', context);
 
 def Obtener_pdf(request):
 

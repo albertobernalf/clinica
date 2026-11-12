@@ -1779,7 +1779,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
         print("Voy a renderizar Panel Clinico");
 
         ## FIN CONTEXTO
-        return render(request, "clinico/panelClinico2F.html", context)
+        return render(request, "clinico/panelClinico2FCli.html", context)
 
     if (escogeModulo == 'TRIAGE'):
         print ("WENTRE PERMSISO TRIAGE")
