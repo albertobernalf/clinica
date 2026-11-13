@@ -3,46 +3,45 @@
 
 {% block head %}
 <!-- Custom css -->
-<link rel="stylesheet" type="text/css" href={% static 'app/css/clinico/navegacionClinicaCli.css' %} >
+<link rel="stylesheet" type="text/css" href={% static 'app/css/clinico/navegacionClinicaCli.css' %}>
 
-<script src={% static 'app/js/clinico/navegacionClinicaCli.js' %} defer >         </script>
-<script src={% static 'app/js/clinico/navegacionClinicaInfoCli.js' %} defer >         </script>
+<script src={% static 'app/js/clinico/navegacionClinicaCli.js' %} defer>         </script>
+<script src={% static 'app/js/clinico/navegacionClinicaInfoCli.js' %} defer>         </script>
 <script type="application/javascript" src={% static 'app/js/clinico/navegacionTabsClinicaCli.js' %} defer> </script>
- 
+
 <div class="marco">
 
- <!--   <div class="wrap">  -->
-        <ul class="tabs">
+    <!--   <div class="wrap">  -->
+    <ul class="tabs">
 
-            <li><a href="#Evoluciones"> <span  class="tab-text"></span>Consulta</a></li>
-            <li><a href="#CausaExterna"><span class="tab-text"> </span>CausaExterna
+        <li><a href="#Evoluciones"> <span class="tab-text"></span>Consulta</a></li>
+        <!--<li><a href="#CausaExterna"><span class="tab-text"> </span>CausaExterna</a></li>-->
+        <li><a href="#Diagnosticos"> <span class="tab-text"> </span>Diagnosticos
             </a>
-            <li><a href="#Diagnosticos"> <span class="tab-text"> </span>Diagnosticos
+        </li>
+        <li><a href="#RevisionSistemas"><span class="tab-text"></span>RevXSist
             </a>
-            </li>
-            <li><a href="#RevisionSistemas"><span class="tab-text"></span>RevXSist
+        </li>
+        <li><a href="#Laboratorios"><span class="tab-text"> </span>Laboratorio
             </a>
-            </li>
-            <li><a href="#Laboratorios"><span class="tab-text"> </span>Labs
-            </a>
-            </li>
-            <li><a href="#Radiologia"> <span class="tab-text"> </span>Rad
+        </li>
+        <li><a href="#Radiologia"> <span class="tab-text"> </span>Radiologia
             </a></li>
-            <li><a href="#Terapias">  <span class="tab-text"> </span>Terapias
+        <li><a href="#Terapias"> <span class="tab-text"> </span>Terapias
             </a></li>
-            <li><a href="#Formulacion"> <span class="tab-text"> </span>Formulacion </a></li>
-            <li><a href="#OrdenDeControl"><span  class="tab-text"> </span>Ord.Control </a></li>
+        <li><a href="#Formulacion"> <span class="tab-text"> </span>Formulacion </a></li>
+        <li><a href="#OrdenDeControl"><span class="tab-text"> </span>Ord.Control </a></li>
 
-            <li><a href="#Consulta"> <span class="tab-text"> </span>Historia</a></li>
-	    <li><a href="#Enfermedades"><span    class="tab-text"> </span>Enfermedad</a></li>
-            <li><a href="#GuardarFolio"><span class="tab-text"> </span>Guardar
+        <li><a href="#Consulta"> <span class="tab-text"> </span>Historia</a></li>
+        <li><a href="#Enfermedades"><span class="tab-text"> </span>Enfermedad</a></li>
+        <li><a href="#GuardarFolio"><span class="tab-text"> </span>Guardar
             </a>
-            </li>
-            <li><a href="#Retornar"> <span class="tab-text"> </span>Salir
+        </li>
+        <li><a href="#Retornar"> <span class="tab-text"> </span>Salir
             </a></li>
 
-        </ul>
-<!--    </div> -->
+    </ul>
+    <!--    </div> -->
 </div>
 
 {% endblock %}
@@ -53,7 +52,7 @@
 
 {% for datosPaciente in DatosPaciente %}
 
-  <div class="paciente">  
+<div class="paciente">
 
     <input type="hidden" id="tipoIng" name="tipoIng" value="{{TipoIng}}"> </input>
     <input type="hidden" id="espMedico" name="espMedico" value="{{EspMedico}}"> </input>
@@ -70,55 +69,56 @@
     <input type="hidden" id="ingresoPaciente" name="ingresoPaciente" value="{{IngresoPaciente}}">
 
     <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
-    <input type="hidden" id="username" name="username" value = "{{Username}}">
-	<input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value = "{{SedeSeleccionada}}">
-	<input type="hidden" id="numreporte" name="numreporte" value = "{{numreporte}}">
-	<input type="hidden" id="grupo" name="grupo" value = "{{Grupo}}">
-	<input type="hidden" id="subGrupo" name="subGrupo" value = "{{SubGrupo}}">
-		
+    <input type="hidden" id="username" name="username" value="{{Username}}">
+    <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value="{{SedeSeleccionada}}">
+    <input type="hidden" id="numreporte" name="numreporte" value="{{numreporte}}">
+    <input type="hidden" id="grupo" name="grupo" value="{{Grupo}}">
+    <input type="hidden" id="subGrupo" name="subGrupo" value="{{SubGrupo}}">
+
     <!--  Estos si de la Aplixcacion bse -->
 
-	<input type="hidden" id="sede" name="sede" value = "{{Sede}}">
-	<input type="hidden" id="documento" name="documento" value = "{{Documento}}">
-	<input type="hidden" id="nombreSede" name="nombreSede" value = "{{NombreSede}}">
-	<input type="hidden" id="profesional" name="profesional" value = "{{Profesional}}">
-	<input type="hidden" id="permisosGrales" name="permisosGrales" value = "{{PermisosGrales}}">
-	<input type="hidden" id="permisosDetalle" name="permisosDetalle" value = "{{PermisosDetalle}}">
-	<input type="hidden" id="escogeModulo" name="escogeModulo" value = "{{EscogeModulo}}">
+    <input type="hidden" id="sede" name="sede" value="{{Sede}}">
+    <input type="hidden" id="documento" name="documento" value="{{Documento}}">
+    <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+    <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}">
+    <input type="hidden" id="permisosGrales" name="permisosGrales" value="{{PermisosGrales}}">
+    <input type="hidden" id="permisosDetalle" name="permisosDetalle" value="{{PermisosDetalle}}">
+    <input type="hidden" id="escogeModulo" name="escogeModulo" value="{{EscogeModulo}}">
 
- <!--  Estos para Cirugia -->
+    <!--  Estos para Cirugia -->
 
-	<input type="hidden" id="tipoDocCirugia" name="tipoDocCirugia" value = "{{ datosPaciente.tipoDoc_id}}">
-	<input type="hidden" id="documentoCirugia" name="documentoCirugia" value = "{{ datosPaciente.documentoPaciente}}">
-	<input type="hidden" id="consecutivoIngresoCirugia" name="consecutivoIngresoCirugia" value = "{{ IngresoPaciente}}">
-          
-            {{ datosPaciente.tipnombre}}
-            <input type="hidden" id="tipoDoc_id" name="tipoDoc_id" value="{{ datosPaciente.tipoDoc_id}}"  readonly></input>
+    <input type="hidden" id="tipoDocCirugia" name="tipoDocCirugia" value="{{ datosPaciente.tipoDoc_id}}">
+    <input type="hidden" id="documentoCirugia" name="documentoCirugia" value="{{ datosPaciente.documentoPaciente}}">
+    <input type="hidden" id="consecutivoIngresoCirugia" name="consecutivoIngresoCirugia" value="{{ IngresoPaciente}}">
 
-            {{ datosPaciente.documentoPaciente}}
-            <input type="hidden" id="documentoPaciente" name="documentoPaciente"  value="{{ datosPaciente.documentoPaciente}}" readonly> </input>
-            {{ datosPaciente.nombre}}
-   
-            Ing:
-            {{ IngresoPaciente}}
-            <input type="hidden" id="IngresoPaciente" name="IngresoPaciente" value="{{ IngresoPaciente}}" readonly> </input>
-            <input type="hidden" class="form-control" id="fecha" name="fecha" value={{ form.fecha }}>
-               {{ datosPaciente.genero}}
-            {{ datosPaciente.centro}}
+    {{ datosPaciente.tipnombre}}
+    <input type="hidden" id="tipoDoc_id" name="tipoDoc_id" value="{{ datosPaciente.tipoDoc_id}}" readonly></input>
+
+    {{ datosPaciente.documentoPaciente}}
+    <input type="hidden" id="documentoPaciente" name="documentoPaciente" value="{{ datosPaciente.documentoPaciente}}"
+        readonly> </input>
+    {{ datosPaciente.nombre}}
+
+    Ing:
+    {{ IngresoPaciente}}
+    <input type="hidden" id="IngresoPaciente" name="IngresoPaciente" value="{{ IngresoPaciente}}" readonly> </input>
+    <input type="hidden" class="form-control" id="fecha" name="fecha" value={{ form.fecha }}>
+    {{ datosPaciente.genero}}
+    {{ datosPaciente.centro}}
 
 
 
 
-            {{ datosPaciente.tipoUsuario}}
+    {{ datosPaciente.tipoUsuario}}
 
-            {{ datosPaciente.direccion}}	
-            Tel:
-            {{ datosPaciente.telefono}}
-<!--             Usuario: -->
-<!--           {{Profesional}}  -->
+    {{ datosPaciente.direccion}}
+    Tel:
+    {{ datosPaciente.telefono}}
+    <!--             Usuario: -->
+    <!--           {{Profesional}}  -->
 
-        </div>  <!-- cierra el form-row -->
-       </div>  <!-- cierra el paciente -->
+</div> <!-- cierra el form-row -->
+</div> <!-- cierra el paciente -->
 
 
 {% endfor %}
@@ -135,657 +135,562 @@
 <div class="secciones">
     <article id="Evoluciones">
 
-    
-    <input type="hidden" id="tipoIng" name="tipoIng" value="{{TipoIng}}"> </input>
-    <input type="hidden" id="espMedico" name="espMedico" value="{{EspMedico}}"> </input>
-    <input type="hidden" id="tiposFolio" name="tiposFolio" value="{{TiposFolio}}"> </input>
-    <input type="hidden" id="tiposFolioEscogido" name="tiposFolioEscogido" value="{{TiposFolioEscogido}}"> </input>
-    <input type="hidden" id="usuarioRegistro" name="usuarioRegistro" value="{{Username_id}}"> </input>
-    <input type="hidden" id="perfil" name="perfil" value="{{perfil}}"> </input>
-    <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}"> </input>
-    <input type="hidden" id="fechaRegistro" name="fechaRegistro" value=""> </input>
 
-    <input type="hidden" id="tipoDocPaciente" name="tipoDocPaciente" value="{{TipoDocPaciente}}">
-   <input type="hidden" id="tipoDoc_id" name="tipoDoc_id" value="{{TipoDocPaciente}}">
-    <input type="hidden" id="documentoPaciente" name="documentoPaciente" value="{{DocumentoPaciente}}">
-    <input type="hidden" id="ingresoPaciente" name="ingresoPaciente" value="{{IngresoPaciente}}">
+        <input type="hidden" id="tipoIng" name="tipoIng" value="{{TipoIng}}"> </input>
+        <input type="hidden" id="espMedico" name="espMedico" value="{{EspMedico}}"> </input>
+        <input type="hidden" id="tiposFolio" name="tiposFolio" value="{{TiposFolio}}"> </input>
+        <input type="hidden" id="tiposFolioEscogido" name="tiposFolioEscogido" value="{{TiposFolioEscogido}}"> </input>
+        <input type="hidden" id="usuarioRegistro" name="usuarioRegistro" value="{{Username_id}}"> </input>
+        <input type="hidden" id="perfil" name="perfil" value="{{perfil}}"> </input>
+        <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}"> </input>
+        <input type="hidden" id="fechaRegistro" name="fechaRegistro" value=""> </input>
 
-    <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
-    <input type="hidden" id="username" name="username" value = "{{Username}}">
-	<input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value = "{{SedeSeleccionada}}">
-	<input type="hidden" id="numreporte" name="numreporte" value = "{{numreporte}}">
-	<input type="hidden" id="grupo" name="grupo" value = "{{Grupo}}">
-	<input type="hidden" id="subGrupo" name="subGrupo" value = "{{SubGrupo}}">
-		
-    <!--  Estos si de la Aplixcacion bse -->
+        <input type="hidden" id="tipoDocPaciente" name="tipoDocPaciente" value="{{TipoDocPaciente}}">
+        <input type="hidden" id="tipoDoc_id" name="tipoDoc_id" value="{{TipoDocPaciente}}">
+        <input type="hidden" id="documentoPaciente" name="documentoPaciente" value="{{DocumentoPaciente}}">
+        <input type="hidden" id="ingresoPaciente" name="ingresoPaciente" value="{{IngresoPaciente}}">
 
-	<input type="hidden" id="sede" name="sede" value = "{{Sede}}">
-	<input type="hidden" id="documento" name="documento" value = "{{Documento}}">
-	<input type="hidden" id="nombreSede" name="nombreSede" value = "{{NombreSede}}">
-	<input type="hidden" id="profesional" name="profesional" value = "{{Profesional}}">
-	<input type="hidden" id="permisosGrales" name="permisosGrales" value = "{{PermisosGrales}}">
-	<input type="hidden" id="permisosDetalle" name="permisosDetalle" value = "{{PermisosDetalle}}">
-	<input type="hidden" id="escogeModulo" name="escogeModulo" value = "{{EscogeModulo}}">
+        <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
+        <input type="hidden" id="username" name="username" value="{{Username}}">
+        <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value="{{SedeSeleccionada}}">
+        <input type="hidden" id="numreporte" name="numreporte" value="{{numreporte}}">
+        <input type="hidden" id="grupo" name="grupo" value="{{Grupo}}">
+        <input type="hidden" id="subGrupo" name="subGrupo" value="{{SubGrupo}}">
 
- <!--  Estos para Cirugia -->
+        <!--  Estos si de la Aplixcacion bse -->
 
-	<input type="hidden" id="tipoDocCirugia" name="tipoDocCirugia" value = "{{ datosPaciente.tipoDoc_id}}">
-	<input type="hidden" id="documentoCirugia" name="documentoCirugia" value = "{{ datosPaciente.documentoPaciente}}">
-	<input type="hidden" id="consecutivoIngresoCirugia" name="consecutivoIngresoCirugia" value = "{{ IngresoPaciente}}">
+        <input type="hidden" id="sede" name="sede" value="{{Sede}}">
+        <input type="hidden" id="documento" name="documento" value="{{Documento}}">
+        <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+        <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}">
+        <input type="hidden" id="permisosGrales" name="permisosGrales" value="{{PermisosGrales}}">
+        <input type="hidden" id="permisosDetalle" name="permisosDetalle" value="{{PermisosDetalle}}">
+        <input type="hidden" id="escogeModulo" name="escogeModulo" value="{{EscogeModulo}}">
 
+        <!--  Estos para Cirugia -->
 
-
-	<!-- desde aqui resultados ya deEvolucion del ingreso -->
-
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
-
-				
-                                        <table  id= "tablaInfoEvolucion" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>                   
-                                                <th>Folio</th>                   
-                                                <th>Fecha</th>                   
-                                                <th>Motivo</th>                                    
-                                                <th>Subjetivo</th>	              
-                                                <th>Objetivo</th>	              
-                                                <th>Analisis</th>	              
-                                                <th>Plan</th>	              
-						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
+        <input type="hidden" id="tipoDocCirugia" name="tipoDocCirugia" value="{{ datosPaciente.tipoDoc_id}}">
+        <input type="hidden" id="documentoCirugia" name="documentoCirugia" value="{{ datosPaciente.documentoPaciente}}">
+        <input type="hidden" id="consecutivoIngresoCirugia" name="consecutivoIngresoCirugia"
+            value="{{ IngresoPaciente}}">
 
 
-			<!-- FIN TABLE DE  EL DATATABLE  -->
 
-                                        <label for="serviciosAdministrativos">Servicio Admon:</label>
-                                        	sELECCION:
-                                            <select id="serviciosAdministrativos"  tabindex= "0"
-                                                    name="serviciosAdministrativos" style="width: 25%;"
-                                                    required>
-                                                {% for serviciosAdministrativos in ServiciosAdministrativos %}
-                                                <option value="{{serviciosAdministrativos.id}}"> {{serviciosAdministrativos.nombre}}</option>
-                                                {% endfor %}
-                                            </select>
-				       
+        <!-- desde aqui resultados ya deEvolucion del ingreso -->
 
-                <div id ="evolucion">
-                
-                <!-- {{ historiaForm.motivo.label }} -->
-                {{ historiaForm.motivo }}
+        <!-- INICIO TABLE DE  EL DATATABLE  -->
 
-                <!-- {{ historiaForm.objetivo.label }} -->
-                {{ historiaForm.objetivo }}
 
-                <!--{{ historiaForm.subjetivo.label }} -->
-                {{ historiaForm.subjetivo }}
-                </div>
+        <table id="tablaInfoEvolucion" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%" ;>
+            <thead>
+                <tr>
+                    <bold>
+                        <th>id</th>
+                        <th>Folio</th>
+                        <th>Fecha</th>
+                        <th>Motivo</th>
+                        <th>Subjetivo</th>
+                        <th>Objetivo</th>
+                        <th>Analisis</th>
+                        <th>Plan</th>
+                    </bold>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
 
-                <div id="evolucion1">
-                
+        </table>
 
-                <!--{{ historiaForm.analisis.label }} -->
 
-                {{ historiaForm.analisis }}
+        <!-- FIN TABLE DE  EL DATATABLE  -->
 
-                <!--{{ historiaForm.plann.label }} -->
+        <label for="serviciosAdministrativos">Servicio Admon:</label>
 
-                {{ historiaForm.plann }}
-                <!--{{ historiaForm.tratamiento.label }} -->
+        <select class="mi-select" id="serviciosAdministrativos" tabindex="0" name="serviciosAdministrativos"
+            style="width: 25%;" required>
+            {% for serviciosAdministrativos in ServiciosAdministrativos %}
+            <option value="{{serviciosAdministrativos.id}}"> {{serviciosAdministrativos.nombre}}</option>
+            {% endfor %}
+        </select>
 
-                {{ historiaForm.tratamiento }}
-                </div>
+        Causa Externa:
+        <select class="mi-select" id="causasExterna" name="causasExterna">
+            {% for causasExterna in CausasExterna %}
+            <option value="{{causasExterna.id}}"> {{causasExterna.nombre}}</option>
+            {% endfor %}
+        </select>
 
-<!--  fin segunda fila -->
+
+
+        <div id="evolucion">
+
+            <!-- {{ historiaForm.motivo.label }} -->
+            {{ historiaForm.motivo }}
+
+            <!-- {{ historiaForm.objetivo.label }} -->
+            {{ historiaForm.objetivo }}
+
+            <!--{{ historiaForm.subjetivo.label }} -->
+            {{ historiaForm.subjetivo }}
+        </div>
+
+        <div id="evolucion1">
+
+
+            <!--{{ historiaForm.analisis.label }} -->
+
+            {{ historiaForm.analisis }}
+
+            <!--{{ historiaForm.plann.label }} -->
+
+            {{ historiaForm.plann }}
+            <!--{{ historiaForm.tratamiento.label }} -->
+
+            {{ historiaForm.tratamiento }}
+        </div>
+
+        <!--  fin segunda fila -->
 
     </article>
 
     <article id="Enfermedades">
 
-	<!-- desde aqui resultados ya de Enfermedad del ingreso -->
+        <!-- desde aqui resultados ya de Enfermedad del ingreso -->
+        <table id="tablaInfoEnfermedad" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%" ;>
+            <thead>
+                <tr>
+                    <bold>
+                        <th>id</th>
+                        <th>Folio</th>
+                        <th>Fecha</th>
+                        <th>Tipo</th>
+                        <th>Descripcion</th>
+                    </bold>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
 
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
-<br><br><br><br>
-        <div class="tabla-contenedor">     
-
-				
-                                        <table  id= "tablaInfoEnfermedad" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>                   
-                                                <th>Folio</th>                   
-                                                <th>Fecha</th>                   
-                                                <th>Tipo</th>                                    
-                                                <th>Descripcion</th>	              
-						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
-
-                                </div>
-
-			<!-- FIN TABLE DE  EL DATATABLE  -->
-
-
-
-		<div class="marco">
-             <!-- DESDE AQUIP DATATABLE  -->
-      <table class="table" style="height: 25px; background-color:LightGray;  width:90%;">
-            <tr style="padding: 0;">
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-                    <table class="table"  style=" background-color:LightGray; BORDERCOLOR=RED ; border: 8px solid black;  width:99%;">
-                        <form class="form-inline" action="/crearEnfermedadesDef/" method="POST" id="FormaEnfermedades" style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
-                            <!-- INICIO TABLE DE  EL DATATABLE  -->
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card" >
-                                        <div class="card-header" style="height:4rem;">
-                                            <center>
-                                               
-							Seleccion:
-                                                        <select class="select-box" id="enf" name="enf" style="width: 25%;">
-                                                            {% for enfermedades in Enfermedades %}
-                                                            <option value="{{enfermedades.id}}">
-                                                                {{enfermedades.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-
-                                                        Observaciones:
-                                                        <input type="text" id="observa" name="observa" value="">
-
-                                                        <span class="text-secondary">Adicionar</span>
-                                                        <a class="btn btn-success" href="javascript:void(0)"
-                                                           id="BtnAdicionarEnfermedades"> <i
-                                                                class="fa fa-battery-half"></i></a>
-
-						    
-                                            </center>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-
-                                                    <table id=tablaEnfermedades  class="display nowrap table table table-bordered  tablaEnfermedades table-hover table-sm dtr-inline">
-                                                        <thead>
-                                                        <tr>
-                                                            <th style="width:5%;">id</th>
-                                                            <th style="width:5%;">Nombres</th>
-                                                            <th style="width:5%;">Observaciones</th>
-                                                            <th style="width:3%;">Borrar</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody style="vertical-align:bottom">
-                                                        <tr style="height:5%">
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-
-
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FIN TABLE DE  EL DATATABLE  -->
-                        </form>
-                    </table>
-
-             <!-- HASTA AQUI DATATABLE -->
-
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
         </table>
-	</div>
-    </article>
-
-
-
-
-
-<article id="OrdenDeControl">
-	<br><br><br><br><br><br>
-        <center><h3>Orden De Control</h3></center>
-
-
- <div class="row row-cols-1 mt-3">
-            <div class="col">
-
-                {{ historiaForm.ordenDeControl }}
-            </div>
-  </div>
-</article>
-
-    <article id="CausaExterna">
-        <center>
-            <h3>Causas Externas</h3>
-        </center>
 
         <table class="table">
-            <tr>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-
-		Seleccion:
-                    <select  id="causasExterna" name="causasExterna" >
-                        {% for causasExterna in CausasExterna %}
-                        <option value="{{causasExterna.id}}"> {{causasExterna.nombre}}</option>
+            <form action="/crearEnfermedadesDef/" method="POST" id="FormaEnfermedades">
+                <!-- INICIO TABLE DE  EL DATATABLE  -->
+                <div class="centraParra">
+                    Seleccion:
+                    <select class="mi-select" id="enf" name="enf">
+                        {% for enfermedades in Enfermedades %}
+                        <option value="{{enfermedades.id}}">
+                            {{enfermedades.nombre}}
+                        </option>
                         {% endfor %}
                     </select>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
+
+                    Observaciones:
+                    <input type="text" id="observa" name="observa" value="">
+
+
+                    <span class="boton-desplegable"><a href="javascript:void(0)"
+                            id="BtnAdicionarEnfermedades">Adicion</a>
+                        <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="30" height="30"></img>
+
+                    </span>
+                </div>
+
+            </form>
         </table>
+
+
+
+        <table id=tablaEnfermedades
+            class="display nowrap table table table-bordered  tablaEnfermedades table-hover table-sm dtr-inline">
+            <thead>
+                <tr>
+                    <th class="tablaEstilos">id</th>
+                    <th class="tablaEstilos">Nombres</th>
+                    <th class="tablaEstilos">Observaciones</th>
+                    <th class="tablaEstilos">Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+
+                </tr>
+            </tbody>
+        </table>
+        <!-- FIN TABLE DE  EL DATATABLE  -->
     </article>
 
 
-<article id="RevisionSistemas">
-
-	<!-- desde aqui resultados ya de RevisionSistemas del ingreso -->
-
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
-
-        <div class="tabla-contenedor">     
-
-				
-                                        <table  id= "tablaInfoRevisionSistemas" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>                   
-                                                <th>Folio</th>                   
-                                                <th>Fecha</th>                   
-                                                <th>Tipo</th>
-                                                <th>Descripcion</th>	              
-						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
-
-                                </div>
-
-			<!-- FIN TABLE DE  EL DATATABLE  -->
 
 
 
-        <table class="table  " style="height:25px; background-color:LightGray;  width:95%;">
-            <tr>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
+    <article id="OrdenDeControl">
+        <center>
+            <h3>Orden De Control</h3>
+        </center>
+        {{ historiaForm.ordenDeControl }}
+    </article>
+
+    <!--    <article id="CausaExterna">-->
+    <!--        <center>-->
+    <!--            <h3>Causas Externas</h3>-->
+    <!--        </center>-->
+    <!---->
+    <!--        <table class="table">-->
+    <!--            <tr>-->
+    <!--                <td>-->
+    <!--                </td>-->
+    <!--                <td>-->
+    <!--                </td>-->
+    <!--                <td>-->
+
+    <!--		Seleccion:-->
+    <!--                    <select  id="causasExterna" name="causasExterna" >-->
+    <!--                        {% for causasExterna in CausasExterna %}-->
+    <!--                        <option value="{{causasExterna.id}}"> {{causasExterna.nombre}}</option>-->
+    <!--                        {% endfor %}-->
+    <!--                    </select> -->
+    <!--                </td> -->
+    <!--                <td> -->
+    <!--                </td> -->
+    <!--                <td> -->
+    <!--                </td> -->
+    <!--            </tr> -->
+    <!--        </table> -->
+    <!--    </article> -->
+
+
+    <article id="RevisionSistemas">
+
+        <!-- desde aqui resultados ya de RevisionSistemas del ingreso -->
 
 
 
+        <table id="tablaInfoRevisionSistemas" class=" display table table-striped table-sm fs-6 nowrap">
+            <thead>
+                <tr>
+                    <bold>
+                        <th>id</th>
+                        <th>Folio</th>
+                        <th>Fecha</th>
+                        <th>Tipo</th>
+                        <th>Descripcion</th>
+                    </bold>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
 
-             <!-- DESDE AQUIP DATATABLE  -->
-
-                    <table class="table" style=" background-color:LightGray; BORDERCOLOR=RED ; border: 8px solid black;   width:99%;">
-                        <form class="form-inline" action="/crearRevisionSistemasDef/" method="POST" id="FormaRevisionSistemas" style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
-                            <input type="hidden" id="sede1" name="sede1" value="{{Sede}}">
-
-                            <!-- INICIO TABLE DE  EL DATATABLE  -->
-
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card">
-                                        <div class="card-header" style="height:50px;">
-                                            <center>
-                                               		Seleccion:
-                                                        <select class="select-box"  id="rev"  name="rev" style="width: 25%;">
-                                                            {% for revisionSistemas in RevisionSistemas %}
-                                                            <option value="{{revisionSistemas.id}}"> {{revisionSistemas.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                                   
-							Observaciones:
-                                                        <input type="text" id="observa9" name="observa9" value="">
-                                                 
-                                                        <span class="text-secondary">Adicionar</span>
-                                                        <a class="btn btn-success" href="javascript:void(0)"
-                                                           id="BtnAdicionarRevisionSistemas"> <i class="fa fa-plus"></i></a>
-                                                
-                                            </center>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <table id=tablaRevisionSistemas
-                                                           class="display nowrap table table table-bordered  tablaRevisionSistemas table-hover table-sm dtr-inline">
-                                                        <thead>
-                                                        <tr>
-                                                            <th style="width:5%;">id</th>
-                                                            <th style="width:5%;">Nombre</th>
-                                                            <th style="width:5%;">Observaciones</th>
-                                                            <th style="width:3%;">Borrar</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody style="vertical-align:bottom">
-                                                        <tr style="height:10%">
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FIN TABLE DE  EL DATATABLE  -->
-                        </form>
-                    </table>
-
-                    <!-- HASTA AQUI DATATABLE -->
-
-
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
         </table>
 
 
-  </article>
+
+        <table id="tablaInfoRevisionSistemas" class=" display table table-striped table-sm fs-6 nowrap"
+            style="width: 100%" ;>
+            <thead>
+                <tr>
+                    <bold>
+                        <th>id</th>
+                        <th>Folio</th>
+                        <th>Fecha</th>
+                        <th>Tipo</th>
+                        <th>Descripcion</th>
+                    </bold>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
+        </table>
+
+
+
+        <!-- FIN TABLE DE  EL DATATABLE  -->
+
+
+
+
+
+
+
+        <!-- DESDE AQUIP DATATABLE  -->
+
+        <table class="table">
+            <form action="/crearRevisionSistemasDef/" method="POST" id="FormaRevisionSistemas">
+                <input type="hidden" id="sede1" name="sede1" value="{{Sede}}">
+
+                <!-- INICIO TABLE DE  EL DATATABLE  -->
+
+                Seleccion:
+                <select class="mi-select" id="rev" name="rev">
+                    {% for revisionSistemas in RevisionSistemas %}
+                    <option value="{{revisionSistemas.id}}"> {{revisionSistemas.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                Observaciones:
+                <input type="text" id="observa9" name="observa9" value="">
+
+
+
+                <span class="boton-desplegable"><a href="javascript:void(0)"
+                        id="BtnAdicionarRevisionSistemas">Adicion</a>
+                    <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="30" height="30"></img>
+
+                </span>
+
+            </form>
+        </table>
+
+        <table id=tablaRevisionSistemas
+            class="display nowrap table table table-bordered  tablaRevisionSistemas table-hover table-sm dtr-inline">
+            <thead>
+                <tr>
+                    <th class="tablaEstilos">id</th>
+                    <th class="tablaEstilos">Nombre</th>
+                    <th class="tablaEstilos">Observaciones</th>
+                    <th class="tablaEstilos">Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- HASTA AQUI DATATABLE -->
+
+
+
+
+    </article>
 
 
 
 
     <article id="SignosVitales">
 
-	<!-- desde aqui resultados ya de signo vitaldel ingreso -->
+        <!-- desde aqui resultados ya de signo vitaldel ingreso -->
 
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
+        <!-- INICIO TABLE DE  EL DATATABLE  -->
 
-        <div class="tabla-contenedor">     
-   			   <div class="row">
-				
-                                        <table  id= "tablaInfoSignosVital" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>
-						<th>folio</th>
-			        	        <th>fechaRegistro</th>
-				                <th>frecCardiaca</th>
-				                <th>frecRespiratoria</th>
-				                <th>tensionADiastolica</th>
-				                <th>tensionASistolica</th>
-				                <th>tensionAMedia</th>
-				                <th>temperatura</th>
-				                <th>saturacion</th>
-				                <th>glucometria</th>
-				                <th>glasgow</th>
-				                <th>apache</th>
-				                <th>pvc</th>
-				                <th>cunav
-				                <th>ic</th>
-				                <th>glasgowOcular</th>
-				                <th>glasgowVerbal</th>
-				                <th>glasgowMotora</th>
-				                <th>observacion</th>						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
-                                    </div>
-                                </div>
+        <div class="tabla-contenedor">
+            <div class="row">
 
-			<!-- FIN TABLE DE  EL DATATABLE  -->
+                <table id="tablaInfoSignosVital" class=" display table table-striped table-sm fs-6 nowrap">
+                    <thead>
+                        <tr>
+                            <bold>
+                                <th>id</th>
+                                <th>folio</th>
+                                <th>fechaRegistro</th>
+                                <th>frecCardiaca</th>
+                                <th>frecRespiratoria</th>
+                                <th>tensionADiastolica</th>
+                                <th>tensionASistolica</th>
+                                <th>tensionAMedia</th>
+                                <th>temperatura</th>
+                                <th>saturacion</th>
+                                <th>glucometria</th>
+                                <th>glasgow</th>
+                                <th>apache</th>
+                                <th>pvc</th>
+                                <th>cunav
+                                <th>ic</th>
+                                <th>glasgowOcular</th>
+                                <th>glasgowVerbal</th>
+                                <th>glasgowMotora</th>
+                                <th>observacion</th>
+                            </bold>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
 
-
-
-
-	<div class="container">
-        <form   method="POST"  id="formSignos">
-        <div class="row row-cols-4 mt-3">
-
-        <!--
-	    <div class="col">
-                Fecha:
-                {{HistoriaSignosVitalesForm.fecha}}
+                </table>
             </div>
--->
-            <div class="col">
-                Frecuencia Cardiaca:
-                {{HistoriaSignosVitalesForm.frecCardiaca}}
-            </div>
-
-            <div class="col">
-                Frecuencia Respiratoria
-                {{HistoriaSignosVitalesForm.frecRespiratoria}}
-            </div>
-
-            <div class="col">
-                TA Diastolica:
-                {{HistoriaSignosVitalesForm.tensionADiastolica}}
-            </div>
-            <div class="col">
-                TA Sistolica:
-                {{HistoriaSignosVitalesForm.tensionASistolica}}
-            </div>
-		 <div class="col">
-                TA Media:
-                {{HistoriaSignosVitalesForm.tensionAMedia}}
-            </div>
-
-            <div class="col">
-                Temperatura:
-                {{HistoriaSignosVitalesForm.temperatura}}
-            </div>
-                        <div class="col">
-                saturacion:
-                {{HistoriaSignosVitalesForm.saturacion}}
-            </div>
-
-                        <div class="col">
-                Glucometria:
-                {{HistoriaSignosVitalesForm.glucometria}}
-            </div>
-
-                        <div class="col">
-                Glasgow:
-                {{HistoriaSignosVitalesForm.glasgow}}
-            </div>
-
-            <div class="col">
-                Apache:
-                {{HistoriaSignosVitalesForm.apache}}
-            </div>
-
-            <div class="col">
-                Pvc:
-                {{HistoriaSignosVitalesForm.pvc}}
-            </div>
-            <div class="col">
-                Cuna:
-                {{HistoriaSignosVitalesForm.cuna}}
-            </div>
-            <div class="col">
-                IC:
-                {{HistoriaSignosVitalesForm.ic}}
-            </div>
-            <div class="col">
-                Glasgow ocular:
-                {{HistoriaSignosVitalesForm.glasgowOcular}}
-            </div>
-            <div class="col">
-                Glasgow verbal:
-                {{HistoriaSignosVitalesForm.glasgowVerbal}}
-            </div>
-            <div class="col">
-                Glasgow motora:
-                {{HistoriaSignosVitalesForm.glasgowMotora}}
-            </div>
-         </div>
-        </form>
         </div>
+
+        <!-- FIN TABLE DE  EL DATATABLE  -->
+
+
+
+
+
+        <form method="POST" id="formSignos">
+
+
+            Frecuencia Cardiaca:
+            {{HistoriaSignosVitalesForm.frecCardiaca}}
+
+
+
+            Frecuencia Respiratoria
+            {{HistoriaSignosVitalesForm.frecRespiratoria}}
+
+
+
+            TA Diastolica:
+            {{HistoriaSignosVitalesForm.tensionADiastolica}}
+
+            TA Sistolica:
+            {{HistoriaSignosVitalesForm.tensionASistolica}}
+
+            TA Media:
+            {{HistoriaSignosVitalesForm.tensionAMedia}}
+
+            Temperatura:
+            {{HistoriaSignosVitalesForm.temperatura}}
+
+
+            saturacion:
+            {{HistoriaSignosVitalesForm.saturacion}}
+
+
+            Glucometria:
+            {{HistoriaSignosVitalesForm.glucometria}}
+
+            Glasgow:
+            {{HistoriaSignosVitalesForm.glasgow}}
+
+            Apache:
+            {{HistoriaSignosVitalesForm.apache}}
+
+            Pvc:
+            {{HistoriaSignosVitalesForm.pvc}}
+
+            Cuna:
+            {{HistoriaSignosVitalesForm.cuna}}
+
+            IC:
+            {{HistoriaSignosVitalesForm.ic}}
+
+            Glasgow ocular:
+            {{HistoriaSignosVitalesForm.glasgowOcular}}
+
+            Glasgow verbal:
+            {{HistoriaSignosVitalesForm.glasgowVerbal}}
+
+            Glasgow motora:
+            {{HistoriaSignosVitalesForm.glasgowMotora}}
+        </form>
 
     </article>
 
     <article id="Laboratorios">
-	<!-- desde aqui resultados ya de laboratorio del ingreso -->
+        <!-- desde aqui resultados ya de laboratorio del ingreso -->
 
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
+        <table id="tablaInfoLaboratorio" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%"
+            ;>
+            <thead>
+                <tr>
+                    <bold>
+                        <th>id</th>
+                        <th>Folio</th>
+                        <th>Fecha</th>
+                        <th>Fec.Tomado</th>
+                        <th>Fec.Reporte</th>
+                        <th>Examen</th>
+                        <th>Interpretacion</th>
+                        <th>Fecha interpretacion</th>
+                        <th>Estado</th>
+                    </bold>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
 
-        <div class="tabla-contenedor">
-            <!--   <div class="row">   -->
-        
-            <table id="tablaInfoLaboratorio" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%" ;>
-                <thead>
-                    <tr>
-                        <bold>
-                            <th>id</th>
-                            <th>Folio</th>
-                            <th>Fecha</th>
-                            <th>Fec.Tomado</th>
-                            <th>Fec.Reporte</th>
-                            <th>Examen</th>
-                            <th>Interpretacion</th>
-                            <th>Fecha interpretacion</th>
-                            <th>Estado</th>
-                        </bold>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-        
-            </table>
+        </table>
 
-              </div> 
-        
-			<!-- FIN TABLE DE  EL DATATABLE  -->
 
-             <!-- DESDE AQUIP DATATABLE  -->
-       <table class="table"> 
-            <tr> 
-               <td> 
-               </td> 
-               <td> 
-                </td>
-               <td> 
-                    <table class="table">
-                        <form action="/crearLaboratoriosDef/" method="POST" id="FormaLaboratorios">
-                            <!-- INICIO TABLE DE  EL DATATABLE  -->
-                            <!--  <div class="card">  -->
-                            <!--     <div class="card-header" style="width: 90%;">  -->
-                    
-                                    Seleccionar:
-                                    <select class="mi-select" id="lab" name="lab">
-                                        {% for laboratorios in Laboratorios %}
-                                        <option value="{{laboratorios.cups}}">
-                                            {{laboratorios.nombre}}
-                                        </option>
-                                        {% endfor %}
-                                    </select>
-                    
-                                    Cantidad:
-                                    <input type="text" id="cantidad" name="cantidad" value="1" >
-                    
-                                    Mipres:
-                                    <input type="text"  id="mipresLab" name="mipresLab" >
-                    
-                                    Numero Orden:
-                                    <input type="text"  id="ordenMedicaLab" name="ordenMedicaLab" value="" >
+        <!-- DESDE AQUIP DATATABLE  -->
+        <table class="table">
+            <form action="/crearLaboratoriosDef/" method="POST" id="FormaLaboratorios">
+                <div class="centraParra">
+                    Seleccionar:
+                    <select class="mi-select" id="lab" name="lab">
+                        {% for laboratorios in Laboratorios %}
+                        <option value="{{laboratorios.cups}}">
+                            {{laboratorios.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
 
-                                    Observaciones:
-                                    <input type="text"  id="observa" name="observa">
+                    Cantidad:
+                    <input type="text" id="cantidad" name="cantidad" value="1">
 
-                    
-                                    <span class="text-secondary">Adicionar</span>
-                                    <a class="btn btn-success" href="javascript:void(0)" id="BtnAdicionarLaboratorio"></a>
-                    
-                             <!--   </div>   -->
-                                <div class="card-body">
-                    
-                                    <table id="tablaLaboratorios" class="display nowrap table table table-bordered  tablaLaboratorios table-hover table-sm dtr-inline">
-                                        <thead>
-                                            <tr>
-                                                <th class= "tablaEstilos">id</th>
-                                                <th class= "tablaEstilos">Nombres</th>
-                                                <th class= "tablaEstilos">Cantidad</th>
-                                                <th class= "tablaEstilos">Observaciones</th>
-                                                <th class= "tablaEstilos">Mipres</th>
-                                                <th>Borrar</th>
+                    Mipres:
+                    <input type="text" id="mipresLab" name="mipresLab">
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class= "tablaEstilos"></td>
-                                                <td class= "tablaEstilos"></td>
-                                                <td class= "tablaEstilos"></td>
-                                                <td class= "tablaEstilos"></td>
-                                                <td class= "tablaEstilos"></td>
-                                                <td class= "tablaEstilos"></td>
-                    
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                    
-                                 </div>
-                             <!-- </div>  -->
-                            <!-- FIN TABLE DE  EL DATATABLE  -->
-                        </form>
-                    </table>
-             <!-- HASTA AQUI DATATABLE -->
-                </td> 
-            <td> 
-                </td>
-                <td> 
-                </td> 
-            </tr> 
-         </table> 
-         
-	<!-- </div>  de classs marco-->
+
+                    <input type="hidden" id="ordenMedicaLab" name="ordenMedicaLab" value="0">
+
+                    Observaciones:
+                    <input type="text" id="observa" name="observa">
+
+
+
+                    <span class="boton-desplegable"><a href="javascript:void(0)"
+                            id="BtnAdicionarLaboratorio">Adicion</a>
+                        <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="30" height="30"></img>
+
+                    </span>
+                </div>
+
+            </form>
+        </table>
+
+
+
+
+
+        <table id="tablaLaboratorios"
+            class="display nowrap table table table-bordered  tablaLaboratorios table-hover table-sm dtr-inline">
+            <thead>
+                <tr>
+                    <th class="tablaEstilos">id</th>
+                    <th class="tablaEstilos">Nombres</th>
+                    <th class="tablaEstilos">Cantidad</th>
+                    <th class="tablaEstilos">Observaciones</th>
+                    <th class="tablaEstilos">Mipres</th>
+                    <th>Borrar</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
     </article>
-<article id="Radiologia">
+    <article id="Radiologia">
 
-    <!-- desde aqui resultados ya de radiologia del ingreso -->
+        <!-- desde aqui resultados ya de radiologia del ingreso -->
 
-    <!-- INICIO TABLE DE  EL DATATABLE  -->
-    <!-- <div class="tabla-contenedor">  -->
+        <!-- INICIO TABLE DE  EL DATATABLE  -->
+        <!-- <div class="tabla-contenedor">  -->
 
         <table id="tablaInfoRadiologia" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%;">
             <thead>
@@ -807,419 +712,323 @@
             </tbody>
 
         </table>
-    <!-- </div>  -->
+        <!-- </div>  -->
 
-    <!-- FIN TABLE DE  EL DATATABLE  -->
+        <!-- FIN TABLE DE  EL DATATABLE  -->
 
-    <table class="table">
-        <form action="/crearRadiologiaDef/" method="POST" id="FormaRadiologia">
-            <input type="hidden" id="sede1" name="sede1" value="{{Sede}}">
-            Seleccion:
-            <select class="mi-select" id="rad" name="rad">
-                {% for radiologias in Radiologias %}
-                <option value="{{radiologias.cups}}"> {{radiologias.nombre}}
-                </option>
-                {% endfor %}
-            </select>
+        <table class="table">
+            <form action="/crearRadiologiaDef/" method="POST" id="FormaRadiologia">
+                <input type="hidden" id="sede1" name="sede1" value="{{Sede}}">
 
-            Cantidad:
-            <input type="text" class="tablaEstilos" id="cantidad3" name="cantidad3" value="1">
+                <div class="centraParra">
+                    Seleccion:
+                    <select class="mi-select" id="rad" name="rad">
+                        {% for radiologias in Radiologias %}
+                        <option value="{{radiologias.cups}}"> {{radiologias.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
 
-            Mipres:
-            <input type="text"  id="mipresRad" name="mipresRad">
+                    Cantidad:
+                    <input type="text" class="tablaEstilos" id="cantidad3" name="cantidad3" value="1">
 
-            Observaciones:
-            <input type="text"  id="observa3" name="observa3" value="" size="35">
+                    Mipres:
+                    <input type="text" id="mipresRad" name="mipresRad">
 
-            
-            <input type="hidden"  id="ordenMedicaRad" name="ordenMedicaRad" value="">
-
-          <!--  <span class="text-secondary">Adicion </span>  -->
-            <!-- <a class="btn btn-success" href="javascript:void(0)" id="BtnAdicionarRadiologia"></a> -->
-
-            <span class="boton-desplegable"><a href="javascript:void(0)" id="BtnAdicionarRadiologia">Adicion</a>
-                <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="50" height="50"></img>              
-
-            </span>
-
-        </form>
-    </table>
-
-    <table id=tablaRadiologia
-        class="display nowrap table table table-bordered  tablaRadiologia table-hover table-sm dtr-inline">
-        <thead>
-            <tr>
-                <th class="tablaEstilos">id</th>
-                <th class="tablaEstilos">Nombres</th>
-                <th class="tablaEstilos">Cantidad</th>                
-                <th class="tablaEstilos">Mipres</th>
-                <th class="tablaEstilos">Observaciones</th>
-                <th class="tablaEstilos">Borrar</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-    <!-- FIN                                                    -->
-</article>
+                    Observaciones:
+                    <input type="text" id="observa3" name="observa3" value="" size="35">
 
 
+                    <input type="hidden" id="ordenMedicaRad" name="ordenMedicaRad" value="0">
+
+                    <!--  <span class="text-secondary">Adicion </span>  -->
+                    <!-- <a class="btn btn-success" href="javascript:void(0)" id="BtnAdicionarRadiologia"></a> -->
+
+                    <span class="boton-desplegable"><a href="javascript:void(0)" id="BtnAdicionarRadiologia">Adicion</a>
+                        <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="30" height="30"></img>
+
+                    </span>
+                </div>
+            </form>
+        </table>
+
+        <table id=tablaRadiologia
+            class="display nowrap table table table-bordered  tablaRadiologia table-hover table-sm dtr-inline">
+            <thead>
+                <tr>
+                    <th class="tablaEstilos">id</th>
+                    <th class="tablaEstilos">Nombres</th>
+                    <th class="tablaEstilos">Cantidad</th>
+                    <th class="tablaEstilos">Mipres</th>
+                    <th class="tablaEstilos">Observaciones</th>
+                    <th class="tablaEstilos">Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- FIN                                                    -->
+    </article>
     <article id="Terapias">
 
+        <table id="tablaInfoTerapia" class=" display table table-striped table-sm fs-6 nowrap">
+            <thead>
+                <tr>
+                    <bold>
+                        <th>id</th>
+                        <th>Folio</th>
+                        <th>Fecha</th>
+                        <th>Fec.Tomado</th>
+                        <th>Fec.Reporte</th>
+                        <th>Examen</th>
+                        <th>Interpretacion</th>
+                        <th>Fecha interpretacion</th>
+                        <th>Estado</th>
+                    </bold>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
 
-	<!-- desde aqui resultados ya de Terapia del ingreso -->
-
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
-<br><br><br><br>
-        <div class="tabla-contenedor">     
-
-				
-                                        <table  id= "tablaInfoTerapia" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>                   
-                                                <th>Folio</th>                   
-                                                <th>Fecha</th>                   
-                                                <th>Fec.Tomado</th>
-                                                <th>Fec.Reporte</th>  
-						<th>Examen</th>                                     
-                                                <th>Interpretacion</th> 
-                                                <th>Fecha interpretacion</th>                                    
-                                                <th>Estado</th>	              
-						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
-
-                                </div>
-
-			<!-- FIN TABLE DE  EL DATATABLE  -->
-
-
-
-
-                <table class="table  " style="height: 25px; background-color:LightGray;  width:100%;">
-            <tr>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-             <!-- DESDE AQUIP DATATABLE  -->
-
-                    <table class="table"
-                           style="background-color:LightGray; BORDERCOLOR=RED ; border: 8px solid black;   width:99%;">
-                        <form class="form-inline" action="/crearTerapiasDef/" method="POST"
-                              id="FormaTerapias" style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
-
-                            <!-- INICIO TABLE DE  EL DATATABLE  -->
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card">
-                                        <div class="card-header" style="height:50px;">
-                                            <center>
-                                               
-                                                	Seleccion:
-                                                        <select class="select-box"  id="ter"
-                                                                name="ter" style="width: 25%;">
-                                                            {% for terapias in Terapias %}
-                                                            <option value="{{terapias.cups}}">
-                                                                {{terapias.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                                
-							Cantidad:
-                                                        <input type="text" id="cantidad4" name="cantidad4" value="1">
-
-
-                                               
-							Observaciones:
-                                                        <input type="text" id="observa4" name="observa4" value="">
-                                             
-                                                        Mipres:
-                                                        <input type="text" id="mipresTer" name="mipresTer">
-                                          
-                                                        Numero Orden:
-                                                        <input type="text" id="ordenMedicaTer" name="ordenMedicaTer" value="">
-                                              
-                                                        <span class="text-secondary">Adicionar</span>
-                                                        <a class="btn btn-success" href="javascript:void(0)"
-                                                           id="BtnAdicionarTerapias"> <i class="fa fa-plus"></i></a>
-                                               
-                                            </center>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <table id=tablaTerapias class="display nowrap table table table-bordered  tablaTerapias table-hover table-sm dtr-inline">
-                                                        <thead>
-                                                        <tr>
-                                                            <th style="width:5%;">id</th>
-                                                            <th style="width:5%;">Nombres</th>
-                                                            <th style="width:5%;">Cantidad</th>
-                                                            <th style="width:5%;">Observaciones</th>
-                                                            <th style="width:5%;">Mipres</th>
-                                                            <th style="width:3%;">Borrar</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody style="vertical-align:bottom">
-                                                        <tr style="height:10%">
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FIN TABLE DE  EL DATATABLE  -->
-                        </form>
-                    </table>
-
-             <!-- HASTA AQUI DATATABLE -->
-
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
         </table>
 
 
+        <!-- DESDE AQUIP DATATABLE  -->
+
+        <table class="table">
+            <form action="/crearTerapiasDef/" method="POST" id="FormaTerapias">
+
+                <!-- INICIO TABLE DE  EL DATATABLE  -->
+                <div class="centraParra">
+                    Seleccion:
+                    <select class="mi-select" id="ter" name="ter">
+                        {% for terapias in Terapias %}
+                        <option value="{{terapias.cups}}">
+                            {{terapias.nombre}}
+                        </option>
+                        {% endfor %}
+                    </select>
+
+                    Cantidad:
+                    <input type="text" id="cantidad4" name="cantidad4" value="1">
+
+                    Mipres:
+                    <input type="text" id="mipresTer" name="mipresTer">
+
+                    Observaciones:
+                    <input type="text" id="observa4" name="observa4" value="">
+
+                    Numero Orden:
+                    <input type="hidden" id="ordenMedicaTer" name="ordenMedicaTer" value="">
+
+
+                    <span class="boton-desplegable"><a href="javascript:void(0)" id="BtnAdicionarTerapias">Adicion</a>
+                        <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="30" height="30"></img>
+
+                    </span>
+                </div>
+            </form>
+        </table>
+
+
+        <table id=tablaTerapias
+            class="display nowrap table table table-bordered  tablaTerapias table-hover table-sm dtr-inline">
+            <thead>
+                <tr>
+                    <th class="tablaEstilos">id</th>
+                    <th class="tablaEstilos">Nombres</th>
+                    <th class="tablaEstilos">Cantidad</th>
+                    <th class="tablaEstilos">Observaciones</th>
+                    <th class="tablaEstilos">Mipres</th>
+                    <th class="tablaEstilos">Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+            </tbody>
+        </table>
     </article>
 
     <article id="Formulacion">
 
+        <table id="tablaInfoMedicamento" class=" display table table-striped table-sm fs-6 nowrap">
+            <thead>
+                <tr>
+                    <bold>
+                        <th>id</th>
+                        <th>Folio</th>
+                        <th>FechaFormulado</th>
+                        <th>Formulado</th>
+                        <th>Sum.Aplicado</th>
+                        <th>#</th>
+                        <th>FechaPlanea</th>
+                        <th>FechaAplica</th>
+                        <th>Cantidad Aplicada</th>
 
-
-	<!-- desde aqui resultados ya de Formulacion del ingreso -->
-
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
-<br><br><br><br>
-        <div class="tabla-contenedor">     
-
-				
-                                        <table  id= "tablaInfoMedicamento" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>                   
-                                                <th>Folio</th>                   
-                                                <th>FechaFormulado</th>                   
-                                                <th>Formulado</th>
-                                                <th>Sum.Aplicado</th>
-                                                <th>#</th>
-                                                <th>FechaPlanea</th>
-                                                <th>FechaAplica</th>
-                                                <th>Cantidad Aplicada</th>
-
-						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
-
-                                </div>
-
-			<!-- FIN TABLE DE  EL DATATABLE  -->
-
-
-             <table class="table  " style="height: 50px; background-color:LightBlue;  width:100%;">
-            <tr>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-             <!-- DESDE AQUIP DATATABLE  -->
-
-                    <table class="table"
-                           style="height: 20px; background-color:LightGray; BORDERCOLOR=RED ; border: 8px solid black; border-color: #96D4D4;  width:99%;">
-                        <form class="form-inline" action="/crearFormulacionDef/" method="POST"
-                              id="FormaFormulacion" style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
-
-                            <!-- INICIO TABLE DE  EL DATATABLE  -->
-                            <div class="row" style="height: 40px;">
-                                <div class="col-sm-12">
-                                    <div class="card">
-                                        <div class="card-header" style="height:80px;">
-                                            <center>
-                                             
-                    				Formula
-                                                        <select class="select-box"  id="medicamentos"
-                                                                name="medicamentos">
-                                                            {% for medicamentos in Medicamentos %}
-                                                            <option value="{{medicamentos.id}}">
-                                                                {{medicamentos.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                                 
-					                                		Dosis:
-                                                        <input type="text" id="dosis" name="dosis" value="" size="2" required>
-                                                   
- 							                    U_Medida
-                                                        <select class="select-box" id="uMedidaDosis"
-                                                                name="uMedidaDosis" required>
-                                                            {% for uMedidaDosis in UMedidaDosis %}
-                                                            <option value="{{uMedidaDosis.id}}">
-                                                                {{uMedidaDosis.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                              
-							                    Farmaceut:
-                                                        <select class="select-box" id="formaFarma"
-                                                                name="formaFarma" required>
-                                                            {% for formaFarma in FormaFarma %}
-                                                            <option value="{{formaFarma.id}}">
-                                                                {{formaFarma.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                                 
-							                        Frecuencia
-                                                        <select class="select-box" id="frecuencia"
-                                                                name="frecuencia" required>
-                                                            {% for frecuencia in Frecuencia %}
-                                                            <option value="{{frecuencia.id}}">
-                                                                {{frecuencia.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                                
-							      Vias
-                                                        <select class="select-box" id="vias"
-                                                                name="vias"  required>
-                                                            {% for viasAdministracion in ViasAdministracion %}
-                                                            <option value="{{viasAdministracion.id}}">
-                                                                {{viasAdministracion.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                              
-							        Cant:
-                                                        <input type="text" id="cantidadMedicamento" name="cantidadMedicamento" value="" size="1" required>
-                                                  
-							                            Dias:
-                                                        <input type="text" id="diasTratamiento" name="diasTratamiento" value="" size="1" required>
-                                           
-                                                        Mipres:
-                                                        <input type="text" id="mipresMed" name="mipresMed" value="" size="10">
-                                           
-                                                        Numero Orden:
-                                                        <input type="text" id="ordenMedicaMed" name="ordenMedicaMed" value="" size="10">
-                                                 
-                                                        <span class="text-secondary">Adicionar</span>
-                                                        <a class="btn btn-success" href="javascript:void(0)"
-                                                           id="BtnAdicionarFormulacion"> <i class="fa fa-plus"></i></a>
-                                              
-                                            </center>
-                                        </div>
-                                        <div class="card-body" style="height:100px;">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <table id="tablaFormulacion"
-                                                           class="display nowrap table table table-bordered  tablaFormulacion table-hover table-sm dtr-inline">
-                                                        <thead>
-                                                        <tr>
-                                                            <th style="width:5%;">Id</th>
-                                                            <th style="width:5%;">Medicamento</th>
-                                                            <th style="width:5%;">Dosis</th>
-                                                            <th style="width:5%;">IdUMedida</th>
-                                                            <th style="width:5%;">UMedida</th>
-                                                            <th style="width:5%;">IdFarma</th>
-                                                            <th style="width:5%;">Farmaceut</th>
-                                                            <th style="width:5%;">IdFrec</th>
-                                                            <th style="width:5%;">Frecuencia</th>
-							    <th style="width:5%;">IdVias</th>
-                                                            <th style="width:5%;">ViasAdmon</th>
-                                                            <th style="width:5%;">Cant</th>
-                                                            <th style="width:5%;">Dias</th>
-                                                            <th style="width:5%;">Mipres</th>
-                                                            <th style="width:3%;">Borrar</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody style="vertical-align:bottom">
-                                                        <tr style="height:10%">
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                             <td></td>
-                                                              <td></td>
-								<td></td>
-                                                              <td></td>
-								<td></td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FIN TABLE DE  EL DATATABLE  -->
-                        </form>
-                    </table>
-
-             <!-- HASTA AQUI DATATABLE -->
-
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
+                    </bold>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
         </table>
 
+        <!-- DESDE AQUIP DATATABLE  -->
 
+        <table class="table">
+            <form action="/crearFormulacionDef/" method="POST" id="FormaFormulacion">
+
+                <!-- INICIO TABLE DE  EL DATATABLE  -->
+
+                Med:
+                <select class="mi-select" id="medicamentos" name="medicamentos">
+                    {% for medicamentos in Medicamentos %}
+                    <option value="{{medicamentos.id}}">
+                        {{medicamentos.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                Dosis:
+                <input type="text" id="dosis" name="dosis" value="" size="2" required>
+
+                Medida
+                <select class="mi-selectMed" id="uMedidaDosis" name="uMedidaDosis" required>
+                    {% for uMedidaDosis in UMedidaDosis %}
+                    <option value="{{uMedidaDosis.id}}">
+                        {{uMedidaDosis.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                Forma:
+                <select class="mi-selectMed" id="formaFarma" name="formaFarma" required>
+                    {% for formaFarma in FormaFarma %}
+                    <option value="{{formaFarma.id}}">
+                        {{formaFarma.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                Frecuencia
+                <select class="mi-selectMed" id="frecuencia" name="frecuencia" required>
+                    {% for frecuencia in Frecuencia %}
+                    <option value="{{frecuencia.id}}">
+                        {{frecuencia.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                Vias
+                <select class="mi-selectMed" id="vias" name="vias" required>
+                    {% for viasAdministracion in ViasAdministracion %}
+                    <option value="{{viasAdministracion.id}}">
+                        {{viasAdministracion.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                Cant:
+                <input type="text" id="cantidadMedicamento" name="cantidadMedicamento" value="" size="1" required>
+
+                Dias:
+                <input type="text" id="diasTratamiento" name="diasTratamiento" value="" size="1" required>
+
+                Mipres:
+                <input type="text" id="mipresMed" name="mipresMed" value="" size="10">
+
+                <input type="hidden" id="ordenMedicaMed" name="ordenMedicaMed" value="0" size="10">
+
+
+                <span class="boton-desplegable"><a href="javascript:void(0)" id="BtnAdicionarFormulacion">Adicion</a>
+                    <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="30" height="30"></img>
+
+                </span>
+
+            </form>
+        </table>
+
+        <table id="tablaFormulacion"
+            class="display nowrap table table table-bordered  tablaFormulacion table-hover table-sm dtr-inline">
+            <thead>
+                <tr>
+                    <th class="tablaEstilos">Id</th>
+                    <th class="tablaEstilos">Medicamento</th>
+                    <th class="tablaEstilos">Dosis</th>
+                    <th class="tablaEstilos">IdUMedida</th>
+                    <th class="tablaEstilos">UMedida</th>
+                    <th class="tablaEstilos">IdFarma</th>
+                    <th class="tablaEstilos">Farmaceut</th>
+                    <th class="tablaEstilos">IdFrec</th>
+                    <th class="tablaEstilos">Frecuencia</th>
+                    <th class="tablaEstilos">IdVias</th>
+                    <th class="tablaEstilos">ViasAdmon</th>
+                    <th class="tablaEstilos">Cant</th>
+                    <th class="tablaEstilos">Dias</th>
+                    <th class="tablaEstilos">Mipres</th>
+                    <th class="tablaEstilos">Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- FIN TABLE DE  EL DATATABLE  -->
+
+
+
+
+        <!-- desde aqui resultados ya de Formulacion del ingreso -->
+
+        <!-- INICIO TABLE DE  EL DATATABLE  -->
 
     </article>
 
     <article id="Consulta">
         <br><br><br><br><br>
         <center>
-            <h3>Consulta Historia Clinica</h3></center>
+            <h3>Consulta Historia Clinica</h3>
+        </center>
     </article>
 
     <article id="Clinica">
-<br><br><br><br>
-{% csrf_token %}
-  
-	<div id="flex-container2-clinica">
-	  <div>	
+        <br><br><br><br>
+        {% csrf_token %}
+
+        <div id="flex-container2-clinica">
+            <div>
                 {{historiaForm.apache2.label}}
                 {{historiaForm.apache2}}
 
@@ -1230,7 +1039,7 @@
                 {{ historiaForm.movilidadLimitada.label_tag }}
                 {{ historiaForm.movilidadLimitada }}
 
-		   {{historiaForm.nauseas.label_tag}}
+                {{historiaForm.nauseas.label_tag}}
                 {{ historiaForm.nauseas}}
                 {{ historiaForm.llenadoCapilar.label_tag }}
                 {{ historiaForm.llenadoCapilar }}
@@ -1285,985 +1094,832 @@
                 {{ historiaForm.leucopenia}}
                 {{ historiaForm.manejoQx.label }}
                 {{ historiaForm.manejoQx}}
-	  </div>
-	</div>
+            </div>
+        </div>
     </article>
 
 
     <article id="Cirugias">
-<br><br><br><br><br>        			
-
-				  <form class="form-inline" id="postFormCirugiaClinica" name="postFormCirugiaClinica">
-		
-					<div>
-					<input type="checkbox" id="cBoxCirugia" name="cBoxCirugia"   value="" />
-		
-		                           </div>
 
 
-				<div id="flex-container2-cirugia">
+        <form id="postFormCirugiaClinica" name="postFormCirugiaClinica">
 
-	                               	<div>
-					 <input type="text"   id="solicitaHospitalizacion" name="solicitaHospitalizacion" size="1" maxlength="5" placeholder="Hosp"  >
+            <div>
+                <input type="checkbox" id="cBoxCirugia" name="cBoxCirugia" value="" />
 
-					  <input type="text"   id="solicitaAyudante" name="solicitaAyudante" size="1" maxlength="15" placeholder="Ayudante"  >
-					 <input type="text"    id="solicitaTiempoQx" name="solicitaTiempoQx" size="1" maxlength="15" placeholder="TiempoQx"  >
-					 <input type="text"   id="solicitaTipoQx" name="solicitaTipoQx" size="1" maxlength="15"  placeholder="tipoQx"  >
-					 <input type="text"  id="solicitaAnestesia" name="solicitaAnestesia" size="1" maxlength="15" placeholder="Anestesia"  >
-					 <input type="text"   id="solicitaOtros" name="solicitaOtros" size="1" maxlength="1" maxlength="15" placeholder="Otros"  >
-					 <input type="text"   id="tiempoMaxQx" name="tiempoMaxQx" size="10" maxlength="20" placeholder="tiempoMaxQx"  >
-					 <input type="text"   id="solicitaAutoSutura" name="solicitaAutoSutura" size="1" maxlength="20" placeholder="AutoSutura"  >
-					 <input type="text"    id="solicitaSoporte" name="solicitaSoporte" size="1" maxlength="15"  placeholder="Soporte"  >
-					 <input type="text"   id="describeOtros" name="describeOtros"  size="1" maxlength="1" placeholder="describeOtros"  >
-	                               </div>
-
-				</div>
-
-				<div id="flex-container2-cirugia_1">
-	
-                                	<div>						
-					 <input type="text"   id="solicitaSangre" name="solicitaSangre" size="1" maxlength="1" placeholder="Sangre"  >
-					 <input type="text"   id="describeSangre" name="describeSangre" size="1" maxlength="1" placeholder="describeSangre"  >
-					 <input type="text"  id="cantidadSangre" name="cantidadSangre" size="1" maxlength="1" placeholder="cantidadSangre"  >
-					 <input type="text"   id="solicitaCamaUci" name="solicitaCamaUci" size="1" maxlength="1" placeholder="CamaUci"  >
-					 <input type="text"  id="solicitaMicroscopio" name="solicitaMicroscopio" size="1" maxlength="1" placeholder="Microscopio"  >
-					 <input type="text"   id="solicitaRx" name="solicitaRx" size="1" maxlength="1" placeholder="Rx"  >
-					 <input type="text"   id="solicitaOsteosintesis" name="solicitaOsteosintesis" size="1" maxlength="1" placeholder="Osteosintesis"  >
-					 <input type="text"  id="solicitaBiopsia" name="solicitaBiopsia" size="1" maxlength="1" placeholder="Biopsia"  >
-					 <input type="text"   id="solicitaMalla" name="solicitaMalla" size="1" maxlength="1" placeholder="Malla"  >
-					 <input type="text"   id="solicitaOtros" name="solicitaOtros" size="1" maxlength="1" placeholder="Otros"  >
-					 <input type="hidden"   id="username3_id" name="username3_id" >
-	                                </div>						
-                                </div>						
-
-				<div id="flex-container2-cirugia_2">
-
-                                <div>						
-
-                                        <label for="anestesia" >Anestesia:</label>
-					Anestesia:
-                                            <select class="select-box" id="anestesia"  tabindex= "0"
-                                                    name="anestesia" style="width: 25%;"
-                                                    required>
-                                                {% for tiposAnestesia in TiposAnestesia %}
-                                                <option value="{{tiposAnestesia.id}}"> {{tiposAnestesia.nombre}}</option>
-                                                {% endfor %}
-                                            </select>
-
-                                        <label for="tiposCirugia" >TipoCirugia:</label>
-                                        	Tipo Cirugia:   
-					 <select class="select-box" id="tiposCirugia"  tabindex= "0"
-                                                    name="tiposCirugia" style="width: 25%;"
-                                                    required>
-                                                {% for tiposCirugia in TiposCirugia %}
-                                                <option value="{{tiposCirugia.id}}"> {{tiposCirugia.nombre}}</option>
-                                                {% endfor %}
-                                            </select>
+            </div>
 
 
-                                        <label for="dxPreQx" >dxPreQx:</label>
-						Dx-PreQx:
-                                            <select class="select-box" id="dxPreQx"  tabindex= "0"
-                                                    name="dxPreQx" style="width: 25%;"
-                                                    required>
-                                                {% for diagnosticosCirugia in DiagnosticosCirugia %}
-                                                <option value="{{diagnosticosCirugia.id}}"> {{diagnosticosCirugia.nombre}}</option>
-                                                {% endfor %}
-                                            </select>
-                                        <label for="dxPrinc" >dxPrinc:</label>
-						Dx-Principal:
-                                            <select class="select-box" id="dxPrinc"  tabindex= "0"
-                                                    name="dxPrinc" style="width: 25%;"
-                                                    required>
-                                                {% for diagnosticosCirugia in DiagnosticosCirugia %}
-                                                <option value="{{diagnosticosCirugia.id}}"> {{diagnosticosCirugia.nombre}}</option>
-                                                {% endfor %}
-                                            </select>
+            <input type="text" id="solicitaHospitalizacion" name="solicitaHospitalizacion" size="1" maxlength="5"
+                placeholder="Hosp">
 
-                                        <label for="dxRel1" >dxRel1:</label>
-						Dx-relacionado:
-                                            <select class="select-box" id="dxRel1"  tabindex= "0"
-                                                    name="dxRel1" style="width: 25%;"
-                                                    required>
-                                                {% for diagnosticosCirugia in DiagnosticosCirugia %}
-                                                <option value="{{diagnosticosCirugia.id}}"> {{diagnosticosCirugia.nombre}}</option>
-                                                {% endfor %}
-                                            </select>
-                                        </div>
-                                    </div>                                             
+            <input type="text" id="solicitaAyudante" name="solicitaAyudante" size="1" maxlength="15"
+                placeholder="Ayudante">
+            <input type="text" id="solicitaTiempoQx" name="solicitaTiempoQx" size="1" maxlength="15"
+                placeholder="TiempoQx">
+            <input type="text" id="solicitaTipoQx" name="solicitaTipoQx" size="1" maxlength="15" placeholder="tipoQx">
+            <input type="text" id="solicitaAnestesia" name="solicitaAnestesia" size="1" maxlength="15"
+                placeholder="Anestesia">
+            <input type="text" id="solicitaOtros" name="solicitaOtros" size="1" maxlength="1" maxlength="15"
+                placeholder="Otros">
+            <input type="text" id="tiempoMaxQx" name="tiempoMaxQx" size="10" maxlength="20" placeholder="tiempoMaxQx">
+            <input type="text" id="solicitaAutoSutura" name="solicitaAutoSutura" size="1" maxlength="20"
+                placeholder="AutoSutura">
+            <input type="text" id="solicitaSoporte" name="solicitaSoporte" size="1" maxlength="15"
+                placeholder="Soporte">
+            <input type="text" id="describeOtros" name="describeOtros" size="1" maxlength="1"
+                placeholder="describeOtros">
 
-		
-                            </form>
+
+            <input type="text" id="solicitaSangre" name="solicitaSangre" size="1" maxlength="1" placeholder="Sangre">
+            <input type="text" id="describeSangre" name="describeSangre" size="1" maxlength="1"
+                placeholder="describeSangre">
+            <input type="text" id="cantidadSangre" name="cantidadSangre" size="1" maxlength="1"
+                placeholder="cantidadSangre">
+            <input type="text" id="solicitaCamaUci" name="solicitaCamaUci" size="1" maxlength="1" placeholder="CamaUci">
+            <input type="text" id="solicitaMicroscopio" name="solicitaMicroscopio" size="1" maxlength="1"
+                placeholder="Microscopio">
+            <input type="text" id="solicitaRx" name="solicitaRx" size="1" maxlength="1" placeholder="Rx">
+            <input type="text" id="solicitaOsteosintesis" name="solicitaOsteosintesis" size="1" maxlength="1"
+                placeholder="Osteosintesis">
+            <input type="text" id="solicitaBiopsia" name="solicitaBiopsia" size="1" maxlength="1" placeholder="Biopsia">
+            <input type="text" id="solicitaMalla" name="solicitaMalla" size="1" maxlength="1" placeholder="Malla">
+            <input type="text" id="solicitaOtros" name="solicitaOtros" size="1" maxlength="1" placeholder="Otros">
+            <input type="hidden" id="username3_id" name="username3_id">
+
+            <label for="anestesia">Anestesia:</label>
+            Anestesia:
+            <select class="mi-selectMed" id="anestesia" tabindex="0" name="anestesia" required>
+                {% for tiposAnestesia in TiposAnestesia %}
+                <option value="{{tiposAnestesia.id}}"> {{tiposAnestesia.nombre}}</option>
+                {% endfor %}
+            </select>
+
+            <label for="tiposCirugia">TipoCirugia:</label>
+            Tipo Cirugia:
+            <select class="mi-selectMed" id="tiposCirugia" tabindex="0" name="tiposCirugia" required>
+                {% for tiposCirugia in TiposCirugia %}
+                <option value="{{tiposCirugia.id}}"> {{tiposCirugia.nombre}}</option>
+                {% endfor %}
+            </select>
+
+
+            <label for="dxPreQx">dxPreQx:</label>
+            Dx-PreQx:
+            <select class="mi-select" id="dxPreQx" tabindex="0" name="dxPreQx" required>
+                {% for diagnosticosCirugia in DiagnosticosCirugia %}
+                <option value="{{diagnosticosCirugia.id}}"> {{diagnosticosCirugia.nombre}}</option>
+                {% endfor %}
+            </select>
+            <label for="dxPrinc">dxPrinc:</label>
+            Dx-Principal:
+            <select class="mi-select" id="dxPrinc" tabindex="0" name="dxPrinc" required>
+                {% for diagnosticosCirugia in DiagnosticosCirugia %}
+                <option value="{{diagnosticosCirugia.id}}"> {{diagnosticosCirugia.nombre}}</option>
+                {% endfor %}
+            </select>
+
+            <label for="dxRel1">dxRel1:</label>
+            Dx-relacionado:
+            <select class="mi-select" id="dxRel1" tabindex="0" name="dxRel1" required>
+                {% for diagnosticosCirugia in DiagnosticosCirugia %}
+                <option value="{{diagnosticosCirugia.id}}"> {{diagnosticosCirugia.nombre}}</option>
+                {% endfor %}
+            </select>
+
+</form>
 
 
 
-    </article>
+</article>
 
+<article id="ProcedimientosNoQx">
 
-    <article id="ProcedimientosNoQx">
-       
-	<!-- desde aqui resultados ya de NoQx del ingreso -->
+    <!-- desde aqui resultados ya de NoQx del ingreso -->
+
+    <table id="tablaInfoNoQx" class=" display table table-striped table-sm fs-6 nowrap">
+        <thead>
+            <tr>
+                <bold>
+                    <th>id</th>
+                    <th>Folio</th>
+                    <th>Fecha</th>
+                    <th>Fec.Tomado</th>
+                    <th>Fec.Reporte</th>
+                    <th>Examen</th>
+                    <th>Interpretacion</th>
+                    <th>Fecha interpretacion</th>
+                    <th>Estado</th>
+                </bold>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+    </table>
+
+    <!-- DESDE AQUIP DATATABLE  -->
+
+    <table class="table">
+        <form action="/crearNoQxDef/" method="POST" id="FormaNoQx1">
 
             <!-- INICIO TABLE DE  EL DATATABLE  -->
-<br><br><br><br>
-        <div class="tabla-contenedor">     
 
-				
-                                        <table  id= "tablaInfoNoQx" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>                   
-                                                <th>Folio</th>                   
-                                                <th>Fecha</th>                   
-                                                <th>Fec.Tomado</th>
-                                                <th>Fec.Reporte</th>  
-						<th>Examen</th>                                     
-                                                <th>Interpretacion</th> 
-                                                <th>Fecha interpretacion</th>                                    
-                                                <th>Estado</th>	              
-						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
+            Seleccion:
+            <select class="mi-select" id="noQx" name="noQx" style="width: 25%;">
+                {% for noQx in NoQx %}
+                <option value="{{noQx.cups}}">
+                    {{noQx.nombre}}
+                </option>
+                {% endfor %}
+            </select>
 
-                                </div>
+            Cantidad:
+            <input type="text" id="cantidad5" name="cantidad5" value="1">
 
-			<!-- FIN TABLE DE  EL DATATABLE  -->
+            Mipres:
+            <input type="text" id="mipresNoQx" name="mipresNoQx">
+
+            Observaciones:
+            <input type="text" id="observa5" name="observa5" value="">
 
 
 
-                <table class="table  " style="height: 25px; background-color:LightGray;  width:100%;">
+            <span class="boton-desplegable"><a href="javascript:void(0)" id="BtnAdicionarNoQx">Adicion</a>
+                <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="30" height="30"></img>
+
+            </span>
+
+        </form>
+    </table>
+
+    <table id=tablaNoQx class="display nowrap table table table-bordered  tablaNoQx table-hover table-sm dtr-inline">
+        <thead>
             <tr>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-             <!-- DESDE AQUIP DATATABLE  -->
-
-                    <table class="table"
-                           style="background-color:LightGray; BORDERCOLOR=RED ; border: 8px solid black;   width:99%;">
-                        <form class="form-inline" action="/crearNoQxDef/" method="POST"  id="FormaNoQx1" style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
-
-                            <!-- INICIO TABLE DE  EL DATATABLE  -->
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card">
-                                        <div class="card-header" style="height:80px;">
-                                            <center>
-                                               
-							Seleccion:
-                                                        <select class="select-box"  id="noQx"
-                                                                name="noQx" style="width: 25%;">
-                                                            {% for noQx in NoQx %}
-                                                            <option value="{{noQx.cups}}">
-                                                                {{noQx.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                                
-							Cantidad:
-                                                        <input type="text" id="cantidad5" name="cantidad5" value="1">
-
-                                                 
-							Observaciones:
-                                                        <input type="text" id="observa5" name="observa5" value="">
-                                               
-                                                        Mipres:
-                                                        <input type="text" id="mipresNoQx" name="mipresNoQx">
-                                            
-                                                        <span class="text-secondary">Adicionar</span>
-                                                        <a class="btn btn-success" href="javascript:void(0)"
-                                                           id="BtnAdicionarNoQx"> <i class="fa fa-plus"></i></a>
-                                             
-                                            </center>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <table id=tablaNoQx
-                                                           class="display nowrap table table table-bordered  tablaNoQx table-hover table-sm dtr-inline">
-                                                        <thead>
-                                                        <tr>
-                                                            <th style="width:5%;">id</th>
-                                                            <th style="width:5%;">Nombres</th>
-                                                            <th style="width:5%;">Cantidad</th>
-                                                            <th style="width:5%;">Observaciones</th>
-                                                            <th style="width:5%;">Mipres</th>
-                                                            <th style="width:3%;">Borrar</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody style="vertical-align:bottom">
-                                                        <tr style="height:10%">
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FIN TABLE DE  EL DATATABLE  -->
-                        </form>
-                    </table>
-
-             <!-- HASTA AQUI DATATABLE -->
-
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
+                <th class="tablaEstilos">id</th>
+                <th class="tablaEstilos">Nombres</th>
+                <th class="tablaEstilos">Cantidad</th>
+                <th class="tablaEstilos">Observaciones</th>
+                <th class="tablaEstilos">Mipres</th>
+                <th class="tablaEstilos">Borrar</th>
             </tr>
-        </table>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
 
-    </article>
+            </tr>
+        </tbody>
+    </table>
 
-    <article id="Diagnosticos">
-    
-        <!-- desde aqui resultados ya de Diagnosticos del ingreso -->
-    
-        <!-- INICIO TABLE DE  EL DATATABLE  -->
-        <table id="tablaInfoDiagnostico" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%" ;>
-            <thead>
-                <tr>
-                    <bold>
-                        <th>id</th>
-                        <th>Folio</th>
-                        <th>Fecha</th>
-                        <th>Tipo</th>
-                        <th>Descripcion</th>
-                    </bold>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-    
-        </table>
-    
-        <!-- DESDE AQUIP DATATABLE  -->
-    
-        <table class="table">
-            <form action="/crearDiagnisticosDef/" method="POST" id="FormaDiagnosticos">
-    
-                <!-- INICIO TABLE DE  EL DATATABLE  -->
-                Seleccion:
-                <select class="mi-select" id="tiposDiagnosticos" name="tiposDiagnosticos">
-                    {% for tiposDiagnostico in TiposDiagnostico %}
-                    <option value="{{tiposDiagnostico.id}}">
-                        {{tiposDiagnostico.nombre}}
+    <!-- FIN TABLE DE  EL DATATABLE  -->
+
+
+
+
+</article>
+
+<article id="Diagnosticos">
+
+    <!-- desde aqui resultados ya de Diagnosticos del ingreso -->
+
+    <!-- INICIO TABLE DE  EL DATATABLE  -->
+    <table id="tablaInfoDiagnostico" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%" ;>
+        <thead>
+            <tr>
+                <bold>
+                    <th>id</th>
+                    <th>Folio</th>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Descripcion</th>
+                </bold>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+    </table>
+
+    <!-- DESDE AQUIP DATATABLE  -->
+
+    <table class="table">
+        <form action="/crearDiagnisticosDef/" method="POST" id="FormaDiagnosticos">
+
+            <!-- INICIO TABLE DE  EL DATATABLE  -->
+            Seleccion:
+            <select class="mi-selectTiposDiagnosticos" id="tiposDiagnosticos" name="tiposDiagnosticos">
+                {% for tiposDiagnostico in TiposDiagnostico %}
+                <option value="{{tiposDiagnostico.id}}">
+                    {{tiposDiagnostico.nombre}}
+                </option>
+                {% endfor %}
+            </select>
+
+
+            <select class="mi-select" id="diagnosticos" name="diagnosticos">
+                {% for diagnosticos in Diagnosticos %}
+                <option value="{{diagnosticos.id}}">
+                    {{diagnosticos.nombre}}
+                </option>
+                {% endfor %}
+            </select>
+
+            Observaciones:
+            <input type="text" id="observa7" name="observa7" value="">
+
+            <!-- <span class="text-secondary">Adicionar</span> -->
+            <!-- <a class="btn btn-success" href="javascript:void(0)" id="BtnAdicionarDiagnosticos"> <i  -->
+            <!--        class="fa fa-plus"></i></a> -->
+
+            <span class="boton-desplegable"><a href="javascript:void(0)" id="BtnAdicionarDiagnosticos">Adicion</a>
+                <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="50" height="50"></img>
+
+            </span>
+
+
+
+
+            <table id="tablaDiagnosticos"
+                class="display nowrap table table table-bordered  tablaDiagnosticos table-hover table-sm dtr-inline">
+                <thead>
+                    <tr>
+                        <th class="tablaEstilos">IdTipo</th>
+                        <th class="tablaEstilos">Tipo Diagnostico</th>
+                        <th class="tablaEstilos">IdDiag</th>
+                        <th class="tablaEstilos">Diagnostico</th>
+                        <th class="tablaEstilos">Observaciones</th>
+                        <th class="tablaEstilos">Borrar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <!-- FIN TABLE DE  EL DATATABLE  -->
+        </form>
+    </table>
+
+    <!-- HASTA AQUI DATATABLE -->
+
+
+
+
+
+</article>
+
+<article id="Antecedentes">
+
+    <!-- desde aqui resultados ya de Antecedentedel ingreso -->
+    <table id="tablaInfoAntecedente" class=" display table table-striped table-sm fs-6 nowrap">
+        <thead>
+            <tr>
+                <bold>
+                    <th>id</th>
+                    <th>Folio</th>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Descripcion</th>
+                </bold>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+    </table>
+
+    <!-- DESDE AQUIP DATATABLE  -->
+
+    <table class="table">
+        <form action="/crearAntecedentesDef/" method="POST" id="FormaAntecedentes">
+
+            <!-- INICIO TABLE DE  EL DATATABLE  -->
+
+            <div class="centraParra">
+                <select class="mi-select" id="antecedentes" name="antecedentes" style="width: 25%;">
+                    {% for antecedentes in Antecedentes %}
+                    <option value="{{antecedentes.id}}">
+                        {{antecedentes.nombre}}
                     </option>
                     {% endfor %}
                 </select>
-    
-    
-                <select class="mi-select" id="diagnosticos" name="diagnosticos">
+
+                Observaciones:
+                <input type="text" id="observa6" name="observa6" value="" size="40px">
+
+
+                <span class="boton-desplegable"><a href="javascript:void(0)" id="BtnAdicionarAntecedentes">Adicion</a>
+                    <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="30" height="30"></img>
+
+                </span>
+            </div>
+
+        </form>
+    </table>
+
+
+
+
+    <table id="tablaAntecedentes"
+        class="display nowrap table table table-bordered  tablaAntecedentes table-hover table-sm dtr-inline">
+        <thead>
+            <tr>
+                <th class="tablaEstilos">id</th>
+                <th class="tablaEstilos">Nombres</th>
+                <th class="tablaEstilos">Descripcion</th>
+                <th class="tablaEstilos">Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+
+            </tr>
+        </tbody>
+    </table>
+    <!-- FIN TABLE DE  EL DATATABLE  -->
+
+
+
+
+</article>
+
+<article id="Incapacidades">
+
+    <!-- desde aqui resultados ya de Incapacidad del ingreso -->
+
+    <table id="tablaInfoIncapacidad" class=" display table table-striped table-sm fs-6 nowrap">
+        <thead>
+            <tr>
+                <bold>
+                    <th>id</th>
+                    <th>Folio</th>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Diagnostico</th>
+                    <th>Descripcion</th>
+                </bold>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+    </table>
+
+
+    <form method="POST" id="formIncapacidades">
+
+        Tipo Incapacidad:
+        {{IncapacidadesForm.tiposIncapacidad}}
+        Diagnostico:
+        {{IncapacidadesForm.diagnosticosIncapacidad}}
+        Inicia:
+        {{IncapacidadesForm.desdeFecha}}
+        Termina:
+        {{IncapacidadesForm.hastaFecha}}
+        Numero de dias:
+        {{IncapacidadesForm.numDias}}
+        Descripcion:
+        {{IncapacidadesForm.descripcion}}
+
+    </form>
+
+
+
+</article>
+<article id="InterConsultas">
+
+
+
+    <!-- desde aqui resultados ya de Formulacion del ingreso -->
+
+    <table id="tablaInfoInterConsulta" class=" display table table-striped table-sm fs-6 nowrap">
+        <thead>
+            <tr>
+                <bold>
+                    <th>id</th>
+                    <th>Folio</th>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Consulta</th>
+                    <th>Descripcion</th>
+                    <th>Responde</th>
+                    <th>Respuesta</th>
+
+                </bold>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+    </table>
+
+
+
+
+
+
+    <!-- DESDE AQUIP DATATABLE  -->
+    <table class="table">
+        <form action="/crearInterconsultassDef/" method="POST" id="FormaInterconsultas">
+
+
+
+            <!-- INICIO ENCABEZADOS DE CAPTURA -->
+
+            <div class="centraParra">
+                Tipo :
+                <select class="mi-selectMed" id="tiposInterconsulta" name="tiposInterconsulta">
+                    {% for tiposInterconsulta in TiposInterconsulta %}
+                    <option value="{{tiposInterconsulta.id}}">
+                        {{tiposInterconsulta.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                EspConsultada:</label>
+                <select class="mi-selectMed" id="especialidadConsultada" name="especialidadConsultada">
+                    {% for especialidadesMedicosInterConsultas in EspecialidadesMedicosInterConsultas %}
+                    <option value="{{especialidadesMedicosInterConsultas.id}}">
+                        {{especialidadesMedicosInterConsultas.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+
+
+                <label for="medicoConsultado">Medico:</label>
+                <select class="mi-selectMed" id="medicoConsultado" name="medicoConsultado">
+                    {% for medicos in Medicos %}
+                    <option value="{{medicos.id}}">
+                        {{medicos.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                Describe:
+                <input type="text" id="descripcionI" name="descripcionI" value="">
+
+                Diagnostico:
+                <select class="mi-selectMed" id="diagnosticosI" name="diagnosticosI">
                     {% for diagnosticos in Diagnosticos %}
                     <option value="{{diagnosticos.id}}">
                         {{diagnosticos.nombre}}
                     </option>
                     {% endfor %}
                 </select>
-    
-                Observaciones:
-                <input type="text" id="observa7" name="observa7" value="">
-    
-                <!-- <span class="text-secondary">Adicionar</span> -->
-                <!-- <a class="btn btn-success" href="javascript:void(0)" id="BtnAdicionarDiagnosticos"> <i  -->
-                <!--        class="fa fa-plus"></i></a> -->
 
-                <span class="boton-desplegable"><a href="javascript:void(0)" id="BtnAdicionarDiagnosticos">Adicion</a>
-                <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="50" height="50"></img>              
 
-            </span>
+                <input type="hidden" id="ordenMedicaInt" name="ordenMedicaInt" value="0" size="5px">
 
 
-    
-    
-                <table id="tablaDiagnosticos"
-                    class="display nowrap table table table-bordered  tablaDiagnosticos table-hover table-sm dtr-inline">
-                    <thead>
-                        <tr>
-                            <th class="tablaEstilos">IdTipo</th>
-                            <th class="tablaEstilos">Tipo Diagnostico</th>
-                            <th class="tablaEstilos">IdDiag</th>
-                            <th class="tablaEstilos">Diagnostico</th>
-                            <th class="tablaEstilos">Observaciones</th>
-                            <th class="tablaEstilos">Borrar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-    
-                        </tr>
-                    </tbody>
-                </table>
-                <!-- FIN TABLE DE  EL DATATABLE  -->
-            </form>
-        </table>
-    
-        <!-- HASTA AQUI DATATABLE -->
-    
-    
-    
-    
-    
-    </article>
+                <span class="boton-desplegable"><a href="javascript:void(0)" id="BtnAdicionarInterconsultas">Adicion</a>
+                    <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="30" height="30"></img>
 
-    <article id="Antecedentes">
-      
-	<!-- desde aqui resultados ya de Antecedentedel ingreso -->
-
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
-<br><br><br><br>
-        <div class="tabla-contenedor">     
-
-				
-                                        <table  id= "tablaInfoAntecedente" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>                   
-                                                <th>Folio</th>                   
-                                                <th>Fecha</th>                   
-                                                <th>Tipo</th>
-                                                <th>Descripcion</th>  
-						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
-
-                                </div>
-
-			<!-- FIN TABLE DE  EL DATATABLE  -->
-
-
-
-
-
-             <table class="table  " style="height: 25px; background-color:LightGray;  width:100%;">
-            <tr>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-             <!-- DESDE AQUIP DATATABLE  -->
-
-                    <table class="table"
-                           style="background-color:LightGray; BORDERCOLOR=RED ; border: 8px solid black;  width:70%;">
-                        <form class="form-inline" action="/crearAntecedentesDef/" method="POST"
-                              id="FormaAntecedentes" style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
-
-                            <!-- INICIO TABLE DE  EL DATATABLE  -->
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card">
-                                        
-						
-                                                        <select class="select-box"  id="antecedentes"
-                                                                name="antecedentes" style="width: 25%;">
-                                                            {% for antecedentes in Antecedentes %}
-                                                            <option value="{{antecedentes.id}}">
-                                                                {{antecedentes.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-
-							Observaciones:
-                                                        <input type="text" id="observa6" name="observa6" value="" size="40px">
-
-                                                        <span class="text-secondary">Adicionar</span>
-                                                        <a class="btn btn-success" href="javascript:void(0)"
-                                                           id="BtnAdicionarAntecedentes"> <i class="fa fa-plus"></i></a>
-
-
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <table id="tablaAntecedentes"
-                                                           class="display nowrap table table table-bordered  tablaAntecedentes table-hover table-sm dtr-inline">
-                                                        <thead>
-                                                        <tr>
-                                                            <th style="width:5%;">id</th>
-                                                            <th style="width:5%;">Nombres</th>
-                                                            <th style="width:5%;">Descripcion</th>
-                                                            <th style="width:3%;">Borrar</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody style="vertical-align:bottom">
-                                                        <tr style="height:10%">
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-
-
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FIN TABLE DE  EL DATATABLE  -->
-                        </form>
-                    </table>
-
-             <!-- HASTA AQUI DATATABLE -->
-
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
-        </table>
-
-    </article>
-
-    <article id="Incapacidades">
-
-	<!-- desde aqui resultados ya de Incapacidad del ingreso -->
-
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
-	<br><br><br><br>
-        <div class="tabla-contenedor">     
-
-				
-                                        <table  id= "tablaInfoIncapacidad" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>                   
-                                                <th>Folio</th>                   
-                                                <th>Fecha</th>                   
-                                                <th>Tipo</th>
-                                                <th>Diagnostico</th>
-                                                <th>Descripcion</th>	              
-						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
-                                </div>
-
-			<!-- FIN TABLE DE  EL DATATABLE  -->
-
-
-            <form   method="POST"  id="formIncapacidades" style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
-		
-                Tipo Incapacidad:
-                {{IncapacidadesForm.tiposIncapacidad}}
-                Diagnostico:
-                {{IncapacidadesForm.diagnosticosIncapacidad}}
-                Inicia:
-                {{IncapacidadesForm.desdeFecha}}
-                Termina:
-                {{IncapacidadesForm.hastaFecha}}
-                Numero de dias:
-                {{IncapacidadesForm.numDias}}
-                Descripcion:
-                {{IncapacidadesForm.descripcion}}
-		
-            </form>
-
-
-    </article>
-
-    <article id="InterConsultas">
-
-
-
-	<!-- desde aqui resultados ya de Formulacion del ingreso -->
-
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
-<br><br><br><br>
-        <div class="tabla-contenedor">     
-
-				
-                                        <table  id= "tablaInfoInterConsulta" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>                   
-                                                <th>Folio</th>                   
-                                                <th>Fecha</th>                   
-                                                <th>Tipo</th>
-                                                <th>Consulta</th>
-                                                <th>Descripcion</th>
-                                                <th>Responde</th>
-                                                <th>Respuesta</th>
-
-						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
-
-                                </div>
-
-			<!-- FIN TABLE DE  EL DATATABLE  -->
-
-
-
-
-
-
-             <table class="table  " style="height: 25px; background-color:LightGray;  width:90%;">
-            <tr>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-             <!-- DESDE AQUIP DATATABLE  -->
-                    <table class="table"
-                           style=" background-color:LightGray; BORDERCOLOR=RED ; border: 8px solid black;   width:99%;">
-                        <form class="form-inline" action="/crearInterconsultassDef/" method="POST"
-                              id="FormaInterconsultas" style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
-
-
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card">
-                                        <div class="card-header" style="height:100px;">
-
-                            <!-- INICIO ENCABEZADOS DE CAPTURA -->
-
-
-                                                        Tipo :
-                                                        <select class="select-box"  id="tiposInterconsulta"
-                                                                name="tiposInterconsulta" style="width: 25%;">
-                                                            {% for tiposInterconsulta in TiposInterconsulta %}
-                                                            <option value="{{tiposInterconsulta.id}}">
-                                                                {{tiposInterconsulta.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-
-                                                        Espe-consultada:</label>
-                                                        <select class="select-box"  id="especialidadConsultada"
-                                                                name="especialidadConsultada" style="width: 25%;">
-                                                            {% for especialidadesMedicosInterConsultas in EspecialidadesMedicosInterConsultas %}
-                                                            <option value="{{especialidadesMedicosInterConsultas.id}}">
-                                                                {{especialidadesMedicosInterConsultas.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-
-
-                                                        <label for="medicoConsultado"
-                                                               class="col-sm-1 control-label">Medico consultado:</label>
-                                                        <select class="select-box" aria-label="" id="medicoConsultado" name="medicoConsultado" style="width: 25%;">
-                                                            {% for medicos in Medicos %}
-                                                            <option value="{{medicos.id}}">
-                                                                {{medicos.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                               
-                                                        Describe:
-                                                        <input type="text" id="descripcionI" name="descripcionI" value="">
-
-                                                        Diagnostico:
-                                                        <select class="select-box" aria-label="" id="diagnosticosI"
-                                                                name="diagnosticosI" style="width: 25%;">
-                                                            {% for diagnosticos in Diagnosticos %}
-                                                            <option value="{{diagnosticos.id}}">
-                                                                {{diagnosticos.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-
-                                                        Orden:
-                                                        <input type="text" id="ordenMedicaInt" name="ordenMedicaInt" value="" size="5px">
-
-                                            
-                                                        <span class="text-secondary">Adicionar</span>
-                                                        <a class="btn btn-success" href="javascript:void(0)"
-                                                           id="BtnAdicionarInterconsultas"> <i class="fa fa-plus"></i></a>
-
-
-		                            <!-- FIN ENCABEZADOS DE CAPTURA -->
-                                        </div> <!-- FIN HEADER -->
-
-                                        <div class="card-body" style="height:50px;">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <table id="tablaInterconsultas"
-                                                           class="display nowrap table table table-bordered  tablaInterconsultas table-hover table-sm dtr-inline">
-                                                        <thead>
-                                                        <tr>
-                                                            <th style="width:5%;">TipoInterconsulta</th>
-                                                            <th style="width:5%;">Tipo</th>
-
-                                                            <th style="width:5%;">Esp.Consultada</th>
-                                                            <th style="width:5%;">Especial</th>
-
-                                                            <th style="width:5%;">Medico Consultado</th>
-                                                            <th style="width:5%;">Medico </th>
-
-                                                            <th style="width:5%;">Descripcion</th>
-                                                            <th style="width:5%;">Diagnostico</th>
-                                                            <th style="width:5%;">DiagnosticoNombre</th>
-                                                            <th style="width:3%;">Borrar</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody style="vertical-align:bottom">
-                                                        <tr style="height:10%">
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FIN TABLE DE  EL DATATABLE  -->
-                        </form>
-                    </table>
-
-             <!-- HASTA AQUI DATATABLE -->
-
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
-        </table>
-
-    </article>
-
-    <article id="NotasEnfermeria">
-
-	<!-- desde aqui resultados ya de Antecedentedel ingreso -->
-
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
-<br><br><br><br>
-        <div class="tabla-contenedor">     
-
-				
-                                        <table  id= "tablaInfoNotasEnfermeria" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>                   
-                                                <th>Folio</th>                   
-                                                <th>Fecha</th>                   
-                                                <th>Nota</th>
-						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
-
-                                </div>
-
-			<!-- FIN TABLE DE  EL DATATABLE  -->
-
-
-
-		<div class="marco">
-             <!-- DESDE AQUIP DATATABLE  -->
-      <table class="table" style="height:25px; background-color:LightGray;  width:90%;">
-            <tr style="padding: 0;">
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-                    <table class="table"  style="background-color:LightGray; BORDERCOLOR=RED ; border: 8px solid black;   width:99%;">
-                        <form class="form-inline" action="/crearNotasEnfermeriaDef/" method="POST"
-                              id="FormaNotas" style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
-                            <!-- INICIO TABLE DE  EL DATATABLE  -->
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card" >
-                                        <div class="card-header" style="height:8rem;">
-                                            
-                                               <div class= "row">                                        
-						<div class="col-sm-9">
-						<label for="observacionesNotas">Nota:</label>
-						<textarea id="observacionesNotas" name="observacionesNotas" rows="4" cols="100" placeholder="Ingrese Nota Enfermeria..." required wrap="hard"></textarea>
-						</div>
-
-						<div class="col-sm-3">
-                                                        <span class="text-secondary">Adicion</span>
-                                                        <a class="btn btn-success" href="javascript:void(0)"
-                                                           id="BtnAdicionarNotasEnfermeria"> <i
-                                                                class="fa fa-battery-half"></i></a>
-                                                    </div>
-                                                 </div>
-
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-
-                                                    <table id=tablaNotasEnfermeria  class="display nowrap table table table-bordered  tablaNotasEnfermeria table-hover table-sm dtr-inline">
-                                                        <thead>
-                                                        <tr>
-                                                          
-                                                            <th style="width:5%;">Observaciones</th>
-                                                            <th style="width:3%;">Borrar</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody style="vertical-align:bottom">
-                                                        <tr style="height:5%">
-                                                            <td></td>
-                                                            <td></td>
-                                                        
-
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FIN TABLE DE  EL DATATABLE  -->
-                        </form>
-                    </table>
-
-             <!-- HASTA AQUI DATATABLE -->
-
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
-        </table>
-	</div>
-    </article>
-
-    <article id="SalidaClinica">
-<br><br><br><br><br>
- <h3>Salida clinica</h3></center>
-		
-	
-							Tipo salida:
-                                                        <select class="select-box"  id="tiposSalidas"  name="tiposSalidas" style="width: 25%;">
-                                                            {% for tiposSalidas in TiposSalidas %}
-                                                            <option value="{{tiposSalidas.id}}">
-                                                                {{tiposSalidas.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                              
-								Dx de complicacion:
-                                                        <select class="select-box"  id="dxComplicacion"  name="dxComplicacion" style="width: 25%;">
-                                                            {% for dxComplicacion in DxComplicacion %}
-                                                            <option value="{{dxComplicacion.id}}">
-                                                                {{dxComplicacion.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                          
-						Seleccione:<input type="checkbox" id="salClinica" name="salClinica"/>
-	
-
-    </article>
-
-    <article id="GuardarFolio">
-
-            <center>
-            <h3>GuardarFolio</h3>
-            </center>
-
-        <form class="form-inline" action="" method="POST" id="formHistoriaClinica">
-
-            <input type="hidden" id="espMedico" name="espMedico" value="{{EspMedico}}"> </input>
-	    <input type="hidden" id="tiposFolio" name="tiposFolio" value="{{TiposFolio}}"> </input>
-	    <input type="hidden" id="tiposFolioEscogido" name="tiposFolioEscogido" value="{{TiposFolioEscogido}}"> </input>
-	    <input type="hidden" id="usuarioRegistro" name="usuarioRegistro" value="{{Username_id}}"> </input>
-	    <input type="hidden" id="perfil" name="perfil" value="{{perfil}}"> </input>
-	    <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}"> </input>
-	    <input type="hidden" id="fechaRegistro" name="fechaRegistro" value=""> </input>
-	    <input type="hidden" id="tipoDocPaciente1" name="tipoDocPaciente1" value="{{TipoDocPaciente}}">
-	    <input type="hidden" id="documentoPaciente1" name="documentoPaciente1" value="{{DocumentoPaciente}}">
-	    <input type="hidden" id="ingresoPaciente1" name="ingresoPaciente1" value="{{IngresoPaciente}}">
-     	    <input type="hidden" id="tipoDocPaciente" name="tipoDocPaciente" value="{{TipoDocPaciente}}">
-	    <input type="hidden" id="documentoPaciente" name="documentoPaciente" value="{{DocumentoPaciente}}">
-	    <input type="hidden" id="ingresoPaciente" name="ingresoPaciente" value="{{IngresoPaciente}}">
-	    <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
-	    <input type="hidden" id="username" name="username" value = "{{Username}}">
-	    <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value = "{{SedeSeleccionada}}">
-	    <input type="hidden" id="numreporte" name="numreporte" value = "{{numreporte}}">
-	    <input type="hidden" id="grupo" name="grupo" value = "{{Grupo}}">
-	    <input type="hidden" id="subGrupo" name="subGrupo" value = "{{SubGrupo}}">
-
-    <!--  Estos si de la Aplixcacion bse -->
-
-	<input type="hidden" id="sede" name="sede" value = "{{Sede}}">
-	<input type="hidden" id="documento" name="documento" value = "{{Documento}}">
-	<input type="hidden" id="nombreSede" name="nombreSede" value = "{{NombreSede}}">
-	<input type="hidden" id="profesional" name="profesional" value = "{{Profesional}}">
-	<input type="hidden" id="permisosGrales" name="permisosGrales" value = "{{PermisosGrales}}">
-	<input type="hidden" id="permisosDetalle" name="permisosDetalle" value = "{{PermisosDetalle}}">
-	<input type="hidden" id="escogeModulo" name="escogeModulo" value = "{{EscogeModulo}}">
-            <input type="submit" id="btnCrearFolio" name="btnCrearFolio" value="Registrar Folio"> </input>
-
-
+                </span>
+            </div>
 
         </form>
+    </table>
 
 
-    </article>
-
-    <article id="Retornar">
-        <center>
-            <h3>Retornar</h3>
-</center>
-        <form class="form-inline" action="/escoge/{{Sede}}, {{Username}}, {{Profesional}}, {{Documento}} ,{{NombreSede}} ,{{EscogeModulo}}" method="POST" id="formRetornaHistoria">
-            
-            <input type="hidden" id="sede" name="sede" value="{{Sede}}">
-            <input type="hidden" id="servicio" name="servicio" value="{{Servicio}}">
-            <input type="hidden" id="perfil" name="perfil" value="{{Perfil}}">
-            <input type="hidden" id="username" name="username" value="{{Username}}">
-            <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
-            <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
-	    <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value = "{{SedeSeleccionada}}">
-	    <input type="hidden" id="numreporte" name="numreporte" value = "{{numreporte}}">
-	    <input type="hidden" id="grupo" name="grupo" value = "{{Grupo}}">
-	    <input type="hidden" id="subGrupo" name="subGrupo" value = "{{SubGrupo}}">
-            <input type="hidden" id="tipoDocPaciente2" name="tipoDocPaciente2" value="{{TipoDocPaciente}}">
-	    <input type="hidden" id="documentoPaciente2" name="documentoPaciente2" value="{{DocumentoPaciente}}">
-	    <input type="hidden id="ingresoPaciente2" name="ingresoPaciente2" value="{{IngresoPaciente}}">
-            <input type="hidden" id="espMedico" name="espMedico" value="{{EspMedico}}"> </input>
-	    <input type="hidden" id="tiposFolio" name="tiposFolio" value="{{TiposFolio}}"> </input>
-	    <input type="hidden" id="tiposFolioEscogido" name="tiposFolioEscogido" value="{{TiposFolioEscogido}}"> </input>
 
 
-		<!--  Estos si de la Aplixcacion bse -->
+    <table id="tablaInterconsultas"
+        class="display nowrap table table table-bordered  tablaInterconsultas table-hover table-sm dtr-inline">
+        <thead>
+            <tr>
+                <th class="tablaEstilos">TipoInterconsulta</th>
+                <th class="tablaEstilos">Tipo</th>
 
-		<input type="hidden" id="sede" name="sede" value = "{{Sede}}">
-		<input type="hidden" id="documento" name="documento" value = "{{Documento}}">
-		<input type="hidden" id="nombreSede" name="nombreSede" value = "{{NombreSede}}">
-		<input type="hidden" id="profesional" name="profesional" value = "{{Profesional}}">
-		<input type="hidden" id="permisosGrales" name="permisosGrales" value = "{{PermisosGrales}}">
-		<input type="hidden" id="permisosDetalle" name="permisosDetalle" value = "{{PermisosDetalle}}">
-		<input type="hidden" id="escogeModulo" name="escogeModulo" value = "{{EscogeModulo}}">
+                <th class="tablaEstilos">Esp.Consultada</th>
+                <th class="tablaEstilos">Especial</th>
 
-		<input type="submit" id="btnRetornaHistoria" name="btnRetornaHistoria" value="RETORNAR"> </input>
+                <th class="tablaEstilos">Medico Consultado</th>
+                <th class="tablaEstilos">Medico </th>
+
+                <th class="tablaEstilos">Descripcion</th>
+                <th class="tablaEstilos">Diagnostico</th>
+                <th class="tablaEstilos">DiagnosticoNombre</th>
+                <th class="tablaEstilos">Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+        </tbody>
+    </table>
+    <!-- FIN TABLE DE  EL DATATABLE  -->
+
+
+
+
+</article>
+
+<article id="NotasEnfermeria">
+
+    <!-- desde aqui resultados ya de Antecedentedel ingreso -->
+
+    <table id="tablaInfoNotasEnfermeria" class=" display table table-striped table-sm fs-6 nowrap">
+        <thead>
+            <tr>
+                <bold>
+                    <th>id</th>
+                    <th>Folio</th>
+                    <th>Fecha</th>
+                    <th>Nota</th>
+                </bold>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+    </table>
+
+
+    <table class="table">
+        <form action="/crearNotasEnfermeriaDef/" method="POST" id="FormaNotas">
+            <!-- INICIO TABLE DE  EL DATATABLE  -->
+
+            <div class="centraParra">
+                <label for="observacionesNotas">Nota:</label>
+                <textarea id="observacionesNotas" name="observacionesNotas" rows="4" cols="100"
+                    placeholder="Ingrese Nota Enfermeria..." required wrap="hard"></textarea>
+
+
+                <span class="boton-desplegable"><a href="javascript:void(0)"
+                        id="BtnAdicionarNotasEnfermeria">Adicion</a>
+                    <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="30" height="30"></img>
+
+                </span>
+            </div>
+
         </form>
-    </article>
+    </table>
 
-    <form class="form-inline" action="/escoge/{{Sede}}, {{Username}}, {{Profesional}}, {{Documento}} ,{{NombreSede}} ,{{EscogeModulo}}" method="POST"  id="formHistoriaClinicaT">
 
-            <input type="hidden" id="espMedico" name="espMedico" value="{{EspMedico}}"> </input>
-	    <input type="hidden" id="tiposFolio" name="tiposFolio" value="{{TiposFolio}}"> </input>
-	    <input type="hidden" id="tiposFolioEscogido" name="tiposFolioEscogido" value="{{TiposFolioEscogido}}"> </input>
-	    <input type="hidden" id="usuarioRegistro" name="usuarioRegistro" value="{{Username_id}}"> </input>
-	    <input type="hidden" id="perfil" name="perfil" value="{{perfil}}"> </input>
-	    <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}"> </input>
-	    <input type="hidden" id="fechaRegistro" name="fechaRegistro" value=""> </input>
-	    <input type="hidden" id="tipoDocPaciente1" name="tipoDocPaciente1" value="{{TipoDocPaciente}}">
-	    <input type="hidden" id="documentoPaciente1" name="documentoPaciente1" value="{{DocumentoPaciente}}">
-	    <input type="hidden" id="ingresoPaciente1" name="ingresoPaciente1" value="{{IngresoPaciente}}">
+    <table id=tablaNotasEnfermeria
+        class="display nowrap table table table-bordered  tablaNotasEnfermeria table-hover table-sm dtr-inline">
+        <thead>
+            <tr>
 
+                <th class="tablaEstilos">Observaciones</th>
+                <th class="tablaEstilos">Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+
+
+            </tr>
+        </tbody>
+    </table>
+    <!-- FIN TABLE DE  EL DATATABLE  -->
+
+</article>
+
+<article id="SalidaClinica">
+
+    <div class="centraParra">
+        Salida clinica
+
+
+        Tipo salida:
+        <select class="mi-select" id="tiposSalidas" name="tiposSalidas">
+            {% for tiposSalidas in TiposSalidas %}
+            <option value="{{tiposSalidas.id}}">
+                {{tiposSalidas.nombre}}
+            </option>
+            {% endfor %}
+        </select>
+
+        Dx de complicacion:
+        <select class="mi-select" id="dxComplicacion" name="dxComplicacion">
+            {% for dxComplicacion in DxComplicacion %}
+            <option value="{{dxComplicacion.id}}">
+                {{dxComplicacion.nombre}}
+            </option>
+            {% endfor %}
+        </select>
+
+        Seleccione:<input type="checkbox" id="salClinica" name="salClinica" />
+    </div>
+
+</article>
+
+<article id="GuardarFolio">
+
+    <p class="centraParra">
+    <h3>GuardarFolio</h3>
+    </p>
+
+
+    <form class="form-inline" action="" method="POST" id="formHistoriaClinica">
+
+        <input type="hidden" id="espMedico" name="espMedico" value="{{EspMedico}}"> </input>
+        <input type="hidden" id="tiposFolio" name="tiposFolio" value="{{TiposFolio}}"> </input>
+        <input type="hidden" id="tiposFolioEscogido" name="tiposFolioEscogido" value="{{TiposFolioEscogido}}"> </input>
+        <input type="hidden" id="usuarioRegistro" name="usuarioRegistro" value="{{Username_id}}"> </input>
+        <input type="hidden" id="perfil" name="perfil" value="{{perfil}}"> </input>
+        <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}"> </input>
+        <input type="hidden" id="fechaRegistro" name="fechaRegistro" value=""> </input>
+        <input type="hidden" id="tipoDocPaciente1" name="tipoDocPaciente1" value="{{TipoDocPaciente}}">
+        <input type="hidden" id="documentoPaciente1" name="documentoPaciente1" value="{{DocumentoPaciente}}">
+        <input type="hidden" id="ingresoPaciente1" name="ingresoPaciente1" value="{{IngresoPaciente}}">
         <input type="hidden" id="tipoDocPaciente" name="tipoDocPaciente" value="{{TipoDocPaciente}}">
-	    <input type="hidden" id="documentoPaciente" name="documentoPaciente" value="{{DocumentoPaciente}}">
-	    <input type="hidden" id="ingresoPaciente" name="ingresoPaciente" value="{{IngresoPaciente}}">
-	    <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
-	    <input type="hidden" id="username" name="username" value = "{{Username}}">
-	    <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value = "{{SedeSeleccionada}}">
-	    <input type="hidden" id="numreporte" name="numreporte" value = "{{numreporte}}">
-	    <input type="hidden" id="grupo" name="grupo" value = "{{Grupo}}">
-	    <input type="hidden" id="subGrupo" name="subGrupo" value = "{{SubGrupo}}">
+        <input type="hidden" id="documentoPaciente" name="documentoPaciente" value="{{DocumentoPaciente}}">
+        <input type="hidden" id="ingresoPaciente" name="ingresoPaciente" value="{{IngresoPaciente}}">
+        <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
+        <input type="hidden" id="username" name="username" value="{{Username}}">
+        <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value="{{SedeSeleccionada}}">
+        <input type="hidden" id="numreporte" name="numreporte" value="{{numreporte}}">
+        <input type="hidden" id="grupo" name="grupo" value="{{Grupo}}">
+        <input type="hidden" id="subGrupo" name="subGrupo" value="{{SubGrupo}}">
+
+        <!--  Estos si de la Aplixcacion bse -->
+
+        <input type="hidden" id="sede" name="sede" value="{{Sede}}">
+        <input type="hidden" id="documento" name="documento" value="{{Documento}}">
+        <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+        <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}">
+        <input type="hidden" id="permisosGrales" name="permisosGrales" value="{{PermisosGrales}}">
+        <input type="hidden" id="permisosDetalle" name="permisosDetalle" value="{{PermisosDetalle}}">
+        <input type="hidden" id="escogeModulo" name="escogeModulo" value="{{EscogeModulo}}">
+        <center>
+            <input type="submit" id="btnCrearFolio" name="btnCrearFolio" value="Registrar Folio"> </input>
+        </center>
+
+
+
+    </form>
+
+
+</article>
+
+<article id="Retornar">
+
+    <p class="centraParra">
+    <h3>Retornar</h3>
+    </p>
+
+    <form class="form-inline"
+        action="/escoge/{{Sede}}, {{Username}}, {{Profesional}}, {{Documento}} ,{{NombreSede}} ,{{EscogeModulo}}"
+        method="POST" id="formRetornaHistoria">
+
+        <input type="hidden" id="sede" name="sede" value="{{Sede}}">
+        <input type="hidden" id="servicio" name="servicio" value="{{Servicio}}">
+        <input type="hidden" id="perfil" name="perfil" value="{{Perfil}}">
+        <input type="hidden" id="username" name="username" value="{{Username}}">
+        <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
+        <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+        <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value="{{SedeSeleccionada}}">
+        <input type="hidden" id="numreporte" name="numreporte" value="{{numreporte}}">
+        <input type="hidden" id="grupo" name="grupo" value="{{Grupo}}">
+        <input type="hidden" id="subGrupo" name="subGrupo" value="{{SubGrupo}}">
+        <input type="hidden" id="tipoDocPaciente2" name="tipoDocPaciente2" value="{{TipoDocPaciente}}">
+        <input type="hidden" id="documentoPaciente2" name="documentoPaciente2" value="{{DocumentoPaciente}}">
+        <input type="hidden id=" ingresoPaciente2" name="ingresoPaciente2" value="{{IngresoPaciente}}">
+        <input type="hidden" id="espMedico" name="espMedico" value="{{EspMedico}}"> </input>
+        <input type="hidden" id="tiposFolio" name="tiposFolio" value="{{TiposFolio}}"> </input>
+        <input type="hidden" id="tiposFolioEscogido" name="tiposFolioEscogido" value="{{TiposFolioEscogido}}"> </input>
+
+
+        <!--  Estos si de la Aplixcacion bse -->
+
+        <input type="hidden" id="sede" name="sede" value="{{Sede}}">
+        <input type="hidden" id="documento" name="documento" value="{{Documento}}">
+        <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+        <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}">
+        <input type="hidden" id="permisosGrales" name="permisosGrales" value="{{PermisosGrales}}">
+        <input type="hidden" id="permisosDetalle" name="permisosDetalle" value="{{PermisosDetalle}}">
+        <input type="hidden" id="escogeModulo" name="escogeModulo" value="{{EscogeModulo}}">
+        <center>
+            <input type="submit" id="btnRetornaHistoria" name="btnRetornaHistoria" value="RETORNAR"> </input>
+        </center>
+    </form>
+</article>
+
+<form class="form-inline"
+    action="/escoge/{{Sede}}, {{Username}}, {{Profesional}}, {{Documento}} ,{{NombreSede}} ,{{EscogeModulo}}"
+    method="POST" id="formHistoriaClinicaT">
+
+    <input type="hidden" id="espMedico" name="espMedico" value="{{EspMedico}}"> </input>
+    <input type="hidden" id="tiposFolio" name="tiposFolio" value="{{TiposFolio}}"> </input>
+    <input type="hidden" id="tiposFolioEscogido" name="tiposFolioEscogido" value="{{TiposFolioEscogido}}"> </input>
+    <input type="hidden" id="usuarioRegistro" name="usuarioRegistro" value="{{Username_id}}"> </input>
+    <input type="hidden" id="perfil" name="perfil" value="{{perfil}}"> </input>
+    <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}"> </input>
+    <input type="hidden" id="fechaRegistro" name="fechaRegistro" value=""> </input>
+    <input type="hidden" id="tipoDocPaciente1" name="tipoDocPaciente1" value="{{TipoDocPaciente}}">
+    <input type="hidden" id="documentoPaciente1" name="documentoPaciente1" value="{{DocumentoPaciente}}">
+    <input type="hidden" id="ingresoPaciente1" name="ingresoPaciente1" value="{{IngresoPaciente}}">
+
+    <input type="hidden" id="tipoDocPaciente" name="tipoDocPaciente" value="{{TipoDocPaciente}}">
+    <input type="hidden" id="documentoPaciente" name="documentoPaciente" value="{{DocumentoPaciente}}">
+    <input type="hidden" id="ingresoPaciente" name="ingresoPaciente" value="{{IngresoPaciente}}">
+    <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
+    <input type="hidden" id="username" name="username" value="{{Username}}">
+    <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value="{{SedeSeleccionada}}">
+    <input type="hidden" id="numreporte" name="numreporte" value="{{numreporte}}">
+    <input type="hidden" id="grupo" name="grupo" value="{{Grupo}}">
+    <input type="hidden" id="subGrupo" name="subGrupo" value="{{SubGrupo}}">
 
     <!--  Estos si de la Aplixcacion bse -->
 
-	<input type="hidden" id="sede" name="sede" value = "{{Sede}}">
-	<input type="hidden" id="documento" name="documento" value = "{{Documento}}">
-	<input type="hidden" id="nombreSede" name="nombreSede" value = "{{NombreSede}}">
-	<input type="hidden" id="profesional" name="profesional" value = "{{Profesional}}">
-	<input type="hidden" id="permisosGrales" name="permisosGrales" value = "{{PermisosGrales}}">
-	<input type="hidden" id="permisosDetalle" name="permisosDetalle" value = "{{PermisosDetalle}}">
-	<input type="hidden" id="escogeModulo" name="escogeModulo" value = "{{EscogeModulo}}">
+    <input type="hidden" id="sede" name="sede" value="{{Sede}}">
+    <input type="hidden" id="documento" name="documento" value="{{Documento}}">
+    <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+    <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}">
+    <input type="hidden" id="permisosGrales" name="permisosGrales" value="{{PermisosGrales}}">
+    <input type="hidden" id="permisosDetalle" name="permisosDetalle" value="{{PermisosDetalle}}">
+    <input type="hidden" id="escogeModulo" name="escogeModulo" value="{{EscogeModulo}}">
 
 
-        </form>
+</form>
 
 </div>
 </div>
 
+<script>
+
+    const formulario = document.getElementById('FormEvolucionarHistoria');
+
+    formulario.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var radios = $('input[type="radio"][name="miRadio"]');
+        var filaSeleccionada = radios.filter(":checked")
+
+        if (radios.is(':checked')) {
+
+            $("#FormEvolucionarHistoria").submit();
+        } else {
+            alert('Por favor, selecciona un Paciente.');
+
+            return;
+        }
+    });
+</script>
 {% endblock %}
 
 
 {% block footer %}
 <div class="marco">
-<!--    <div class="wrap">  -->
-        <ul class="tabs">
-            <li><a href="#Clinica"><span  class="tab-text"> </span>Clinica paciente </a></li>
-            <li><a href="#SignosVitales"><span class="tab-text"> </span>Signos
+    <!--    <div class="wrap">  -->
+    <ul class="tabs">
+        <li><a href="#Clinica"><span class="tab-text"> </span>Clinica paciente </a></li>
+        <li><a href="#SignosVitales"><span class="tab-text"> </span>Signos
                 Vitales
             </a>
-            </li>
+        </li>
 
-            <li><a href="#Cirugias"><span class="tab-text"> </span>Cirugias </a></li>
-            <li><a href="#ProcedimientosNoQx"><span class="tab-text"> </span>ProcedimientosNoQx
+        <li><a href="#Cirugias"><span class="tab-text"> </span>Cirugias </a></li>
+        <li><a href="#ProcedimientosNoQx"><span class="tab-text"> </span>ProcedimientosNoQx
             </a>
-	</li>
-            <li><a href="#Antecedentes"> <span class="tab-text"> </span>Antecedentes
+        </li>
+        <li><a href="#Antecedentes"> <span class="tab-text"> </span>Antecedentes
             </a>
-            </li>
- 	<li><a href="#NotasEnfermeria"> <span class="tab-text"> </span> NotasEnf</a></li>
-            <li><a href="#Incapacidades"><span   class="tab-text"> </span>Incapacidades
+        </li>
+        <li><a href="#NotasEnfermeria"> <span class="tab-text"> </span> NotasEnf</a></li>
+        <li><a href="#Incapacidades"><span class="tab-text"> </span>Incapacidades
             </a>
-            </li>
-            <li><a href="#InterConsultas"> <span class="tab-text"> </span>InterConsultas
+        </li>
+        <li><a href="#InterConsultas"> <span class="tab-text"> </span>InterConsultas
             </a></li>
-            <li><a href="#SalidaClinica"> <span class="tab-text"> </span>SalidaClinica
+        <li><a href="#SalidaClinica"> <span class="tab-text"> </span>SalidaClinica
             </a>
-            </li>
+        </li>
 
-        </ul>
-<!--    </div> -->
+    </ul>
+    <!--    </div> -->
 </div>
 {% endblock %}

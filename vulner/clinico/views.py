@@ -70,6 +70,8 @@ from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 from django.conf import settings
 import base64
+from django.db.models import DecimalField, FloatField, IntegerField, F
+
 
 # Create your views here.
 
@@ -2478,26 +2480,46 @@ def crearHistoriaClinica(request):
 
 
                 ## AQUI INGRESAR LOAS ACUMULADOS DE LA FACTURA/FACTURACION
+                print("Pase primera prueba de fuego liquidacionId = ", liquidacionId)
 
-                totalSuministros = LiquidacionDetalle.objects.all().filter(liquidacion_id=liquidacionId).filter(examen_id = None).exclude(estadoRegistro='I').exclude(anulado='S').aggregate(totalS=Coalesce(Sum('valorTotal'), 0))
+
+                try:
+                    with transaction.atomic():
+
+                        totalSuministros = LiquidacionDetalle.objects.all().filter(liquidacion_id=liquidacionId).filter(examen_id = None).exclude(estadoRegistro='I').exclude(anulado='S').aggregate(totalS=Coalesce(Sum('valorTotal' , output_field=IntegerField()), 0)) 
+                        print ("suma = ", totalSuministros)
+
+                except Exception as e:
+                        # Aquí ya se hizo rollback automáticamente
+                        print("Se hizo rollback por PRONO SE HACE NADA:", e)
+                        
+        
+                finally:
+                    print("No haga nada")
+
+
                 totalSuministros = (totalSuministros['totalS']) + 0
                 print("totalSuministros", totalSuministros)
-                totalProcedimientos = LiquidacionDetalle.objects.all().filter(liquidacion_id=liquidacionId).filter(cums_id = None).exclude(estadoRegistro='I').exclude(anulado='S').aggregate(totalP=Coalesce(Sum('valorTotal'), 0))
+                
+                totalProcedimientos = LiquidacionDetalle.objects.all().filter(liquidacion_id=liquidacionId).filter(cums_id = None).exclude(estadoRegistro='I').exclude(anulado='S').aggregate(totalP=Coalesce(Sum('valorTotal', output_field=IntegerField()), 0))
+                #totalProcedimientos = LiquidacionDetalle.objects.all().filter(liquidacion_id=liquidacionId).filter(cums_id = None).exclude(estadoRegistro='I').exclude(anulado='S').aggregate(totalP=Coalesce(Sum('valorTotal'), 0))
+                
                 totalProcedimientos = (totalProcedimientos['totalP']) + 0
+
                 print("totalProcedimientos", totalProcedimientos)
                 print ("liquidacionId = ",liquidacionId )
 
-                totalCopagos = Pagos.objects.all().filter(tipoDoc_id=tipoDocId.id).filter(documento_id=documentoId.id).filter(consec=ingresoPaciente).filter(formaPago_id=4).exclude(estadoReg='I').exclude(anulado='N').aggregate(totalC=Coalesce(Sum('valor'), 0))
+                totalCopagos = Pagos.objects.all().filter(tipoDoc_id=tipoDocId.id).filter(documento_id=documentoId.id).filter(consec=ingresoPaciente).filter(formaPago_id=4).exclude(estadoReg='I').exclude(anulado='N').aggregate(totalC=Coalesce(Sum('valor', output_field=IntegerField()), 0))
                 totalCopagos = (totalCopagos['totalC']) + 0
                 print("totalCopagos", totalCopagos)
                 print("ingresoPaciente = ", ingresoPaciente)
-                totalCuotaModeradora = Pagos.objects.all().filter(tipoDoc_id=tipoDocId.id).filter(documento_id=documentoId.id).filter(consec=ingresoPaciente).filter(formaPago_id=3).exclude(estadoReg='I').exclude(anulado='N').aggregate(totalM=Coalesce(Sum('valor'), 0))
+                totalCuotaModeradora = Pagos.objects.all().filter(tipoDoc_id=tipoDocId.id).filter(documento_id=documentoId.id).filter(consec=ingresoPaciente).filter(formaPago_id=3).exclude(estadoReg='I').exclude(anulado='N').aggregate(totalM=Coalesce(Sum('valor', output_field=IntegerField()), 0))
                 totalCuotaModeradora = (totalCuotaModeradora['totalM']) + 0
                 print("totalCuotaModeradora", totalCuotaModeradora)
-                totalAnticipos = Pagos.objects.all().filter(tipoDoc_id=tipoDocId.id).filter(documento_id=documentoId.id).filter(consec=ingresoPaciente).filter(formaPago_id=1).exclude(estadoReg='I').exclude(anulado='N').aggregate(Anticipos=Coalesce(Sum('valor'), 0))
+                totalAnticipos = Pagos.objects.all().filter(tipoDoc_id=tipoDocId.id).filter(documento_id=documentoId.id).filter(consec=ingresoPaciente).filter(formaPago_id=1).exclude(estadoReg='I').exclude(anulado='N').aggregate(Anticipos=Coalesce(Sum('valor' , output_field=IntegerField()), 0))
                 totalAnticipos = (totalAnticipos['Anticipos']) + 0
                 print("totalAnticipos", totalAnticipos)
-                totalAbonos = Pagos.objects.all().filter(tipoDoc_id=tipoDocId.id).filter(documento_id=documentoId.id).filter(consec=ingresoPaciente).filter(formaPago_id=2).exclude(estadoReg='I').exclude(anulado='N').aggregate(totalAb=Coalesce(Sum('valor'), 0))
+                totalAbonos = Pagos.objects.all().filter(tipoDoc_id=tipoDocId.id).filter(documento_id=documentoId.id).filter(consec=ingresoPaciente).filter(formaPago_id=2).exclude(estadoReg='I').exclude(anulado='N').aggregate(totalAb=Coalesce(Sum('valor', output_field=IntegerField()), 0))
                 totalAbonos = (totalAbonos['totalAb']) + 0
                 #totalAbonos = totalCopagos + totalAnticipos + totalCuotaModeradora
                 print("totalAbonos", totalAbonos)

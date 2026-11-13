@@ -1,0 +1,186 @@
+
+
+				
+                                        <table  id= "tablaInfoMedicamento" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
+                                           <thead>
+                                            <tr>    
+						<bold> 
+						<th>id</th>                   
+                                                <th>Folio</th>                   
+                                                <th>FechaFormulado</th>                   
+                                                <th>Formulado</th>
+                                                <th>Sum.Aplicado</th>
+                                                <th>#</th>
+                                                <th>FechaPlanea</th>
+                                                <th>FechaAplica</th>
+                                                <th>Cantidad Aplicada</th>
+
+						</bold>                                  
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                     
+                                        </table>
+
+
+			<!-- FIN TABLE DE  EL DATATABLE  -->
+
+
+             <table class="table  " style="height: 50px; background-color:LightBlue;  width:100%;">
+            <tr>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+             <!-- DESDE AQUIP DATATABLE  -->
+
+                    <table class="table"
+                           style="height: 20px; background-color:LightGray; BORDERCOLOR=RED ; border: 8px solid black; border-color: #96D4D4;  width:99%;">
+                        <form class="form-inline" action="/crearFormulacionDef/" method="POST"
+                              id="FormaFormulacion" style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
+
+                            <!-- INICIO TABLE DE  EL DATATABLE  -->
+                            <div class="row" style="height: 40px;">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header" style="height:80px;">
+                                            <center>
+                                             
+                    				Formula
+                                                        <select class="select-box"  id="medicamentos"
+                                                                name="medicamentos">
+                                                            {% for medicamentos in Medicamentos %}
+                                                            <option value="{{medicamentos.id}}">
+                                                                {{medicamentos.nombre}}
+                                                            </option>
+                                                            {% endfor %}
+                                                        </select>
+                                                 
+					                                		Dosis:
+                                                        <input type="text" id="dosis" name="dosis" value="" size="2" required>
+                                                   
+ 							                    U_Medida
+                                                        <select class="select-box" id="uMedidaDosis"
+                                                                name="uMedidaDosis" required>
+                                                            {% for uMedidaDosis in UMedidaDosis %}
+                                                            <option value="{{uMedidaDosis.id}}">
+                                                                {{uMedidaDosis.nombre}}
+                                                            </option>
+                                                            {% endfor %}
+                                                        </select>
+                                              
+							                    Farmaceut:
+                                                        <select class="select-box" id="formaFarma"
+                                                                name="formaFarma" required>
+                                                            {% for formaFarma in FormaFarma %}
+                                                            <option value="{{formaFarma.id}}">
+                                                                {{formaFarma.nombre}}
+                                                            </option>
+                                                            {% endfor %}
+                                                        </select>
+                                                 
+							                        Frecuencia
+                                                        <select class="select-box" id="frecuencia"
+                                                                name="frecuencia" required>
+                                                            {% for frecuencia in Frecuencia %}
+                                                            <option value="{{frecuencia.id}}">
+                                                                {{frecuencia.nombre}}
+                                                            </option>
+                                                            {% endfor %}
+                                                        </select>
+                                                
+							      Vias
+                                                        <select class="select-box" id="vias"
+                                                                name="vias"  required>
+                                                            {% for viasAdministracion in ViasAdministracion %}
+                                                            <option value="{{viasAdministracion.id}}">
+                                                                {{viasAdministracion.nombre}}
+                                                            </option>
+                                                            {% endfor %}
+                                                        </select>
+                                              
+							        Cant:
+                                                        <input type="text" id="cantidadMedicamento" name="cantidadMedicamento" value="" size="1" required>
+                                                  
+							                            Dias:
+                                                        <input type="text" id="diasTratamiento" name="diasTratamiento" value="" size="1" required>
+                                           
+                                                        Mipres:
+                                                        <input type="text" id="mipresMed" name="mipresMed" value="" size="10">
+                                           
+                                                        Numero Orden:
+                                                        <input type="text" id="ordenMedicaMed" name="ordenMedicaMed" value="" size="10">
+                                                 
+                                                        <span class="text-secondary">Adicionar</span>
+                                                        <a class="btn btn-success" href="javascript:void(0)"
+                                                           id="BtnAdicionarFormulacion"> <i class="fa fa-plus"></i></a>
+                                              
+                                            </center>
+                                        </div>
+                                        <div class="card-body" style="height:100px;">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <table id="tablaFormulacion"
+                                                           class="display nowrap table table table-bordered  tablaFormulacion table-hover table-sm dtr-inline">
+                                                        <thead>
+                                                        <tr>
+                                                            <th style="width:5%;">Id</th>
+                                                            <th style="width:5%;">Medicamento</th>
+                                                            <th style="width:5%;">Dosis</th>
+                                                            <th style="width:5%;">IdUMedida</th>
+                                                            <th style="width:5%;">UMedida</th>
+                                                            <th style="width:5%;">IdFarma</th>
+                                                            <th style="width:5%;">Farmaceut</th>
+                                                            <th style="width:5%;">IdFrec</th>
+                                                            <th style="width:5%;">Frecuencia</th>
+							    <th style="width:5%;">IdVias</th>
+                                                            <th style="width:5%;">ViasAdmon</th>
+                                                            <th style="width:5%;">Cant</th>
+                                                            <th style="width:5%;">Dias</th>
+                                                            <th style="width:5%;">Mipres</th>
+                                                            <th style="width:3%;">Borrar</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody style="vertical-align:bottom">
+                                                        <tr style="height:10%">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                             <td></td>
+                                                              <td></td>
+								<td></td>
+                                                              <td></td>
+								<td></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TABLE DE  EL DATATABLE  -->
+                        </form>
+                    </table>
+
+             <!-- HASTA AQUI DATATABLE -->
+
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+
+

@@ -417,7 +417,7 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
 
    	   if (controlRad == 0)
    	   {
-   	   var table1 = $('#tablaRadiologia').DataTable({scrollY: '200px', paging:false, info:false, scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
+   	   var table1 = $('#tablaRadiologia').DataTable({scrollY: '120px', paging:false, info:false, scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
    	   controlRad=1;
    	   }
    	   else
@@ -453,7 +453,7 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
 
    	   if (controlTer == 0)
    	   {
-   	   var table3 = $('#tablaTerapias').DataTable({scrollY: '150px', paging:false,   scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
+   	   var table3 = $('#tablaTerapias').DataTable({scrollY: '120px',info: false, paging:false,   scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
    	   controlTer=1;
    	   }
    	   else
@@ -486,7 +486,7 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
 
    	   if (controlPro == 0)
    	   {
-   	   var table4 = $('#tablaNoQx').DataTable({scrollY: '150px', paging:false,   scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
+   	   var table4 = $('#tablaNoQx').DataTable({scrollY: '120px', paging:false, info:false, scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
    	   controlPro=1;
    	   }
    	   else
@@ -518,7 +518,7 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
 
    	   if (controlAnt == 0)
    	   {
-   	   var table5 = $('#tablaAntecedentes').DataTable({scrollY: '150px', paging:false,   scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
+   	   var table5 = $('#tablaAntecedentes').DataTable({scrollY: '120px', paging:false, info:false, scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
    	   controlAnt=1;
    	   }
    	   else
@@ -549,7 +549,7 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
 
    	   if (controlDia == 0)
    	   {
-   	   var table6 = $('#tablaDiagnosticos').DataTable({scrollY: '150px', paging:false,   scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
+   	   var table6 = $('#tablaDiagnosticos').DataTable({scrollY: '120px', paging:false,  info:false, scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
    	   controlDia=1;
    	   }
    	   else
@@ -583,7 +583,7 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
 
    	   if (controlInt == 0)
    	   {
-   	   var table7 = $('#tablaInterconsultas').DataTable({scrollY: '150px', paging:false,   scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
+   	   var table7 = $('#tablaInterconsultas').DataTable({scrollY: '120px', paging:false, info:false, scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
    	   controlInt=1;
    	   }
    	   else
@@ -645,7 +645,7 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
 
    	   if (controlMed == 0)
    	   {
-   	   var table10 = $('#tablaFormulacion').DataTable({scrollY: '50px', paging:false,   scrollX: true, scrollY: '200px', scrollCollapse: true});   // accede de nuevo a la DataTable.
+   	   var table10 = $('#tablaFormulacion').DataTable({scrollY: '120px', paging:false, info:false, scrollX: true, scrollY: '200px', scrollCollapse: true});   // accede de nuevo a la DataTable.
    	   controlMed=1;
    	   }
    	   else
@@ -746,7 +746,7 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
 
    	   if (controlLab == 0)
    	   {
-   	   var tableL = $('#tablaEnfermedadess').DataTable({scrollY: '150px', paging:false,   scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
+   	   var tableL = $('#tablaEnfermedadess').DataTable({scrollY: '120px', paging:false, info:false, scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
    	   controlLab=1;
    	   }
    	   else
@@ -780,7 +780,7 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
 
    	   if (controlEnf == 0)
    	   {
-   	   var tableE = $('#tablaNotasEnfermeria').DataTable({scrollY: '150px', paging:false,   scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
+   	   var tableE = $('#tablaNotasEnfermeria').DataTable({scrollY: '120px', paging:false, info:false, scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
    	   controlEnf=1;
    	   }
    	   else
@@ -919,7 +919,7 @@ function tableActionsRadiologia() {
                     },
                 processing: true,
                 serverSide: false,
-                scrollY: '130px',
+                scrollY: '150px',
 	            scrollX: true,
 	            scrollCollapse: true,
                 paging:false,
