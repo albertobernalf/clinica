@@ -318,9 +318,6 @@ $('#tablaFormulacion tbody').on('click', 'tr', function () {
 });
 
 
-
-
-
 $('#tablaTerapias tbody').on('click', 'tr', function () {
       var tableL = $('#tablaTerapias').DataTable();
       var fila = $(this).parents("tr")['prevObject']['0']['_DT_RowIndex'];
@@ -408,7 +405,6 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
 		 document.getElementById("tablaFacturacion").deleteRow(fila-1);
 });
 
-
         /*------------------------------------------
         --------------------------------------------
         Create Post Code Radiologia
@@ -416,10 +412,12 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
         --------------------------------------------*/
         $('#BtnAdicionarRadiologia').click(function (e) {
             e.preventDefault();
+            alert("Entre a Adicionar Radiologia");
+            
 
    	   if (controlRad == 0)
    	   {
-   	   var table1 = $('#tablaRadiologia').DataTable({scrollY: '150px', paging:false,   scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
+   	   var table1 = $('#tablaRadiologia').DataTable({scrollY: '200px', paging:false, info:false, scrollX: true,  scrollCollapse: true,  lengthMenu: [5]});   // accede de nuevo a la DataTable.
    	   controlRad=1;
    	   }
    	   else
@@ -435,6 +433,7 @@ $('#tablaFacturacions tbody').on('click', 'tr', function () {
 	   var mipres = document.getElementById("mipresRad").value;
 
         alert("valor de MipresRad = " + mipres);
+           alert("LISTO VOY A ADICIONAR RADIOLOGIA " + rad + "  " + text + "  " + cantidad + "  " + observa + "  " + mipres);
 
 	        table1.row.add([
                     rad, text,  cantidad, observa, mipres , '<i class="fa fa-trash"></i>'
@@ -924,6 +923,7 @@ function tableActionsRadiologia() {
 	            scrollX: true,
 	            scrollCollapse: true,
                 paging:false,
+                info:false,
                  columnDefs: [
                 {
                     "render": function ( data, type, row ) {

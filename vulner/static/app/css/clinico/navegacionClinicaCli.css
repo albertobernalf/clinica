@@ -218,9 +218,66 @@ textarea
   width: 100%;
    
 }
+
+.mi-select
+{
+    width: 100%;
+    max-width: 240px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease;    
+}
+
+.tablaEstilos
+{
+font-family:sans-serif;
+width: 3%;
+font-size: 12px;
+
+}
 /********************* DESDE AQUI LABORATORIOcss de VENTANAS MODA */
 
+.selectMed
+{
 
+}
+.selectMedUnidades
+{
+
+}
+.selectMedvias
+{
+
+}
+.selectMedFrecuencia
+{
+
+}
+
+.contenedor-fecha
+{
+    dipslay: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+
+
+}
+.icono-flecha
+{
+    width: 16px;
+    height: 16px;
+    
+}
 /* Reseteo básico y fuentes */
 
 

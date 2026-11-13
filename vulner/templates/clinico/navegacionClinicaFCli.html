@@ -665,8 +665,6 @@
     </article>
 
     <article id="Laboratorios">
-
-
 	<!-- desde aqui resultados ya de laboratorio del ingreso -->
 
             <!-- INICIO TABLE DE  EL DATATABLE  -->
@@ -694,26 +692,27 @@
                 </tbody>
         
             </table>
-            <!--  </div> -->
-        </div>
+
+              </div> 
+        
 			<!-- FIN TABLE DE  EL DATATABLE  -->
 
              <!-- DESDE AQUIP DATATABLE  -->
-      <table class="table">
-            <tr>
-                <td>
+       <table class="table"> 
+            <tr> 
+               <td> 
+               </td> 
+               <td> 
                 </td>
-                <td>
-                </td>
-                <td>
+               <td> 
                     <table class="table">
-                        <form class="form-inline" action="/crearLaboratoriosDef/" method="POST" id="FormaLaboratorios">
+                        <form action="/crearLaboratoriosDef/" method="POST" id="FormaLaboratorios">
                             <!-- INICIO TABLE DE  EL DATATABLE  -->
                             <!--  <div class="card">  -->
                             <!--     <div class="card-header" style="width: 90%;">  -->
                     
                                     Seleccionar:
-                                    <select id="lab" name="lab">
+                                    <select class="mi-select" id="lab" name="lab">
                                         {% for laboratorios in Laboratorios %}
                                         <option value="{{laboratorios.cups}}">
                                             {{laboratorios.nombre}}
@@ -725,13 +724,13 @@
                                     <input type="text" id="cantidad" name="cantidad" value="1" >
                     
                                     Mipres:
-                                    <input type="text" id="mipresLab" name="mipresLab" >
+                                    <input type="text"  id="mipresLab" name="mipresLab" >
                     
                                     Numero Orden:
-                                    <input type="text" id="ordenMedicaLab" name="ordenMedicaLab" value="" >
+                                    <input type="text"  id="ordenMedicaLab" name="ordenMedicaLab" value="" >
 
                                     Observaciones:
-                                    <input type="text" id="observa" name="observa">
+                                    <input type="text"  id="observa" name="observa">
 
                     
                                     <span class="text-secondary">Adicionar</span>
@@ -743,22 +742,23 @@
                                     <table id="tablaLaboratorios" class="display nowrap table table table-bordered  tablaLaboratorios table-hover table-sm dtr-inline">
                                         <thead>
                                             <tr>
-                                                <th style="width:15%;">id</th>
-                                                <th style="width:15%;">Nombres</th>
-                                                <th style="width:15%;">Cantidad</th>
-                                                <th style="width:15%;">Observaciones</th>
-                                                <th style="width:15%;">Mipres</th>
+                                                <th class= "tablaEstilos">id</th>
+                                                <th class= "tablaEstilos">Nombres</th>
+                                                <th class= "tablaEstilos">Cantidad</th>
+                                                <th class= "tablaEstilos">Observaciones</th>
+                                                <th class= "tablaEstilos">Mipres</th>
                                                 <th>Borrar</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td class= "tablaEstilos"></td>
+                                                <td class= "tablaEstilos"></td>
+                                                <td class= "tablaEstilos"></td>
+                                                <td class= "tablaEstilos"></td>
+                                                <td class= "tablaEstilos"></td>
+                                                <td class= "tablaEstilos"></td>
                     
                                             </tr>
                                         </tbody>
@@ -770,150 +770,106 @@
                         </form>
                     </table>
              <!-- HASTA AQUI DATATABLE -->
+                </td> 
+            <td> 
                 </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
-        </table>
+                <td> 
+                </td> 
+            </tr> 
+         </table> 
+         
 	<!-- </div>  de classs marco-->
     </article>
+<article id="Radiologia">
 
-    <article id="Radiologia">
-    
-        <!-- desde aqui resultados ya de radiologia del ingreso -->
-    
-        <!-- INICIO TABLE DE  EL DATATABLE  -->
-        <div class="tabla-contenedor">             
-    
-            <table id="tablaInfoRadiologia" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%;">
-                <thead>
-                    <tr>
-                        <bold>
-                            <th>id</th>
-                            <th>Folio</th>
-                            <th>Fecha</th>
-                            <th>Fec.Tomado</th>
-                            <th>Fec.Reporte</th>
-                            <th>Examen</th>
-                            <th>Interpretacion</th>
-                            <th>Fecha interpretacion</th>
-                            <th>Estado</th>
-                        </bold>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-    
-            </table>
-            </div>
+    <!-- desde aqui resultados ya de radiologia del ingreso -->
 
-        
-    
-        <!-- FIN TABLE DE  EL DATATABLE  -->
-    
-    
-        <!-- FIN                                                    -->
-    
-        <table class="table  " style="height: 25px; background-color:LightGray;  width:100%;">
-            <tr>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-                    <!-- DESDE AQUIP DATATABLE  -->
-        
-                    <table class="table"
-                        style="background-color:LightGray; BORDERCOLOR=RED ; border: 8px solid black;   width:99%;">
-                        <form class="form-inline" action="/crearRadiologiaDef/" method="POST" id="FormaRadiologia"
-                            style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
-                            <input type="hidden" id="sede1" name="sede1" value="{{Sede}}">
-        
-                            <!-- INICIO TABLE DE  EL DATATABLE  -->
-        
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card">
-                                        <div class="card-header" style="height:50px;">
-                                            <center>
-        
-                                                Seleccion:
-                                                <select class="select-box" id="rad" name="rad" style="width: 25%;">
-                                                    {% for radiologias in Radiologias %}
-                                                    <option value="{{radiologias.cups}}"> {{radiologias.nombre}}
-                                                    </option>
-                                                    {% endfor %}
-                                                </select>
-        
-                                                Cantidad:
-                                                <input type="text" id="cantidad3" name="cantidad3" value="1">
-        
-        
-        
-                                                Observaciones:
-                                                <input type="text" id="observa3" name="observa3" value="">
-        
-                                                Mipres:
-                                                <input type="text" id="mipresRad" name="mipresRad">
-        
-                                                Numero Orden:
-                                                <input type="text" id="ordenMedicaRad" name="ordenMedicaRad" value="">
-        
-                                                <span class="text-secondary">Adicionar</span>
-                                                <a class="btn btn-success" href="javascript:void(0)"
-                                                    id="BtnAdicionarRadiologia"> <i class="fa fa-plus"></i></a>
-        
-                                            </center>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <table id=tablaRadiologia
-                                                        class="display nowrap table table table-bordered  tablaRadiologia table-hover table-sm dtr-inline">
-                                                        <thead>
-                                                            <tr>
-                                                                <th style="width:5%;">id</th>
-                                                                <th style="width:5%;">Nombres</th>
-                                                                <th style="width:5%;">Cantidad</th>
-                                                                <th style="width:5%;">Observaciones</th>
-                                                                <th style="width:5%;">Mipres</th>
-                                                                <th style="width:3%;">Borrar</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody style="vertical-align:bottom">
-                                                            <tr style="height:10%">
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FIN TABLE DE  EL DATATABLE  -->
-                        </form>
-                    </table>
-        
-                    <!-- HASTA AQUI DATATABLE -->
-        
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
+    <!-- INICIO TABLE DE  EL DATATABLE  -->
+    <!-- <div class="tabla-contenedor">  -->
+
+        <table id="tablaInfoRadiologia" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%;">
+            <thead>
+                <tr>
+                    <bold>
+                        <th>id</th>
+                        <th>Folio</th>
+                        <th>Fecha</th>
+                        <th>Fec.Tomado</th>
+                        <th>Fec.Reporte</th>
+                        <th>Examen</th>
+                        <th>Interpretacion</th>
+                        <th>Fecha interpretacion</th>
+                        <th>Estado</th>
+                    </bold>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
         </table>
-    
-    </article>
+    <!-- </div>  -->
+
+    <!-- FIN TABLE DE  EL DATATABLE  -->
+
+    <table class="table">
+        <form action="/crearRadiologiaDef/" method="POST" id="FormaRadiologia">
+            <input type="hidden" id="sede1" name="sede1" value="{{Sede}}">
+            Seleccion:
+            <select class="mi-select" id="rad" name="rad">
+                {% for radiologias in Radiologias %}
+                <option value="{{radiologias.cups}}"> {{radiologias.nombre}}
+                </option>
+                {% endfor %}
+            </select>
+
+            Cantidad:
+            <input type="text" class="tablaEstilos" id="cantidad3" name="cantidad3" value="1">
+
+            Mipres:
+            <input type="text"  id="mipresRad" name="mipresRad">
+
+            Observaciones:
+            <input type="text"  id="observa3" name="observa3" value="" size="35">
+
+            
+            <input type="hidden"  id="ordenMedicaRad" name="ordenMedicaRad" value="">
+
+          <!--  <span class="text-secondary">Adicion </span>  -->
+            <!-- <a class="btn btn-success" href="javascript:void(0)" id="BtnAdicionarRadiologia"></a> -->
+
+            <span class="boton-desplegable"><a href="javascript:void(0)" id="BtnAdicionarRadiologia">Adicion</a>
+                <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="50" height="50"></img>              
+
+            </span>
+
+        </form>
+    </table>
+
+    <table id=tablaRadiologia
+        class="display nowrap table table table-bordered  tablaRadiologia table-hover table-sm dtr-inline">
+        <thead>
+            <tr>
+                <th class="tablaEstilos">id</th>
+                <th class="tablaEstilos">Nombres</th>
+                <th class="tablaEstilos">Cantidad</th>                
+                <th class="tablaEstilos">Mipres</th>
+                <th class="tablaEstilos">Observaciones</th>
+                <th class="tablaEstilos">Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- FIN                                                    -->
+</article>
 
 
     <article id="Terapias">
@@ -1576,137 +1532,100 @@
     </article>
 
     <article id="Diagnosticos">
-
-	<!-- desde aqui resultados ya de Diagnosticos del ingreso -->
-
-            <!-- INICIO TABLE DE  EL DATATABLE  -->
-<br><br><br><br>
-        <div class="tabla-contenedor">     
-
-				
-                                        <table  id= "tablaInfoDiagnostico" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
-                                           <thead>
-                                            <tr>    
-						<bold> 
-						<th>id</th>                   
-                                                <th>Folio</th>                   
-                                                <th>Fecha</th>                   
-                                                <th>Tipo</th>
-                                                <th>Descripcion</th>	              
-						</bold>                                  
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                     
-                                        </table>
-
-                                </div>
-
-			<!-- FIN TABLE DE  EL DATATABLE  -->
-
-
-
-
-             <table class="table  " style="height: 25px; background-color:LightGray;  width:90%;">
-            <tr>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-             <!-- DESDE AQUIP DATATABLE  -->
-
-                    <table class="table"
-                           style="background-color:LightGray; BORDERCOLOR=RED ; border: 8px solid black;   width:99%;">
-                        <form class="form-inline" action="/crearDiagnisticosDef/" method="POST"
-                              id="FormaDiagnosticos" style="display: flex; flex-direction: row; gap: 10px;flex-wrap: wrap; text-align: left;">
-
-                            <!-- INICIO TABLE DE  EL DATATABLE  -->
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card">
-                                        <div class="card-header" style="height:50px;">
-                                            <center>
-                                            Seleccion:
-                                                        <select class="select-box"  id="tiposDiagnosticos"
-                                                                name="tiposDiagnosticos" style="width: 25%;">
-                                                            {% for tiposDiagnostico in TiposDiagnostico %}
-                                                            <option value="{{tiposDiagnostico.id}}">
-                                                                {{tiposDiagnostico.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                                
-
-                                                        <select class="select-box" id="diagnosticos"
-                                                                name="diagnosticos" style="width: 25%;">
-                                                            {% for diagnosticos in Diagnosticos %}
-                                                            <option value="{{diagnosticos.id}}">
-                                                                {{diagnosticos.nombre}}
-                                                            </option>
-                                                            {% endfor %}
-                                                        </select>
-                                                
-							Observaciones:
-                                                        <input type="text" id="observa7" name="observa7" value="">
-                                            
-                                                        <span class="text-secondary">Adicionar</span>
-                                                        <a class="btn btn-success" href="javascript:void(0)"
-                                                           id="BtnAdicionarDiagnosticos"> <i class="fa fa-plus"></i></a>
-                                               
-                                            </center>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <table id="tablaDiagnosticos"
-                                                           class="display nowrap table table table-bordered  tablaDiagnosticos table-hover table-sm dtr-inline">
-                                                        <thead>
-                                                        <tr>
-                                                            <th style="width:5%;">IdTipo</th>
-                                                            <th style="width:5%;">Tipo Diagnostico</th>
-                                                            <th style="width:5%;">IdDiag</th>
-                                                            <th style="width:5%;">Diagnostico</th>
-                                                            <th style="width:5%;">Observaciones</th>
-                                                            <th style="width:3%;">Borrar</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody style="vertical-align:bottom">
-                                                        <tr style="height:10%">
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-
-
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FIN TABLE DE  EL DATATABLE  -->
-                        </form>
-                    </table>
-
-             <!-- HASTA AQUI DATATABLE -->
-
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
+    
+        <!-- desde aqui resultados ya de Diagnosticos del ingreso -->
+    
+        <!-- INICIO TABLE DE  EL DATATABLE  -->
+        <table id="tablaInfoDiagnostico" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%" ;>
+            <thead>
+                <tr>
+                    <bold>
+                        <th>id</th>
+                        <th>Folio</th>
+                        <th>Fecha</th>
+                        <th>Tipo</th>
+                        <th>Descripcion</th>
+                    </bold>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+    
         </table>
+    
+        <!-- DESDE AQUIP DATATABLE  -->
+    
+        <table class="table">
+            <form action="/crearDiagnisticosDef/" method="POST" id="FormaDiagnosticos">
+    
+                <!-- INICIO TABLE DE  EL DATATABLE  -->
+                Seleccion:
+                <select class="mi-select" id="tiposDiagnosticos" name="tiposDiagnosticos">
+                    {% for tiposDiagnostico in TiposDiagnostico %}
+                    <option value="{{tiposDiagnostico.id}}">
+                        {{tiposDiagnostico.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+    
+    
+                <select class="mi-select" id="diagnosticos" name="diagnosticos">
+                    {% for diagnosticos in Diagnosticos %}
+                    <option value="{{diagnosticos.id}}">
+                        {{diagnosticos.nombre}}
+                    </option>
+                    {% endfor %}
+                </select>
+    
+                Observaciones:
+                <input type="text" id="observa7" name="observa7" value="">
+    
+                <!-- <span class="text-secondary">Adicionar</span> -->
+                <!-- <a class="btn btn-success" href="javascript:void(0)" id="BtnAdicionarDiagnosticos"> <i  -->
+                <!--        class="fa fa-plus"></i></a> -->
+
+                <span class="boton-desplegable"><a href="javascript:void(0)" id="BtnAdicionarDiagnosticos">Adicion</a>
+                <img src="{% static 'img/un-dedo.png'%}" alt="Cargar" width="50" height="50"></img>              
+
+            </span>
 
 
-
+    
+    
+                <table id="tablaDiagnosticos"
+                    class="display nowrap table table table-bordered  tablaDiagnosticos table-hover table-sm dtr-inline">
+                    <thead>
+                        <tr>
+                            <th class="tablaEstilos">IdTipo</th>
+                            <th class="tablaEstilos">Tipo Diagnostico</th>
+                            <th class="tablaEstilos">IdDiag</th>
+                            <th class="tablaEstilos">Diagnostico</th>
+                            <th class="tablaEstilos">Observaciones</th>
+                            <th class="tablaEstilos">Borrar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+    
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- FIN TABLE DE  EL DATATABLE  -->
+            </form>
+        </table>
+    
+        <!-- HASTA AQUI DATATABLE -->
+    
+    
+    
+    
+    
     </article>
 
     <article id="Antecedentes">
@@ -2192,9 +2111,10 @@
     </article>
 
     <article id="GuardarFolio">
-        <center><br><br><br><br><br>
 
-            <h3>GuardarFolio</h3></center>
+            <center>
+            <h3>GuardarFolio</h3>
+            </center>
 
         <form class="form-inline" action="" method="POST" id="formHistoriaClinica">
 
@@ -2237,9 +2157,9 @@
     </article>
 
     <article id="Retornar">
-        <center><br><br><br><br><br>
-            <h3>Retornar</h3></center>
-
+        <center>
+            <h3>Retornar</h3>
+</center>
         <form class="form-inline" action="/escoge/{{Sede}}, {{Username}}, {{Profesional}}, {{Documento}} ,{{NombreSede}} ,{{EscogeModulo}}" method="POST" id="formRetornaHistoria">
             
             <input type="hidden" id="sede" name="sede" value="{{Sede}}">

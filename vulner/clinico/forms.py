@@ -163,12 +163,12 @@ class historiaForm(forms.ModelForm):
 
 
         widgets = {
-            'motivo':    forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "80", 'rows': "200", 'placeholder': "Motivo"}),
-            'tratamiento': forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "80", 'rows': "200", 'placeholder': "tratamiento"}),
-            'subjetivo': forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "80", 'rows': "200", 'placeholder': "Subjetivo"}),
-            'objetivo':  forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "80", 'rows': "200", 'placeholder': "Objetivo"}),
-            'analisis':  forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "80", 'rows': "200", 'placeholder': "Analisis"}),
-            'plann':     forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "80", 'rows': "6", 'placeholder': "Plan"}),
+            'motivo':    forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "180", 'rows': "200", 'placeholder': "Motivo"}),
+            'tratamiento': forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "180", 'rows': "200", 'placeholder': "tratamiento"}),
+            'subjetivo': forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "180", 'rows': "200", 'placeholder': "Subjetivo"}),
+            'objetivo':  forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "180", 'rows': "200", 'placeholder': "Objetivo"}),
+            'analisis':  forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "180", 'rows': "200", 'placeholder': "Analisis"}),
+            'plann':     forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "180", 'rows': "6", 'placeholder': "Plan"}),
             'ordenDeControl': forms.Textarea(attrs={'class': 'form-control', 'width': "100%", 'cols': "40", 'rows': "6", 'placeholder': "Orden De Control"}),
             'textoNotaAclaratoria':     forms.Textarea(attrs={'width': "30%", 'cols': "20", 'rows': "4", 'placeholder': "textoNotaAclaratoria"}),
             'examenFisico':     forms.Textarea(attrs={'width': "30%", 'cols': "20", 'rows': "4", 'placeholder': "examenFisico"}),

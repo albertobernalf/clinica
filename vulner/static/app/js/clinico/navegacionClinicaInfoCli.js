@@ -47,26 +47,27 @@ function arrancaInfoClinico(valorTabla,valorData)
              "<'row mt-0'<'col-sm-5'i><'col-sm-7'p>>",
 
   buttons: [
-    {
-      extend: 'excelHtml5',
-      text: '<i class="fas fa-file-excel"></i> ',
+   // {
+    //  extend: 'excelHtml5',
+    //  text: '<i class="fas fa-file-excel"></i> ',
 	// text: '<i class="bi bi-file-earmark-excel-fill"></i> Exportar Excel',
-      titleAttr: 'Exportar a Excel',
-      className: 'btn btn-success btn-sm',
-    },
+    //  titleAttr: 'Exportar a Excel',
+    //  className: 'btn btn-success btn-sm',
+    //},
     {
       extend: 'pdfHtml5',
       text: '<i class="fas fa-file-pdf"></i> ',
       titleAttr: 'Exportar a PDF',
       className: 'btn btn-danger btn-sm',
     },
-    {
-      extend: 'print',
-      text: '<i class="fa fa-print"></i> ',
-      titleAttr: 'Imprimir',
-      className: 'btn btn-info btn-sm',
-    },
+   // {
+    //  extend: 'print',
+   //   text: '<i class="fa fa-print"></i> ',
+   //   titleAttr: 'Imprimir',
+   //   className: 'btn btn-info btn-sm',
+  //  },
   ],
+  info: false,
 autoWidth: false,
   lengthMenu: [2, 4, 15],
            processing: true,
