@@ -349,7 +349,7 @@ dom: "<'row mb-0'<'col-sm-6'f><'col-sm-4'><'col-sm-2'B>>" + // B = Botones a la 
             columnDefs: [
 		{ className: 'centered', targets: [0, 1, 2, 3, 4, 5] },
 		{     
-                    "targets": 16
+                    "targets": 15
                }
             ],
 	 pageLength: 3,
@@ -816,12 +816,14 @@ const initDataTableLiquidacion = async () => {
         arrancaLiquidacion(2,data);
 	    dataTableLiquidacionDetalleInitialized = true;
 
+        arrancaLiquidacion(3,data);
+	    dataTableFacturacionInitialized = true;
 
-        //arrancaLiquidacion(3,data);
-	//    dataTableFacturacionInitialized = true;
+		alert("Hasta este punto ya debe estar cargado FACTIURACION ver logs");
 
-        //arrancaLiquidacion(4,data);
-	//    dataTableFacAbonosInitialized = true;
+
+       arrancaLiquidacion(4,data);
+	    dataTableFacAbonosInitialized = true;
 
 	 $('#tablaLiquidacion tbody tr:eq(0) .miLiquidacion').prop('checked', true);  // Checkprimera fila el checkbox creo solo javascript
 
@@ -873,6 +875,7 @@ window.addEventListener('load', async () => {
 	           type: 'POST',
 	           dataType : 'json',
 	  		success: function (data) {
+				alert("Regrese de POSTconsultaliquidacion ");
 
 			// alert("llegue con esta data" + JSON.stringify(data));
 	//		alert("llegue con esta data.id" + data.id);
@@ -1080,6 +1083,7 @@ window.addEventListener('load', async () => {
 	       		     arrancaLiquidacion(6,data2);
 			     dataTableFacRefacturacionInitialized = true;
 
+				alert("Acabo de cargar REFACTURACION");
 
                   },
 	   	        error: function(data){

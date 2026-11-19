@@ -7,33 +7,35 @@
 
 <script src={% static 'app/js/clinico/navegacionClinicaCli.js' %} defer>         </script>
 <script src={% static 'app/js/clinico/navegacionClinicaInfoCli.js' %} defer>         </script>
+<script type="application/javascript" src={% static 'app/main/clinico/mainModalSalirCli.js' defer %}> </script>     
 <script type="application/javascript" src={% static 'app/js/clinico/navegacionTabsClinicaCli.js' %} defer> </script>
+
 
 <div class="marco">
 
     <!--   <div class="wrap">  -->
     <ul class="tabs">
 
-        <li><a href="#Evoluciones"> <span class="tab-text"></span>Consulta</a></li>
+        <li><a href="#Evoluciones"> <span class="tab-text"></span>CONSULTA</a></li>
         <!--<li><a href="#CausaExterna"><span class="tab-text"> </span>CausaExterna</a></li>-->
-        <li><a href="#Diagnosticos"> <span class="tab-text"> </span>Diagnosticos
+        <li><a href="#Diagnosticos"> <span class="tab-text"> </span>DIAGNOSTICOS
             </a>
         </li>
-        <li><a href="#RevisionSistemas"><span class="tab-text"></span>RevXSist
+        <li><a href="#RevisionSistemas"><span class="tab-text"></span>REVSIST
             </a>
         </li>
-        <li><a href="#Laboratorios"><span class="tab-text"> </span>Laboratorio
+        <li><a href="#Laboratorios"><span class="tab-text"> </span>LAB
             </a>
         </li>
-        <li><a href="#Radiologia"> <span class="tab-text"> </span>Radiologia
+        <li><a href="#Radiologia"> <span class="tab-text"> </span>RAD
             </a></li>
-        <li><a href="#Terapias"> <span class="tab-text"> </span>Terapias
+        <li><a href="#Terapias"> <span class="tab-text"> </span>TERAPIAS
             </a></li>
-        <li><a href="#Formulacion"> <span class="tab-text"> </span>Formulacion </a></li>
-        <li><a href="#OrdenDeControl"><span class="tab-text"> </span>Ord.Control </a></li>
+        <li><a href="#Formulacion"> <span class="tab-text"> </span>FORMULACION </a></li>
+        <li><a href="#OrdenDeControl"><span class="tab-text"> </span>CONTROL </a></li>
 
-        <li><a href="#Consulta"> <span class="tab-text"> </span>Historia</a></li>
-        <li><a href="#Enfermedades"><span class="tab-text"> </span>Enfermedad</a></li>
+        <li><a href="#Consulta"> <span class="tab-text"> </span>HISTORIA</a></li>
+        <li><a href="#Enfermedades"><span class="tab-text"> </span>ENFERMEDAD</a></li>
         <li><a href="#GuardarFolio"><span class="tab-text"> </span>Guardar
             </a>
         </li>
@@ -107,13 +109,16 @@
     {{ datosPaciente.centro}}
 
 
-
-
     {{ datosPaciente.tipoUsuario}}
 
     {{ datosPaciente.direccion}}
     Tel:
     {{ datosPaciente.telefono}}
+
+    <button type="button" id="btnGuardarFolio" name="btnGuardarFolio">Guardar</button>
+    <button type="button" id="btnSalirFolio" name="btnSalirFolio">Salir</button>
+
+
     <!--             Usuario: -->
     <!--           {{Profesional}}  -->
 
@@ -250,6 +255,69 @@
         </div>
 
         <!--  fin segunda fila -->
+
+
+            <!-- Espacio Modales Agendas -->
+
+    <!-- Estructura de la Ventana Modal -->
+
+    <div id="miModal" class="modal-salir">
+        <span id="cerrarModal" class="btn-cerrar">&times;</span>
+        <div class="modal-salir-contenido">
+            <form action="/escoge/{{Sede}}, {{Username}}, {{Profesional}}, {{Documento}} ,{{NombreSede}} ,{{EscogeModulo}}"
+                method="POST" id="formRetornaHistoria">
+    
+                <div class="modal-salir-header">
+    
+                    <p class="centraParra">
+                    <h2>Retornar</h2>
+                    </p>
+                    <div class="modal-salir-title" id="exampleModalLabel"></div>
+    
+                </div>
+                <div class="modal-salir-body">
+                    <input type="hidden" id="sede" name="sede" value="{{Sede}}">
+                    <input type="hidden" id="servicio" name="servicio" value="{{Servicio}}">
+                    <input type="hidden" id="perfil" name="perfil" value="{{Perfil}}">
+                    <input type="hidden" id="username" name="username" value="{{Username}}">
+                    <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
+                    <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+                    <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value="{{SedeSeleccionada}}">
+                    <input type="hidden" id="numreporte" name="numreporte" value="{{numreporte}}">
+                    <input type="hidden" id="grupo" name="grupo" value="{{Grupo}}">
+                    <input type="hidden" id="subGrupo" name="subGrupo" value="{{SubGrupo}}">
+                    <input type="hidden" id="tipoDocPaciente2" name="tipoDocPaciente2" value="{{TipoDocPaciente}}">
+                    <input type="hidden" id="documentoPaciente2" name="documentoPaciente2" value="{{DocumentoPaciente}}">
+                    <input type="hidden" id=" ingresoPaciente2" name="ingresoPaciente2" value="{{IngresoPaciente}}">
+                    <input type="hidden" id="espMedico" name="espMedico" value="{{EspMedico}}"> </input>
+                    <input type="hidden" id="tiposFolio" name="tiposFolio" value="{{TiposFolio}}"> </input>
+                    <input type="hidden" id="tiposFolioEscogido" name="tiposFolioEscogido" value="{{TiposFolioEscogido}}">
+                    </input>
+    
+    
+                    <!--  Estos si de la Aplixcacion bse -->
+    
+                    <input type="hidden" id="sede" name="sede" value="{{Sede}}">
+                    <input type="hidden" id="documento" name="documento" value="{{Documento}}">
+                    <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+                    <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}">
+                    <input type="hidden" id="permisosGrales" name="permisosGrales" value="{{PermisosGrales}}">
+                    <input type="hidden" id="permisosDetalle" name="permisosDetalle" value="{{PermisosDetalle}}">
+                    <input type="hidden" id="escogeModulo" name="escogeModulo" value="{{EscogeModulo}}">
+                    <center>
+                        <input type="submit" id="btnRetornaHistoria" name="btnRetornaHistoria" value="RETORNAR"> </input>
+                    </center>
+                </div>
+                <div class="modal-salir-footer">
+    
+                    <!-- <button id="btnAceptar" class="btn-accion">Aceptar</button>  -->
+                    <button id="btnCancelarFolio" class="btn-secundario">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- FIN Espacio Estructura ventanas Modales  -->
+
 
     </article>
 
@@ -531,16 +599,14 @@
 
         <form method="POST" id="formSignos">
 
+            <div class="centraParra">
+               
 
             Frecuencia Cardiaca:
             {{HistoriaSignosVitalesForm.frecCardiaca}}
 
-
-
             Frecuencia Respiratoria
             {{HistoriaSignosVitalesForm.frecRespiratoria}}
-
-
 
             TA Diastolica:
             {{HistoriaSignosVitalesForm.tensionADiastolica}}
@@ -548,16 +614,19 @@
             TA Sistolica:
             {{HistoriaSignosVitalesForm.tensionASistolica}}
 
+            </div>
+            <div class="centraParra">
+
             TA Media:
             {{HistoriaSignosVitalesForm.tensionAMedia}}
 
             Temperatura:
             {{HistoriaSignosVitalesForm.temperatura}}
 
-
             saturacion:
             {{HistoriaSignosVitalesForm.saturacion}}
-
+            </div>
+            <div class="centraParra">
 
             Glucometria:
             {{HistoriaSignosVitalesForm.glucometria}}
@@ -574,6 +643,9 @@
             Cuna:
             {{HistoriaSignosVitalesForm.cuna}}
 
+            </div>
+            <div class="centraParra">
+
             IC:
             {{HistoriaSignosVitalesForm.ic}}
 
@@ -585,6 +657,9 @@
 
             Glasgow motora:
             {{HistoriaSignosVitalesForm.glasgowMotora}}
+
+            </div>
+
         </form>
 
     </article>
@@ -1022,81 +1097,91 @@
             <h3>Consulta Historia Clinica</h3>
         </center>
     </article>
+<article id="Clinica">
 
-    <article id="Clinica">
-        <br><br><br><br>
-        {% csrf_token %}
+    {% csrf_token %}
+    <div id="centraParra">
 
-        <div id="flex-container2-clinica">
-            <div>
-                {{historiaForm.apache2.label}}
-                {{historiaForm.apache2}}
+        {{historiaForm.apache2.label}}
+        {{historiaForm.apache2}}
 
-                {{ historiaForm.antibioticos.label_tag }}
-                {{ historiaForm.antibioticos }}
+        {{ historiaForm.antibioticos.label_tag }}
+        {{ historiaForm.antibioticos }}
 
-                {{ historiaForm.monitoreo}}
-                {{ historiaForm.movilidadLimitada.label_tag }}
-                {{ historiaForm.movilidadLimitada }}
+        {{ historiaForm.monitoreo}}
+        {{ historiaForm.movilidadLimitada.label_tag }}
+        {{ historiaForm.movilidadLimitada }}
 
-                {{historiaForm.nauseas.label_tag}}
-                {{ historiaForm.nauseas}}
-                {{ historiaForm.llenadoCapilar.label_tag }}
-                {{ historiaForm.llenadoCapilar }}
-                {{ historiaForm.llenadoCapilar.label_tag }}
-                {{ historiaForm.llenadoCapilar }}
-                {{ historiaForm.neurologia.label }}
-                {{ historiaForm.neurologia }}
-                {{ historiaForm.irritacion.label }}
-                {{ historiaForm.irritacion }}
-                {{ historiaForm.pulsos.label }}
-                {{ historiaForm.pulsos}}
-                {{ historiaForm.retiroPuntos.label }}
-                {{ historiaForm.retiroPuntos }}
+        {{historiaForm.nauseas.label_tag}}
+        {{ historiaForm.nauseas}}
+        {{ historiaForm.llenadoCapilar.label_tag }}
+        {{ historiaForm.llenadoCapilar }}
+        {{ historiaForm.llenadoCapilar.label_tag }}
+        {{ historiaForm.llenadoCapilar }}
 
-
-                {{ historiaForm.vomito.label }}
-                {{ historiaForm.vomito }}
-                {{ historiaForm.inmovilizacion.label }}
-                {{ historiaForm.inmovilizacion }}
-                {{ historiaForm.notaAclaratoria.label }}
-                {{ historiaForm.notaAclaratoria }}
-                {{ historiaForm.fecNotaAclaratoria.label }}
-                {{ historiaForm.fecNotaAclaratoria}}
-                {{ historiaForm.textoNotaAclaratoria.label }}
-                {{ historiaForm.textoNotaAclaratoria}}
-                {{ historiaForm.examenFisico.label }}
-                {{ historiaForm.examenFisico}}
-                {{ historiaForm.noQx.label }}
-                {{ historiaForm.noQx}}
-                {{ historiaForm.observaciones.label }}
-                {{ historiaForm.observaciones}}
-                {{ historiaForm.riesgoHemodinamico.label }}
-                {{ historiaForm.riesgoHemodinamico}}
+    </div>
+    <div id="centraParra">
+        {{ historiaForm.neurologia.label }}
+        {{ historiaForm.neurologia }}
+        {{ historiaForm.irritacion.label }}
+        {{ historiaForm.irritacion }}
+        {{ historiaForm.pulsos.label }}
+        {{ historiaForm.pulsos}}
+        {{ historiaForm.retiroPuntos.label }}
+        {{ historiaForm.retiroPuntos }}
 
 
-                {{ historiaForm.riesgos.label }}
-                {{ historiaForm.riesgos}}
-                {{ historiaForm.trombocitopenia.label }}
-                {{ historiaForm.trombocitopenia}}
-                {{ historiaForm.hipotension.label }}
-                {{ historiaForm.hipotension}}
-                {{ historiaForm.indiceMortalidad.label }}
-                {{ historiaForm.indiceMortalidad}}
-                {{ historiaForm.ingestaAlcohol.label }}
-                {{ historiaForm.ingestaAlcohol}}
-                {{ historiaForm.inmovilizacionObservaciones.label }}
-                {{ historiaForm.inmovilizacionObservaciones}}
-
-                {{ historiaForm.justificacion.label }}
-                {{ historiaForm.justificacion}}
-                {{ historiaForm.leucopenia.label }}
-                {{ historiaForm.leucopenia}}
-                {{ historiaForm.manejoQx.label }}
-                {{ historiaForm.manejoQx}}
-            </div>
+        {{ historiaForm.vomito.label }}
+        {{ historiaForm.vomito }}
+        {{ historiaForm.inmovilizacion.label }}
+        {{ historiaForm.inmovilizacion }}
         </div>
-    </article>
+        <div id="centraParra">
+
+        {{ historiaForm.notaAclaratoria.label }}
+        {{ historiaForm.notaAclaratoria }}
+        {{ historiaForm.fecNotaAclaratoria.label }}
+        {{ historiaForm.fecNotaAclaratoria}}
+        {{ historiaForm.textoNotaAclaratoria.label }}
+        {{ historiaForm.textoNotaAclaratoria}}
+    </div>
+    <div id="centraParra">
+        {{ historiaForm.examenFisico.label }}
+        {{ historiaForm.examenFisico}}
+        {{ historiaForm.noQx.label }}
+        {{ historiaForm.noQx}}
+        {{ historiaForm.observaciones.label }}
+        {{ historiaForm.observaciones}}
+        {{ historiaForm.riesgoHemodinamico.label }}
+        {{ historiaForm.riesgoHemodinamico}}
+
+
+        {{ historiaForm.riesgos.label }}
+        {{ historiaForm.riesgos}}
+    </div>
+    <div id="centraParra">
+        {{ historiaForm.trombocitopenia.label }}
+        {{ historiaForm.trombocitopenia}}
+        {{ historiaForm.hipotension.label }}
+        {{ historiaForm.hipotension}}
+        {{ historiaForm.indiceMortalidad.label }}
+        {{ historiaForm.indiceMortalidad}}
+        {{ historiaForm.ingestaAlcohol.label }}
+        {{ historiaForm.ingestaAlcohol}}
+    </div>
+    <div id="centraParra">
+        {{ historiaForm.inmovilizacionObservaciones.label }}
+        {{ historiaForm.inmovilizacionObservaciones}}
+
+        {{ historiaForm.justificacion.label }}
+        {{ historiaForm.justificacion}}
+        {{ historiaForm.leucopenia.label }}
+        {{ historiaForm.leucopenia}}
+        {{ historiaForm.manejoQx.label }}
+        {{ historiaForm.manejoQx}}
+    </div>
+
+</article>
 
 
     <article id="Cirugias">
@@ -1104,59 +1189,63 @@
 
         <form id="postFormCirugiaClinica" name="postFormCirugiaClinica">
 
-            <div>
-                <input type="checkbox" id="cBoxCirugia" name="cBoxCirugia" value="" />
+            <div id="centraParra">
+                Cirugia:
+                <input type="checkbox" id="cBoxCirugia" name="cBoxCirugia" value="" />           
 
+            Hosp:
+            <input type="checkbox" id="solicitaHospitalizacion" name="solicitaHospitalizacion" placeholder="Hosp">
+            Ayudante:
+            <input type="checkbox" id="solicitaAyudante" name="solicitaAyudante"  placeholder="Ayudante">
+            <input type="text" id="solicitaTiempoQx" name="solicitaTiempoQx" size="1" maxlength="25"  placeholder="TiempoQx">
+            <input type="text" id="solicitaTipoQx" name="solicitaTipoQx" size="1" maxlength="25" placeholder="tipoQx">
+            Solicita Anestesia:
+            <input type="checkbox" id="solicitaAnestesia" name="solicitaAnestesia"  placeholder="Solicita Anestesia">
+            Otros:
+            <input type="checkbox" id="solicitaOtros" name="solicitaOtros" size="1" placeholder="Otros">
+            
+            <input type="text" id="tiempoMaxQx" name="tiempoMaxQx" size="10" maxlength="20" placeholder="tiempoMaxQx">
+            AutoSutura:
+            <input type="checkbox" id="solicitaAutoSutura" name="solicitaAutoSutura" placeholder="AutoSutura">
+            Soporte:
+            <input type="checkbox" id="solicitaSoporte" name="solicitaSoporte" placeholder="Soporte">
+            <input type="checkbox" id="describeOtros" name="describeOtros" placeholder="describeOtros">
+
+            Solicita Sangre
+            <input type="checkbox" id="solicitaSangre" name="solicitaSangre" placeholder="Sangre">
+            <input type="text" id="describeSangre" name="describeSangre" size="1" maxlength="1"  placeholder="describeSangre">
+            <input type="text" id="cantidadSangre" name="cantidadSangre" size="1" maxlength="1"  placeholder="cantidadSangre">
             </div>
 
+            <div id="centraParra">
+            CamaUci:
+            <input type="checkbox" id="solicitaCamaUci" name="solicitaCamaUci" placeholder="CamaUci">
+            Microscopia:
+            <input type="checkbox" id="solicitaMicroscopio" name="solicitaMicroscopio"  placeholder="Microscopio">
+            Rayos X:
+            <input type="checkbox" id="solicitaRx" name="solicitaRx"  placeholder="Rx">
+            Osteosintesis_
+            <input type="text" id="solicitaOsteosintesis" name="solicitaOsteosintesis" size="1" maxlength="1" placeholder="Osteosintesis">
+            Biopsia
+            <input type="checkbox" id="solicitaBiopsia" name="solicitaBiopsia" placeholder="Biopsia">
+            Malla
+            <input type="checkbox" id="solicitaMalla" name="solicitaMalla"  placeholder="Malla">
 
-            <input type="text" id="solicitaHospitalizacion" name="solicitaHospitalizacion" size="1" maxlength="5"
-                placeholder="Hosp">
-
-            <input type="text" id="solicitaAyudante" name="solicitaAyudante" size="1" maxlength="15"
-                placeholder="Ayudante">
-            <input type="text" id="solicitaTiempoQx" name="solicitaTiempoQx" size="1" maxlength="15"
-                placeholder="TiempoQx">
-            <input type="text" id="solicitaTipoQx" name="solicitaTipoQx" size="1" maxlength="15" placeholder="tipoQx">
-            <input type="text" id="solicitaAnestesia" name="solicitaAnestesia" size="1" maxlength="15"
-                placeholder="Anestesia">
-            <input type="text" id="solicitaOtros" name="solicitaOtros" size="1" maxlength="1" maxlength="15"
-                placeholder="Otros">
-            <input type="text" id="tiempoMaxQx" name="tiempoMaxQx" size="10" maxlength="20" placeholder="tiempoMaxQx">
-            <input type="text" id="solicitaAutoSutura" name="solicitaAutoSutura" size="1" maxlength="20"
-                placeholder="AutoSutura">
-            <input type="text" id="solicitaSoporte" name="solicitaSoporte" size="1" maxlength="15"
-                placeholder="Soporte">
-            <input type="text" id="describeOtros" name="describeOtros" size="1" maxlength="1"
-                placeholder="describeOtros">
-
-
-            <input type="text" id="solicitaSangre" name="solicitaSangre" size="1" maxlength="1" placeholder="Sangre">
-            <input type="text" id="describeSangre" name="describeSangre" size="1" maxlength="1"
-                placeholder="describeSangre">
-            <input type="text" id="cantidadSangre" name="cantidadSangre" size="1" maxlength="1"
-                placeholder="cantidadSangre">
-            <input type="text" id="solicitaCamaUci" name="solicitaCamaUci" size="1" maxlength="1" placeholder="CamaUci">
-            <input type="text" id="solicitaMicroscopio" name="solicitaMicroscopio" size="1" maxlength="1"
-                placeholder="Microscopio">
-            <input type="text" id="solicitaRx" name="solicitaRx" size="1" maxlength="1" placeholder="Rx">
-            <input type="text" id="solicitaOsteosintesis" name="solicitaOsteosintesis" size="1" maxlength="1"
-                placeholder="Osteosintesis">
-            <input type="text" id="solicitaBiopsia" name="solicitaBiopsia" size="1" maxlength="1" placeholder="Biopsia">
-            <input type="text" id="solicitaMalla" name="solicitaMalla" size="1" maxlength="1" placeholder="Malla">
-            <input type="text" id="solicitaOtros" name="solicitaOtros" size="1" maxlength="1" placeholder="Otros">
             <input type="hidden" id="username3_id" name="username3_id">
 
-            <label for="anestesia">Anestesia:</label>
-            Anestesia:
+            <label for="anestesia">Tipo Anestesia:</label>
+            
             <select class="mi-selectMed" id="anestesia" tabindex="0" name="anestesia" required>
                 {% for tiposAnestesia in TiposAnestesia %}
                 <option value="{{tiposAnestesia.id}}"> {{tiposAnestesia.nombre}}</option>
                 {% endfor %}
             </select>
 
+            </div>
+            <div id="centraParra">
+
             <label for="tiposCirugia">TipoCirugia:</label>
-            Tipo Cirugia:
+            
             <select class="mi-selectMed" id="tiposCirugia" tabindex="0" name="tiposCirugia" required>
                 {% for tiposCirugia in TiposCirugia %}
                 <option value="{{tiposCirugia.id}}"> {{tiposCirugia.nombre}}</option>
@@ -1165,27 +1254,28 @@
 
 
             <label for="dxPreQx">dxPreQx:</label>
-            Dx-PreQx:
+
             <select class="mi-select" id="dxPreQx" tabindex="0" name="dxPreQx" required>
                 {% for diagnosticosCirugia in DiagnosticosCirugia %}
                 <option value="{{diagnosticosCirugia.id}}"> {{diagnosticosCirugia.nombre}}</option>
                 {% endfor %}
             </select>
-            <label for="dxPrinc">dxPrinc:</label>
-            Dx-Principal:
+            <label for="dxPrinc">dx Principal:</label>
+
             <select class="mi-select" id="dxPrinc" tabindex="0" name="dxPrinc" required>
                 {% for diagnosticosCirugia in DiagnosticosCirugia %}
                 <option value="{{diagnosticosCirugia.id}}"> {{diagnosticosCirugia.nombre}}</option>
                 {% endfor %}
             </select>
 
-            <label for="dxRel1">dxRel1:</label>
-            Dx-relacionado:
+            <label for="dxRel1">dx Relacionado1:</label>
+
             <select class="mi-select" id="dxRel1" tabindex="0" name="dxRel1" required>
                 {% for diagnosticosCirugia in DiagnosticosCirugia %}
                 <option value="{{diagnosticosCirugia.id}}"> {{diagnosticosCirugia.nombre}}</option>
                 {% endfor %}
             </select>
+            </div>
 
 </form>
 
@@ -1486,19 +1576,26 @@
 
     <form method="POST" id="formIncapacidades">
 
+        <div id="centraParra">
         Tipo Incapacidad:
         {{IncapacidadesForm.tiposIncapacidad}}
+        </div>
+        <div id="centraParra">
         Diagnostico:
         {{IncapacidadesForm.diagnosticosIncapacidad}}
+        </div>
+        <div id="centraParra">
         Inicia:
         {{IncapacidadesForm.desdeFecha}}
         Termina:
         {{IncapacidadesForm.hastaFecha}}
         Numero de dias:
         {{IncapacidadesForm.numDias}}
+        </div>
+        <div id="centraParra">
         Descripcion:
         {{IncapacidadesForm.descripcion}}
-
+        </div>
     </form>
 
 
@@ -1896,26 +1993,26 @@
 <div class="marco">
     <!--    <div class="wrap">  -->
     <ul class="tabs">
-        <li><a href="#Clinica"><span class="tab-text"> </span>Clinica paciente </a></li>
-        <li><a href="#SignosVitales"><span class="tab-text"> </span>Signos
-                Vitales
+        <li><a href="#Clinica"><span class="tab-text"> </span>CLINICA</a></li>
+        <li><a href="#SignosVitales"><span class="tab-text"> </span>SIGNOS VITALES
+                
             </a>
         </li>
 
-        <li><a href="#Cirugias"><span class="tab-text"> </span>Cirugias </a></li>
-        <li><a href="#ProcedimientosNoQx"><span class="tab-text"> </span>ProcedimientosNoQx
+        <li><a href="#Cirugias"><span class="tab-text"> </span>CIRUGIAS </a></li>
+        <li><a href="#ProcedimientosNoQx"><span class="tab-text"> </span>PROCEDNOQX
             </a>
         </li>
-        <li><a href="#Antecedentes"> <span class="tab-text"> </span>Antecedentes
+        <li><a href="#Antecedentes"> <span class="tab-text"> </span>ANTECEDENTES
             </a>
         </li>
-        <li><a href="#NotasEnfermeria"> <span class="tab-text"> </span> NotasEnf</a></li>
-        <li><a href="#Incapacidades"><span class="tab-text"> </span>Incapacidades
+        <li><a href="#NotasEnfermeria"> <span class="tab-text"> </span> NOTASENF</a></li>
+        <li><a href="#Incapacidades"><span class="tab-text"> </span>INCAPACIDAD
             </a>
         </li>
-        <li><a href="#InterConsultas"> <span class="tab-text"> </span>InterConsultas
+        <li><a href="#InterConsultas"> <span class="tab-text"> </span>INTERCONSULTA
             </a></li>
-        <li><a href="#SalidaClinica"> <span class="tab-text"> </span>SalidaClinica
+        <li><a href="#SalidaClinica"> <span class="tab-text"> </span>SALIDACLINICA
             </a>
         </li>
 

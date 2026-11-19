@@ -31,25 +31,6 @@ $('ul.tabs li a:first').addClass('active');
 	});
 
 
-const formulario = document.getElementById('FormEvolucionarHistoria');
-
-formulario.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-	 var radios = $('input[type="radio"][name="miRadio"]');
-	 var filaSeleccionada =	radios.filter(":checked")
-	
-  if (radios.is(':checked')) {
-
-		 $("#FormEvolucionarHistoria").submit();
-  } else {
-    alert('Por favor, selecciona un Paciente.');
-	
-		return;
-  }
-});
-
-
 function arrancaClinico(valorTabla,valorData)
 {
     data = {}
@@ -603,5 +584,6 @@ $('#saveBtnResponderInterConsulta').click(function (e) {
       });
 
      });
+
 
 

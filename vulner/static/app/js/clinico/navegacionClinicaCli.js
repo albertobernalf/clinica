@@ -1,5 +1,6 @@
-	$(document).ready(function() {
 	var $ = jQuery;
+    $(document).ready(function() {
+	
 	console.log('Hola Alberto Hi!')
 	var controlLab = 0;
 	var controlRad = 0;
@@ -41,6 +42,17 @@
 //	tableActionsInterconsultas();
 //	tableActionsRevisionSistemas();
 //	tableActionsFormulacion();
+
+$("#btnSalirFolio").click(function (e) {
+  e.preventDefault();
+
+  alert("Entre salir Folio para activar la modal");
+  miModal.style.display = "flex";
+  alert("YA ACTIVE modal");
+ });
+
+
+
 
         /*------------------------------------------
         --------------------------------------------
@@ -1951,6 +1963,7 @@ formHistoriaClinica.addEventListener('submit', e=>{
 				 return;
 		            }
 
+                    alert("VOY A COMENZAR A ABRIR VENTANAS CHROME");
 
 			data.archivos.forEach(archivo => {
 
@@ -1967,6 +1980,7 @@ formHistoriaClinica.addEventListener('submit', e=>{
 				      const url = URL.createObjectURL(blob);
 					// var blob = new Blob([data.archivos.blob], { type: 'application/pdf' });
 				        var link = window.URL.createObjectURL(blob);
+                        alert ("Ventana No ...");
 				        window.open(link, '_blank'); // Abre el PDF en nueva pestaña [11]
 
 			});            

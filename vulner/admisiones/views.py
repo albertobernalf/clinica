@@ -2225,7 +2225,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
         # Fin combo estadoEnvioDian
 
 
-        return render(request, "facturacion/panelFacturacionF.html", context)
+        return render(request, "facturacion/panelFacturacionFCli.html", context)
 
 
     if (escogeModulo == 'CIRUGIA'):

@@ -7,6 +7,27 @@ from django.db.models import Index
 
 # Create your models here.
 
+class TiposOrdenesClinicas(models.Model):
+    id = models.AutoField(primary_key=True)
+    #sedesClinica = models.ForeignKey('sitios.SedesClinica', default=1, on_delete=models.PROTECT, null=True)
+    nombre = models.CharField(max_length=30, null = False)
+
+
+    def __str__(self):
+        return self.nombre
+
+
+
+class OrdenesClinicas(models.Model):
+    id = models.AutoField(primary_key=True)
+    tipoOrden = models.ForeignKey('clinico.TiposOrdenesClinicas',  blank=True, null=True, editable=True, on_delete=models.PROTECT)
+    nombre = models.CharField(max_length=30, null = False)
+    consecutivo = models.IntegerField( blank=False, null=False, default=0)
+
+    def __str__(self):
+        return self.nombre
+
+    
 class HistorialDiagnosticosCabezote(models.Model):
 
     id = models.AutoField(primary_key=True)
@@ -449,6 +470,10 @@ class Historia(models.Model):
     leucopenia = models.CharField(max_length=50,  blank=True, null=True,)
     trombocitopenia = models.CharField(max_length=50,  blank=True, null=True,)
     hipotension = models.CharField(max_length=50,  blank=True, null=True,)
+    ordenMedicaProcNoQx = models.CharField(max_length=30, blank=True, null=True)
+    ordenMedicaQx = models.CharField(max_length=30, blank=True, null=True)
+    ordenMedicaInc = models.CharField(max_length=30, blank=True, null=True)
+
     #mipres = models.CharField(max_length=50, null=True, blank=True)
     fechaRegistro = models.DateTimeField(editable=True, null=True, blank=True)
     usuarioRegistro = models.ForeignKey('planta.Planta', blank=True, null=True, editable=True, on_delete=models.PROTECT   ,          related_name='lanta345')

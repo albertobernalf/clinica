@@ -33,6 +33,8 @@ body {
     background-color: #a69f9f; /* Color de fondo blanco */
     /* width: 100%;*/
     /*margin-left:100px;*/
+    align-items: center;    
+    text-align:center;
     
 
 }
@@ -55,7 +57,9 @@ body {
 
 
 p{
-color:black;
-padding:5px;
+    color:black;
+    padding:5px;
+    align-items: center;    
+    text-align:center;
 
 }
