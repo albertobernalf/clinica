@@ -229,58 +229,61 @@ textarea
         align-items: center;
 }
 
-select.mi-select {
+select.mi-select
+{
     width: 70%;
     max-width: 230px;
     min-width: 20px;
-    padding: 12px 16px;
+    line-height: 1.4;
     color: #222222; /* Color oscuro obligatorio para que sea visible */
-    background-color: #ffffff; /* Contraste claro con el texto */
+    background-color: #ffffff;  /* Contraste claro con el texto */ 
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    appearance: none;
+    appearance: none; 
     cursor: pointer;
-    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none; 
     transition: border-color 0.2s ease;    
 }
-
-/* Estilo de las opciones al desplegar el menú */
-select.mi-select option {
-    color: #222222;
-    background-color: #ffffff;
-    padding: 10px;
-}
-
 select.mi-select:focus {
-    border-color: #2563eb;
+  outline: none;
+  border-color: #0066cc;
 }
 
+/* Estilo para las opciones internas */
+select.mi-select option {
+  color: #222222;
+  background-color: #ccc;
+}
 
 select.mi-selectTiposDiagnosticos
 {
     width: 40%;
     max-width: 140px;
-    padding: 12px 16px;
+    line-height: 1.4;
     color: #222222; /* Color oscuro obligatorio para que sea visible */
-    background-color: #ffffff; /* Contraste claro con el texto */
+    background-color: #ffffff;  /* Contraste claro con el texto */ 
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    appearance: none;
+    appearance: none; 
     cursor: pointer;
-    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none; 
     transition: border-color 0.2s ease;    
 }
-
-select.mi-selectTiposDiagnosticos option {
-    color: #222222;
-    background-color: #ffffff;
-    padding: 10px;
+select.mi-selectTiposDiagnosticos:focus {
+  outline: none;
+  border-color: #0066cc;
 }
 
-select.mi-selectTiposDiagnosticos:focus {
-    border-color: #2563eb;
+/* Estilo para las opciones internas */
+select.mi-selectTiposDiagnosticos option {
+  color: #222222;
+  background-color: #ccc;
 }
 
 
@@ -293,35 +296,38 @@ font-size: 12px;
 }
 /********************* DESDE AQUI LABORATORIOcss de VENTANAS MODA */
 
+
+
+
 select.mi-selectMed
 {
-
-    width: 65px;
+    width: 50px;
     max-width: 230px;
     min-width: 10px;
-    padding: 12px 16px;
+    line-height: 1.4;
     color: #222222; /* Color oscuro obligatorio para que sea visible */
-    background-color: #ffffff; /* Contraste claro con el texto */
+    background-color: #ffffff;  /* Contraste claro con el texto */ 
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    appearance: none;
+    appearance: none; 
     cursor: pointer;
-    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none; 
     transition: border-color 0.2s ease;    
 }
-.selectMedUnidades
-{
-
+select.mi-selectMed:focus {
+  outline: none;
+  border-color: #0066cc;
 }
-.selectMedvias
-{
 
+/* Estilo para las opciones internas */
+select.mi-selectMed option {
+  color: #222222;
+  background-color: #ccc;
 }
-.selectMedFrecuencia
-{
 
-}
 
 .contenedor-fecha
 {

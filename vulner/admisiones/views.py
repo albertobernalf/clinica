@@ -2154,7 +2154,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
 
 
         ## FIN CONTEXTO
-        return render(request, "autorizaciones/panelAutorizacionesF.html", context)
+        return render(request, "autorizaciones/panelAutorizacionesFCli.html", context)
 
     if (escogeModulo == 'FACTURACION'):
         print("ENTRE PERMSISO FACTURACION")
@@ -3525,7 +3525,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
 
 
         ## FIN CONTEXTO
-        return render(request, "enfermeria/PanelEnfermeriaF.html", context)
+        return render(request, "enfermeria/PanelEnfermeriaFCli.html", context)
 
 
     if (escogeModulo == 'FARMACIA'):
@@ -3703,7 +3703,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
         print("voy a cargar farmacia")
 
         ## FIN CONTEXTO
-        return render(request, "farmacia/PanelFarmaciaF.html", context)
+        return render(request, "farmacia/PanelFarmaciaFCli.html", context)
 
 
     if (escogeModulo == 'CITAS MEDICAS'):

@@ -194,6 +194,36 @@ textarea
     font-family:sans-serif;
 }
 
+select.mi-select
+{
+    width: 70%;
+    max-width: 230px;
+    min-width: 20px;
+    line-height: 1.4;
+    color: #222222; /* Color oscuro obligatorio para que sea visible */
+    background-color: #ffffff;  /* Contraste claro con el texto */ 
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    appearance: none; 
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none; 
+    transition: border-color 0.2s ease;    
+}
+select.mi-select:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+/* Estilo para las opciones internas */
+select.mi-select option {
+  color: #222222;
+  background-color: #ccc;
+}
+
+
 
 /********************* DESDE AQUI LABORATORIOcss de VENTANAS MODA */
 

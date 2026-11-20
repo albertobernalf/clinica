@@ -3,13 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src={% static 'mainAutorizacionesF.js' %} defer> </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="application/javascript" src={% static 'app/main/autorizaciones/mainAutorizacionesFCli.js' %} defer> </script>
     <title>
         {% block title %} {% endblock %}
     </title>
   <!-- Custom css -->
     <link rel="stylesheet" type="text/css"  href = {% static 'css/login.css' %} >
- <link rel="stylesheet" type="text/css" href={% static 'css/panelAutorizaciones.css' %} 
+ <link rel="stylesheet" type="text/css" href={% static 'app/css/autorizaciones/panelAutorizacionesCli.css' %} 
     <link rel="stylesheet" type="text/css"  href = {% static 'nav_sidebar.css' %} >
     <link rel="stylesheet" type="text/css"  href = {% static 'css/base.css' %} >
     <link rel="stylesheet" type="text/css"  href = {% static 'css/responsive.css' %} >
@@ -42,81 +43,59 @@
 
 
      <!-- Custom css -->
-    <link rel="stylesheet" type="text/css"  href = {% static 'css/styleTab.css' %} >
+    <link rel="stylesheet" type="text/css"  href = {% static 'app/css/autorizaciones/styleTab.css' %} >
 
-        <script src={% static 'js/styleTab.js' %} defer> </script>
+        <script type= "application/javascript" src={% static 'app/js/autorizaciones/styleTab.js' %} defer> </script>
 
     <!-- Fin Custom css -->
 
-    <style type="text/css">
-        thead tr th {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background-color: #ffffff;
-        }
 
-        .table-responsive {
-            height:200px;
-            overflow:scroll;
-        }
 
-        .button {
-             border: none;
-             width: 580%;
-             height: 90%;
-             padding: 15px 32px;
-             display: inline-block;
+<script>
+function RefrescarPantalla() {
+ 	 
+    	var sedeSeleccionada = document.getElementById("sedeSeleccionada").value;
+        var username = document.getElementById("username").value;
+        var nombreSede = document.getElementById("nombreSede").value;
+    	var sede = document.getElementById("sede").value;
+        var username_id = document.getElementById("username_id").value;
+         var data =  {}   ;
+        data['username'] = username;
+        data['sedeSeleccionada'] = sedeSeleccionada;
+        data['nombreSede'] = nombreSede;
+        data['sede'] = sede;
+        data['username_id'] = username_id;
+ 	    data = JSON.stringify(data);
 
-        }
-
-        .button1 {
-             background-color: #f44336;
-             color: white;
-             border: none;
-             width: 300%;
-             height: 50%;
-             display: inline-block;
-
-        }
-
-.contenedorSpan {
-  display: flex;
-  justify-content: space-between;
-  /* Otros estilos para el contenedor */
-}
-.izquierda {
-  /* Estilos para el span izquierdo */
-color:blue;
- font-size:15px;
- line-height:10px;
- font-family: Calibri; 
-margin-left:10px;
- float: left;
+        arrancaAutorizaciones(1,data);
+	    dataTableAutorizacionesInitialized = true;
 }
 
-.derecha {
-  /* Estilos para el span derecho */
-color:blue;
- font-size:15px; 
-line-height:10px; 
-font-family: Calibri; 
-margin-left:450px;
- float: right;
+function RefrescarPantallaDetalle() {
+
+        autorizacionId  = document.getElementById("autorizacionId").value ;
+
+ 	 
+    	var sedeSeleccionada = document.getElementById("sedeSeleccionada").value;
+        var username = document.getElementById("username").value;
+        var nombreSede = document.getElementById("nombreSede").value;
+    	var sede = document.getElementById("sede").value;
+        var username_id = document.getElementById("username_id").value;
+         var data =  {}   ;
+        data['username'] = username;
+        data['sedeSeleccionada'] = sedeSeleccionada;
+        data['nombreSede'] = nombreSede;
+        data['sede'] = sede;
+        data['username_id'] = username_id;
+	data['username_id'] = username_id;
+	data['autorizacionId'] = autorizacionId;
+
+ 	    data = JSON.stringify(data);
+
+        arrancaAutorizaciones(2,data);
+	    dataTableAutorizacionesDetalleInitialized = true;
 }
-
-.masderecha {
-  /* Estilos para el span derecho */
-color:blue;
- font-size:15px; 
-line-height:10px; 
-font-family: Calibri; 
-margin-left:400px;
- float: right;
-}
-
-    </style>
-
+</script>
 
 </head>
 
@@ -138,59 +117,55 @@ margin-left:400px;
 <input type="hidden" id="permisosDetalle" name="permisosDetalle" value = "{{PermisosDetalle}}">
 <input type="hidden" id="escogeModulo" name="escogeModulo" value = "{{EscogeModulo}}">
 
+
+<div id="men" name="men">
 {% block menu  %}
-<div class="marco" style="width:100%">
-       
-       <form class="form-inline my-2 my-lg-0">
-        	<div style="Text-align:right; line-height:10px;">
+  <!-- <form class="form-inline"> -->
+  <form>
 
-	<div class="contenedorSpan" style="width=100%">
+	 <span> <img src="{% static 'app/img/accesoPrincipal/ClinicaAlb2.png' %}" alt="Clinica" width="70" height="30"> </span>
 
-	<span class="izquierda">  {{EscogeModulo}} </span>
-		<figcaption class="figure-caption text-center">
-	            <a  href="/retornarMen/{{Sede}}, {{Username}}, {{Documento}}, {{NombreSede}}, {{Profesional}} ">RETORNAR
-		<i class="fa-solid fa-arrow-rotate-left"></i>
-		</a> 
+    <span> Sede: {{NombreSede}} </span>
 
-		  </figcaption>
+    <span> Colaborador : {{Profesional}} </span>
 
-         
-		<span class="derecha">  Sede: {{NombreSede}}  </span>
+    <span> Modulo :  {{EscogeModulo}}
+    </span>
 
-   
-		<span class="masderecha"> Colaborador : {{Profesional}} </span>
+    <span>
+      <a href="/retornarMen/{{Sede}}, {{Username}}, {{Documento}}, {{NombreSede}}, {{Profesional}} ">RETORNO</a>
+        <i class="fa-solid fa-arrow-rotate-left"></i>
 
-	
-         	   <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+      </span>
 
-		        </form>
+    <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
 
-		  
-            </div>
-         </div>
-
-
+  </form>
 {% endblock %}
+</div>
+
+  <div id="head">{% block head  %} {% endblock %} </div>
+  <div id="encabezado"> {% block encabezado  %} {% endblock %} </div>
 
 
-
-{% block head  %}
-<script>
-</script>
-{% endblock %}
-
-
-{% block encabezado  %}
-
-{% endblock %}
-
+  <div id="mensajeria">
 {% block mensajeria  %}
+Mensajes
+    <textarea id= "mensajes" name="mensajes" rows="1" cols="260"></textarea>
+      Notificacion
+    <textarea id= "mensajesError" name="mensajesError" rows="1" cols="260"></textarea>
+    <input type="button" id="btnRefrescar" name="btnRefrescar" value="Refrescar" onclick="RefrescarPantalla()">
+    <input type="button" id="btnRefrescarDetalle" name="btnRefrescarDetalle" value="RefresDetalle" onclick="RefrescarPantallaDetalle()">
 
 {% endblock %}
+  </div>
 
+<div id="contenido">
 {% block content  %}
 
 {% endblock %}
+</div>
+
 
 {% block totales  %}
 
@@ -249,7 +224,7 @@ margin-left:400px;
     <!-- Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src={% static 'js/menuAutorizaciones.js' %} defer >         </script>
+<script  type="application/javascript" src={% static 'app/js/autorizaciones/menuAutorizacionesCli.js' %} defer >         </script>
 
 </body>
 </html>

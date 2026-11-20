@@ -15,10 +15,10 @@ function arrancaAutorizaciones(valorTabla,valorData)
     if (valorTabla == 1)
     {
         let dataTableOptions  ={
-  
- dom: "<'row mb-0'<'col-sm-6'f><'col-sm-4'><'col-sm-2'B>>" + // B = Botones a la izquierda, f = filtro a la derecha
+   dom: "<'row mb-0'<'col-sm-6'B><'col-sm-3'><'col-sm-3 'f>>" + // B = Botones a la izquierda, f = filtro a la derecha
             "<'row'<'col-sm-12'tr>>" +
              "<'row mt-0'<'col-sm-5'i><'col-sm-7'p>>",
+
 
   buttons: [
     {
@@ -40,10 +40,11 @@ function arrancaAutorizaciones(valorTabla,valorData)
       className: 'btn btn-info',
     },
   ],
+  autoWidth:false,
   lengthMenu: [2, 4, 15],
            processing: true,
             serverSide: false,
-            scrollY: '500px',
+            scrollY: '400px',
 	    scrollX: true,
 	    scrollCollapse: true,
             paging:false,
@@ -134,9 +135,10 @@ function arrancaAutorizaciones(valorTabla,valorData)
 
         let dataTableOptionsAutorizacionesDetalle  ={
 
- dom: "<'row mb-0'<'col-sm-6'f><'col-sm-4'><'col-sm-2'B>>" + // B = Botones a la izquierda, f = filtro a la derecha
+    dom: "<'row mb-0'<'col-sm-6'B><'col-sm-3'><'col-sm-3 'f>>" + // B = Botones a la izquierda, f = filtro a la derecha
             "<'row'<'col-sm-12'tr>>" +
              "<'row mt-0'<'col-sm-5'i><'col-sm-7'p>>",
+
   buttons: [
     {
       extend: 'excelHtml5',
@@ -157,10 +159,12 @@ function arrancaAutorizaciones(valorTabla,valorData)
       className: 'btn btn-info',
     },
   ],
+
+  autoWidth:false,
   lengthMenu: [2, 4, 15],
            processing: true,
             serverSide: false,
-            scrollY: '275px',
+            scrollY: '350px',
 	    scrollX: true,
 	    scrollCollapse: true,
             paging:false,
