@@ -1,0 +1,573 @@
+{% extends "apoyoTerapeutico/menuApoyoTerapeuticoCli.html" %}
+{% load static %}
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href={% static 'app/css/apoyoTerapeutico/panelApoyoTerapeuticoCli.css' %} >
+<link rel="stylesheet" type="text/css" href={% static 'css/fontawesome.css' %}>
+<link rel="stylesheet" type="text/css"  href = {% static 'css/litle.css' %} >
+<script type="application/javascript" src={% static 'app/js/apoyoTerapeutico/panelTabsApoyoTerapeuticoCli.js' %} defer>         </script>
+<script src="https://kit.fontawesome.com/5d0337a043.js" crossorigin="anonymous"></script>
+<div class="marco">
+    <ul class="tabs">
+        <li><a href="#ApoyoTerapeutico"><span class="tab-text"> </span>
+            CLINICA  </a></li>
+        <li><a href="#Ordenados"><span class="tab-text"> </span>
+            ORDENADOS </a></li>
+	 <li><a href="#RespuestasApoTerap"></span> <span class="tab-text"> </span>
+            RESPONDER EXAMEN</a></li>
+	 <li><a href="#NoOrdenados"><span class="tab-text"> </span>
+            EN TRAMITE</a></li>
+	 <li><a href="#Resultados"><span class="tab-text"> </span>
+             RESULTADOSs </a></li>
+
+
+    </ul>
+</div>
+
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="secciones">
+        <article id="ApoyoTerapeutico">
+            <form action="/crearApoyoTerapeutico/" method="get" id="FormApoyoTerapeutico">
+
+                <input type="hidden" id="username" name="username" value="{{Username}}">
+                <input type="hidden" id="sedeSeleccionada" name="sedeSeleccionada" value="{{SedeSeleccionada}}">
+                <input type="hidden" id="numreporte" name="numreporte" value="{{numreporte}}">
+                <input type="hidden" id="grupo" name="grupo" value="{{Grupo}}">
+                <input type="hidden" id="subGrupo" name="subGrupo" value="{{SubGrupo}}">
+                <!--  Estos si de la Aplixcacion base -->
+                <input type="hidden" id="sede" name="sede" value="{{Sede}}">
+                <input type="hidden" id="documento" name="documento" value="{{Documento}}">
+                <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+                <input type="hidden" id="profesional" name="profesional" value="{{Profesional}}">
+                <input type="hidden" id="permisosGrales" name="permisosGrales" value="{{PermisosGrales}}">
+                <input type="hidden" id="permisosDetalle" name="permisosDetalle" value="{{PermisosDetalle}}">
+                <input type="hidden" id="escogeModulo" name="escogeModulo" value="{{EscogeModulo}}">
+                <input type="hidden" id="username_id" name="username_id" value="{{Username_id}}">
+                <input type="hidden" id="tipoDocId" name="tipoDocId" value="">
+                <input type="hidden" id="nombreTipoDoc" name="nombreTipoDoc" value="">
+                <input type="hidden" id="documentoId" name="documentoId" value="">
+                <input type="hidden" id="documento2" name="documento2" value="">
+                <input type="hidden" id="consec" name="consec" value="">
+                <input type="hidden" id="tipoIng" name="tipoIng" value="{{tipoIng}}">
+
+            </form>
+
+            <!-- INICIO TABLE DE  EL DATATABLE  -->
+
+ 				    <table  id= "tablaApoyoTerapeutico" class="display table table-striped table-sm fs-6 nowrap">                                    
+                                        <thead>
+                                        <tr>
+                                            <th>Action</th>
+                                            <th>tipoIng</th>
+                                            <th>id</th>
+                                            <th>TipoDoc</th>
+                                            <th>Documento</th>
+                                            <th>Paciente</th>
+                                            <th>#</th>
+                                            <th>FecIngreso</th>
+                                            <th>ServicioIngreso</th>
+                                            <th>Cama</th>
+                         
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+        </article>
+
+       <article id="RespuestasApoTerap">
+
+                            <form class="form-inline" action="/crearApoyoTerapeutico/" method="POST"   id="ApoyoTerapeuticoForma">
+
+                                <input type="hidden" id="examId" name="examId" value="">
+
+                                    <input type="hidden" id="tipoExamenId"    name="tipoExamenId" value="" readonly>
+
+        <div class="centraDiv">
+					TipoDoc:
+					<span id="tipoDocPaci" name="tipoDocPaci" size="2px"></span>
+
+					Doc#:
+					<span id="documentoPaci" name="documentoPaci"  size="6px"></span>
+				
+					<span id="nombrePaciente" name="nombrePaciente"  size="10px"></span>
+					<span id="tipoExamen" name="tipoExamen"></span>
+					<span id="CupsId" name="CupsId"></span>
+					Examen:
+				<span id="nombreExamen" name="nombreExamen"></span>
+	
+					Cantidad:
+					<span id="cantidad" name="cantidad"></span>
+                                   
+                                         Folio:
+                                        <input type="text"  id="folio" name="folio" size="2"
+                                               value="" readonly>
+                </div>
+                              
+            <div class="centraDivExamen">
+                
+
+                                        Estado:
+
+                                        <select  class="mi-select" id="estadoExamen"
+                                                name="estadoExamen">
+                                            {% for estadosExamenes in EstadosExamenes %}
+                                            <option value="{{estadosExamenes.id}}">
+                                                {{estadosExamenes.nombre}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+
+                                    Toma:
+                                        <input type="datetime-local"  id="fechaToma" name="fechaToma"  placeholder="Fecha Toma">
+
+					            Servicio:
+                                                    <select class="mi-select" id="serviciosAdministrativos"  tabindex= "0"
+                                                    name="serviciosAdministrativos" required>
+                                                {% for serviciosAdministrativos in ServiciosAdministrativos %}
+                                                <option value="{{serviciosAdministrativos.id}}"> {{serviciosAdministrativos.nombre}}</option>
+                                                {% endfor %}
+                                            </select>
+
+                                        <textarea id="observaciones" name="observaciones" rows="1" cols="110" placeholder="Observaciones..."  wrap="hard"></textarea>
+
+
+                                        
+
+	                 
+
+               </div>
+               
+
+                                        <textarea id="resultado" name="resultado" rows="1" cols="200" placeholder="resultado..."  wrap="hard"></textarea>
+
+
+
+
+               <div class="centraDivExamen">
+
+                                        Med:
+
+                                        <select  class="mi-selectApo" id="medicoInterpretacion1"
+                                                name="medicoInterpretacion1">
+                                            {% for medicoInterpretacion1 in MedicoInterpretacion1 %}
+                                            <option value="{{medicoInterpretacion1.id}}">
+                                                {{medicoInterpretacion1.nombre}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+
+                            <textarea id="interpretacion1" name="interpretacion1" rows="1" cols="50" placeholder="Interpretacion_1..."  wrap="hard"></textarea>
+
+
+                                      Med:
+
+                                        <select class="mi-selectApo" id="medicoInterpretacion2"
+                                                name="medicoInterpretacion2">
+                                            {% for medicoInterpretacion2 in MedicoInterpretacion2 %}
+                                            <option value="{{medicoInterpretacion2.id}}">
+                                                {{medicoInterpretacion2.nombre}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+
+                    <textarea id="interpretacion2" name="interpretacion2" rows="1" cols="50" placeholder="Interpretacion_2..."  wrap="hard"></textarea>
+
+
+                                       MedReporte:
+
+                                        <select class="mi-selectApo" id="medicoReporte" name="medicoReporte" >
+                                            {% for medicoReporte in MedicoReporte %}
+                                            <option value="{{medicoReporte.id}}"> {{medicoReporte.nombre}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+
+                        </div>
+                        <div class="centraDivExamen">
+                                         Imagen :
+                                        <input type="text"  id="rutaImagen"
+                                               name="rutaImagen" value="" size="60" placeholder="Ruta Imagen">
+
+                                        Video :
+                                        <input type="text"  id="rutaVideo"
+                                               name="rutaVideo" value="" size="60" placeholder="Ruta video">
+
+								  <input type="button" id="btn-rango" name="btn-rango"  value="Guardar Resultado¡" onClick="guardarResultado()">
+                    </div>                                            
+				 </form>
+                                <!-- DESDE AQUIP DATATABLE  -->
+                        <br>
+                                <!-- INICIO TABLE DE  EL DATATABLE  -->
+                                                <div class="centraDiv">
+                                                        RazgoClinico:
+
+                                                        <select  class="mi-select" id="rasgosClinicos"
+                                                                name="rasgosClinicos">
+                                                            {% for rasgosClinicos in RasgosClinicos %}
+                                                            <option value="{{rasgosClinicos.id}}">
+                                                                {{rasgosClinicos.nombre}}
+                                                            </option>
+                                                            {% endfor %}
+                                                        </select>
+
+                                                        <input type="text" id="observa" name="observa" value="">
+
+
+
+                                                       Resultado:
+                                                        <input type="text" id="valor" name="valor" value="">
+					 
+
+
+                                                        <span class="text-secondary">Crear Razgo</span>
+                                                        <a class="btn btn-success" href="javascript:void(0)"
+                                                           id="createNewResultadoRasgo"> </a>
+                                        </div>
+						<br>
+					
+
+                                                         <table id=tablaRasgos  class="display nowrap table table table-bordered  tablaRasgos table-hover table-sm dtr-inline " >  
+                                                      <!--  <table id=tablaRasgos  class="display nowrap table table table-bordered  tablaRasgos table-hover "> -->
+
+                                                            <thead>
+                                                            <tr>
+                                                             <!--    <th>id</th> -->
+                                                                <th>Codigo Cups</th>
+                                                                <th>Nombre Rasgo</th>
+                                                                <th>Unidad</th>
+                                                                <th>Minimo</th>
+                                                                <th>Maximo</th>
+                                                                <th>Valor</th>
+								 <th>Observacion</th>
+                                                                <th>Borrar</th>
+
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+            <!-- HASTA AQUI DATATABLE -->
+
+                   
+         </article>
+
+<article id="NoOrdenados">
+
+                <div class="centraDiv">
+					TipoDoc:
+					<span id="tipoDocPaciNoOrd" name="tipoDocPaciNoOrd" size="2px"></span>
+
+					Doc#:
+					<span id="documentoPaciNoOrd" name="documentoPaciNoOrd"  size="6px"></span>
+				
+					<span id="nombrePacienteNoOrd" name="nombrePacienteNoOrd"  size="10px"></span>
+					<span id="tipoExamenNoOrd" name="tipoExamenNoOrd"></span>
+					<span id="CupsIdNoOrd" name="CupsIdNoOrd"></span>
+					Examen:
+				<span id="nombreExamenNoOrd" name="nombreExamenNoOrd"></span>
+	
+					Cantidad:
+					<span id="cantidadNoOrd" name="cantidadNoOrd"></span>
+                                   
+                                         Folio:
+                                        <input type="text"  id="folioNoOrd" name="folioNoOrd" size="2"   value="" readonly>
+                </div>
+
+
+          
+ 				    <table  id= "tablaNoOrdenadosApoyoTerapeutico" class="display table table-striped table-sm fs-6 nowrap" >                                    
+                                        <thead>
+                                        <tr>
+                                                <th>Action</th>
+                                            <th>id</th>
+                                            <th>FecExamen</th>
+                                            <th>TipoExamen</th>
+                                            <th>Examen</th>
+                                            <th>Estado</th>
+                                            <th>#</th>
+                                            <th>Cups</th>
+                                            <th>Cantidad</th>
+                                            <th>Observa</th>
+                                            <th>Folio</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+
+
+</article>	<!-- Aqui  Otro Article de consultaDetallado  -->
+
+        <article id="Resultados">
+               
+            <div class="centraDiv">
+					TipoDoc:
+					<span id="tipoDocPaciResul" name="tipoDocPaciResul" size="2px"></span>
+
+					Doc#:
+					<span id="documentoPaciResul" name="documentoPaciResul"  size="6px"></span>
+				
+					<span id="nombrePacienteResul" name="nombrePacienteResul"  size="10px"></span>
+					<span id="tipoExamenNoResul" name="tipoExamenResul"></span>
+					<span id="CupsIdNoResul" name="CupsIdResul"></span>
+					Examen:
+				<span id="nombreExamenResul" name="nombreExamenResul"></span>
+	
+					Cantidad:
+					<span id="cantidadResul" name="cantidadResul"></span>
+                                   
+                                         Folio:
+                                        <input type="text"  id="folioResul" name="folioResul" size="2"   value="" readonly>
+                </div>
+
+
+
+
+
+                            <form class="form-inline" action="/consultaRespuestasTerapeutico/" method="POST"  id="ApoyoTerapeuticoForma">
+
+                                <input type="hidden" id="zexamId" name="zexamId" value="">
+
+                                    <input type="hidden" id="ztipoExamenId"    name="ztipoExamenId" value="" readonly>
+
+
+                                <div class="centraDivExamen">
+
+                                    
+                                        <label for="zfolio" > Folio:</label>
+                                        <input type="text"  id="zfolio" name="zfolio"
+                                               value="" readonly>
+
+                                        <label for="zestadoExamen" >EstadoExamen:</label>
+
+                                        <select class="mi-select" id="zestadoExamen"
+                                                name="zestadoExamen" disabled>
+                                            {% for estadosExamenes in EstadosExamenes %}
+                                            <option value="{{estadosExamenes.id}}">
+                                                {{estadosExamenes.nombre}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+
+                                           <label for="ztipoExamen" > TipoExamen:</label>
+                                        <input type="text"  id="ztipoExamen"
+                                               name="ztipoExamen" value="" readonly>
+                    
+
+                                        <label for="zCupsId" > CupsId :</label>
+                                        <input type="text"  id="zCupsId"
+                                               name="zCupsId" value="" readonly>
+
+                                        <label for="znombreExamen" > Examen:</label>
+                                        <input type="text"  id="znombreExamen"
+                                               name="znombreExamen" value="" readonly>
+
+                                        <label for="zcantidad" > Cantidad:</label>
+                                        <input type="text"  id="zcantidad"
+                                               name="zcantidad" value="" readonly>
+
+
+                                </div>
+                                <div class="centraDivExamen">
+
+                                                               
+                                        <label for="zserviciosAdministrativos" >Servicio:</label>
+
+                                        <select  class="mi-select" id="zserviciosAdministrativos"
+                                                name="zserviciosAdministrativos" disabled>
+                                            {% for serviciosAdministrativos in ServiciosAdministrativos %}
+                                            <option value="{{serviciosAdministrativos.id}}">
+                                                {{serviciosAdministrativos.nombre}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+
+                                        <label for="ztipoDocPaci" > TipoDoc:</label>
+                                        <input type="text" id="ztipoDocPaci"
+                                               name="ztipoDocPaci" value="" readonly>
+                                        <label for="zdocumentoPaci" >Paciente:</label>
+                                        <input type="text" id="zdocumentoPaci"
+                                               name="zdocumentoPaciente" value="" readonly>
+
+                                        <label for="znombrePaciente" >Paciente:</label>
+                                        <input type="text"  id="znombrePaciente"
+                                               name="znombrePaciente" value="" readonly>
+
+                                        </div>
+
+                                <div class="centraDivExamen">
+
+
+                                        <label for="zobservaciones" > Observaciones
+                                            :</label>
+                                        <input type="text"  id="zobservaciones"
+                                               name="zobservaciones" value="" readonly>
+
+                                    </div>
+                                    <div class="centraDivExamen">
+                                                                                <label for="zmedicoInterpretacion1">MedicoInterpreta:</label>
+
+                                        <select class="mi-select" id="zmedicoInterpretacion1"
+                                                name="zmedicoInterpretacion1" disabled>
+                                            {% for medicoInterpretacion1 in MedicoInterpretacion1 %}
+                                            <option value="{{medicoInterpretacion1.id}}">
+                                                {{medicoInterpretacion1.nombre}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>                                        
+
+                                        <label for="zinterpretacion1" > Interpretacion1
+                                            :</label>
+                                        <input type="text"  id="zinterpretacion1"
+                                               name="zinterpretacion1" value="" readonly>
+
+                                         <label for="zmedicoInterpretacion2" >MedicoInterpreta:</label>
+
+                                        <select class="mi-select" id="zmedicoInterpretacion2"
+                                                name="zmedicoInterpretacion2" disabled>
+                                            {% for medicoInterpretacion2 in MedicoInterpretacion2 %}
+                                            <option value="{{medicoInterpretacion2.id}}">
+                                                {{medicoInterpretacion2.nombre}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+
+
+                                        <label for="zinterpretacion2" > Interpretacion2:</label>
+                                        <input type="text"  id="zinterpretacion2"
+                                               name="zinterpretacion2" value="" readonly>
+
+                                  
+                                        <label for="zmedicoReporte" >MedicoReporte:</label>
+
+                                        <select class="mi-select" id="zmedicoReporte" name="zmedicoReporte" disabled>
+                                            {% for medicoReporte in MedicoReporte %}
+                                            <option value="{{medicoReporte.id}}"> {{medicoReporte.nombre}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                <div class="centraDivExamen">
+
+                                        <label for="zrutaImagen" > RutaImagen :</label>
+                                        <input type="text"  id="zrutaImagen"
+                                               name="zrutaImagen" value="" readonly>
+
+                                        <label for="zrutaVideo" > RutaVideo :</label>
+                                        <input type="text"  id="zrutaVideo"
+                                               name="zrutaVideo" value="" readonly>
+                                </div>
+
+				 </form>
+                                <!-- DESDE AQUIP DATATABLE  -->
+
+
+                                                         <table id="tablaRasgosConsulta"  class="display nowrap table table table-bordered  tablaRasgosConsulta table-hover table-sm dtr-inline " >
+                                                            <thead>
+                                                            <tr>
+                                                                <th>Codigo Cups</th>
+                                                                <th>Nombre Rasgo</th>
+                                                                <th>Unidad</th>
+                                                                <th>Minimo</th>
+                                                                <th>Maximo</th>
+                                                                <th>Valor</th>
+                        						                 <th>Observacion</th>
+                                                                <th>Borrar</th>  
+
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                        
+                                                            </tbody>
+                                                        </table>
+            </table>
+          <!-- HASTA AQUI DATATABLE -->
+
+
+    </form>
+    <!--     </table> -->
+
+
+    </form>
+
+    </table>
+    </article>
+
+<article id="Ordenados">
+
+            <div class="centraDiv">
+					TipoDoc:
+					<span id="tipoDocPaciOrd" name="tipoDocPaciOrd" size="2px"></span>
+
+					Doc#:
+					<span id="documentoPaciOrd" name="documentoPaciOrd"  size="6px"></span>
+				
+					<span id="nombrePacienteOrd" name="nombrePacienteOrd"  size="10px"></span>
+					<span id="tipoExamenOrd" name="tipoExamenOrd"></span>
+					<span id="CupsIdOrd" name="CupsIdOrd"></span>
+					Examen:
+				<span id="nombreExamenOrd" name="nombreExamenOrd"></span>
+	
+					Cantidad:
+					<span id="cantidadOrd" name="cantidadOrd"></span>
+                                   
+                                         Folio:
+                                        <input type="text"  id="folioOrd" name="folioOrd" size="2"   value="" readonly>
+                </div>
+
+
+          
+ 				    <table  id= "tablaOrdenadosApoyoTerapeutico" class="display table table-striped table-sm fs-6 nowrap">                                    
+                                        <thead>
+                                        <tr>
+                                                <th>Action</th>
+                                            <th>id</th>
+                                            <th>FecExamen</th>
+                                            <th>TipoExamen</th>
+                                            <th>Examen</th>
+                                            <th>Estado</th>
+                                            <th>#</th>
+                                            <th>Cups</th>
+                                            <th>Cantidad</th>
+                                            <th>Observa</th>
+                                            <th>Folio</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+
+</article>
+
+
+	<!-- Aqui  Fin Otro Article de consultaDetallado  -->
+
+
+    </div>
+
+    <script>
+var fecha = new Date(); //Fecha actual
+ // alert("esta es la fecha de hoy = " + fecha);
+
+  document.getElementById('fechaToma').value=fecha;
+  // alert("chao script");
+
+  </script>
+{% endblock %}
+
+
+{% block footer%}
+{% endblock %}
+
+
+

@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  #background-color: #f2f2f2;
+}
+
+body {
+  /*	background: #D4D4D4;*/
+  background: #fcfcfc;
+  font-family: "Open sans";
+}
+
+#men
+{ box-sizing: border-box;
+  height: 40px;
+  margin: 8px;
+  background-color: #d3efeb;
+  padding: 5px;
+  border: 2px solid #38cfb8;
+}
+
+#head
+{ box-sizing: border-box;
+  height: 40px;
+    border-radius: 10px;
+  /* margin: 10px; */
+  margin: 0  8px 0 8px       ;
+  background-color: #d3efeb;
+  padding: 5px;
+  border: 2px solid #38cfb8;
+  width: auto;
+
+}
+
+#footer
+{
+  margin: 8px;
+  height: 50px;
+  background-color: #d3efeb;
+  padding: 10px;
+  border: 2px solid #38cfb8;
+
+}
+
+#contenido
+{
+  height: 550px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #f9fafa;
+  padding: 11px;
+  border: 2px solid #87b3cd;
+
+}
+
+.paciente
+{
+  height: 25px;
+  width: 99%;
+  border-radius: 10px;
+  padding: 0px 10px 0px 10px;
+  border: 2px solid #87b3cd;
+  margin: 0  0px 0px 10px;
+  align-items: center;
+  text-align: center;
+
+
+}
+
+#mensajeria
+{
+  margin:0  8px 8px 8px;
+    border-radius: 10px;
+  /* box-sizing: border-box; */
+  background-color: #d3efeb;
+  padding: 0;
+  border: 2px solid #38cfb8;
+
+}
+
+#mensajes {
+   background-color: lightgray;
+   /*  box-sizing: border-box; */
+   color: green;
+   width:35%;
+   margin:8px;
+}
+
+#mensajesError {
+     background-color: rgb(211, 211, 211);
+      /* box-sizing: border-box;*/
+   color: red;
+   width: 35%;
+   margin:8px;
+}
+
+
+#mensajesErrorModalEdicionAdmisiones {
+     background-color: rgb(211, 211, 211);
+      /* box-sizing: border-box;*/
+   color: red;
+   width: 65%;
+   margin:1px;
+    height:60%;
+
+}
+
+span { 
+   color: navy;
+   margin:8px  ;
+   padding: 0;
+}
+
+.texto-span { 
+   color: navy;
+   margin:15px  ;
+   padding: 0;
+
+}
+
+.texto-span-area { 
+   color: navy;
+   margin:185px  ;
+   padding: 0;
+
+}
+
+.table-responsive {
+  height: 200px;
+  overflow: scroll;
+}
+
+ul.tabs{
+	width: 100%;
+	background: #363636;
+	list-style: none;
+	display: flex;
+
+}
+
+ul.tabs li{
+	width: 14%;
+    height: 100%;
+    padding:0;
+}
+
+ul.tabs li a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+	text-align: center;
+	display: block;
+/*	padding: 20px 0px; */
+	padding:0;
+}
+
+.active{
+	background: #0984CC;
+}
+
+ul.tabs li a .tab-text{
+	margin-left: 8px;
+}
+
+/* ul.tabs li a .tab-text */
+.tab-text {
+	margin-left: 8px;
+    color:#f60a0a;
+    /* height: 80%; */
+}
+
+table {
+    width:100%;
+    border-spacing: 4px;
+     border-collapse: collapse;
+    max-width:500px;
+    margin:auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #0002;
+    padding-top: 0;
+}
+
+td, th
+{
+    text-align: center;
+    padding: 0;
+    font-family:sans-serif;
+    border:none;
+    height:2px;
+
+    /* border-bottom: 1px solid #000;*/
+
+}
+
+td {
+    color: #444;
+    font-size: 0.75em;
+}
+
+tr {
+height: 2px;
+}
+
+textarea
+{
+    resize:vertical;
+    min-height:30px;
+    max-height:400x;
+    font-family:sans-serif;
+}
+ 
+
+.centraDiv
+{
+      display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center;    /* Centra verticalmente */
+      /* place-items: center; */ /* Centra tanto horizontal como verticalmente */
+      border: 1px solid #3e25a5;      
+      border-radius: 8px;
+      height: 45px;
+     /* margin:12px; */
+}
+
+.centraDivExamen
+{
+      display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center;    /* Centra verticalmente */
+      /* place-items: center; */ /* Centra tanto horizontal como verticalmente */
+      /* border: 1px solid #3e25a5;      */
+      /* border-radius: 8px; */
+      height: 15px;
+      margin:12px; 
+}
+
+
+.centraParra
+{
+      display: flex;
+      justify-content: center; /* Centra horizontalmente    */
+      align-items: center;     /* Centra verticalmente */
+      border: 1px solid #ccc;      
+      border-radius: 8px;
+     /* margin:12px; */
+}
+
+
+.izqParra
+{
+      display: flex;
+      justify-content: left; /* Centra horizontalmente    */
+      align-items: left;     /* Centra verticalmente */
+      border: 1px solid #ccc;      
+      border-radius: 8px;
+      margin:15px; 
+
+}
+
+
+select.mi-select {
+    width: 70%;
+    max-width: 230px;
+    min-width: 20px;
+    color: #222222; /* Color oscuro obligatorio para que sea visible */
+    background-color: #ffffff; /* Contraste claro con el texto */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease;    
+}
+
+/* Estilo de las opciones al desplegar el menú */
+select.mi-select option {
+    color: #222222;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+select.mi-select:focus {
+    border-color: #2563eb;
+}
+
+
+
+
+.tablaEstilos
+{
+font-family:sans-serif;
+width: 3%;
+font-size: 12px;
+
+}
+/********************* DESDE AQUI LABORATORIOcss de VENTANAS MODA */
+
+select.mi-selectApo
+{
+    width: 65px;
+    max-width: 230px;
+    min-width: 10px;
+    line-height: 1.4;
+    color: #222222; /* Color oscuro obligatorio para que sea visible */
+    background-color: #ffffff;  /* Contraste claro con el texto */ 
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    appearance: none; 
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none; 
+    transition: border-color 0.2s ease;    
+}
+select.mi-selectApo:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+/* Estilo para las opciones internas */
+select.mi-selectApo option {
+  color: #222222;
+  background-color: #ccc;
+}
+
+
+.contenedor-fecha
+{
+    dipslay: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+
+
+}
+.icono-flecha
+{
+    width: 16px;
+    height: 16px;
+    
+}
+/* Reseteo básico y fuentes */
+input
+{
+    width: auto;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    border:none;
+    box-shadow: 0px 0px 15px #0003;
+    margin:5px;
+}
+
+
+/* modales  */
+
+#crearModelRipsEnvioJson .estiloModal_uno
+{
+    background-color:antiquewhite;
+}
+
+
+#crearModelRipsJson .estiloModal_uno
+{
+    background-color:antiquewhite;
+}

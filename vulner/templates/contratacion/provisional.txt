@@ -1,0 +1,43 @@
+<article id="TarifariosDescripcionSum">
+
+        <!-- INICIO TABLE DE  EL DATATABLE  -->
+		
+                                        <table id="tablaTarifariosDescripcionSuministros" class=" display table table-striped  table-sm fs-6 nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <bold>
+                                                        <th>id</th>
+                                                        <th>Tipo</th>
+                                                        <th>Tipo Tarifa</th>
+                                                        <th>Columna</th>
+                                                        <th>Descripcion</th>
+                                                        <th>Seleccionar</th>
+                                                    </bold>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        
+                                        </table>
+                                        <br>
+                                        
+                                        <table id="tablaTarifariosSuministros" class=" display table table-striped  table-sm fs-6 nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <bold>
+                                                        <th>id</th>
+                                                        <th>tipoTarifa</th>
+                                                        <th>cums</th>
+                                                        <th>codigoHomologado</th>
+                                                        <th>exaNombre</th>
+                                                        <th>valor</th>
+                                                    </bold>
+                                        
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        
+                                        </table>
+
+</article>

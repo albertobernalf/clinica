@@ -962,16 +962,19 @@ def crearHistoriaClinica(request):
                         #Rutina Actualiza orden de Laboratorio
                         if (conteoLab >= 1):
 
-                            ordenMedicaLab = TiposOrdenesClinicas.objects.filter(nombre="LABORATORIO")
+                            tipoOrdenMedicaLab = TiposOrdenesClinicas.objects.get(nombre="LABORATORIO")
+                            print("tipoOrdenMedicaLab = ",tipoOrdenMedicaLab)
+                            print ("tipoOrdenMedicaLab lab = ", tipoOrdenMedicaLab.id)
 
-                            print ("consecutivo lab = ", ordenMedicaLab.consecutivo)
+                            ordenMedicaLab = OrdenesClinicas.objects.get(tipoOrden_id=tipoOrdenMedicaLab.id)
                             ordenNo = ordenMedicaLab.consecutivo
-                            ordenNo += ordenNo
+                            ordenNo = ordenNo + 1
+                            print ("Orden de laboratorio No .. ", ordenNo)
                             
-                            comando = "UPDATE clinico_historia SET OrdenMedicaLab = '" + str(ordenNo) + "' WHERE id = " + str(historiaId)
+                            comando = 'UPDATE clinico_historia SET "ordenMedicaLab" = ' + "'" + str(ordenNo) + "' WHERE id = " + "'" +  str(historiaId) + "'"
                             cur3.execute(comando)
 
-                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = '" + str(ordenNo) + "'" + '  WHERE "tipoOrden_id" = ' + str(ordenMedicaLab.id)                     
+                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = " +  str(ordenNo) + '  WHERE "tipoOrden_id" = ' + "'" + str(ordenMedicaLab.id) +  "'"
                             cur3.execute(comando)
 
 
@@ -1192,16 +1195,19 @@ def crearHistoriaClinica(request):
                         #Rutina Actualiza orden de Laboratorio
                         if (conteoRad>=1):
 
-                            ordenMedicaRad = TiposOrdenesClinicas.objects.filter(nombre="RADIOLOGIA")
+                            tipoOrdenMedicaRad = TiposOrdenesClinicas.objects.get(nombre="RADIOLOGIA")
+                            print("tipoOrdenMedicaRad = ",tipoOrdenMedicaRad)
+                            print ("tipoOrdenMedicaRad rad = ", tipoOrdenMedicaRad.id)
 
-                            print ("consecutivo rad = ", ordenMedicaRad.consecutivo)
-                            ordenNo = ordenMedicaRad.consecutivo
-                            ordenNo += ordenNo
+                            ordenMedicaRad = OrdenesClinicas.objects.get(tipoOrden_id=tipoOrdenMedicaRad.id)
+                           
+                            ordenNo = ordenNo + 1
+                            print ("Orden de radiologia No .. ", ordenNo)
                             
-                            comando = "UPDATE clinico_historia SET OrdenMedicaRad = '" + str(ordenNo) + "' WHERE id = " + str(historiaId)
+                            comando = 'UPDATE clinico_historia SET "ordenMedicaRad" = ' + "'" + str(ordenNo) + "'" + "   WHERE id = " + "'" +  str(historiaId) + "'"
                             cur3.execute(comando)
 
-                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = '" + str(ordenNo) + "'" + '  WHERE "tipoOrden_id" = ' + str(ordenMedicaRad.id)                     
+                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = " +  str(ordenNo) +  '  WHERE "tipoOrden_id" = ' + "'"  + str(ordenMedicaRad.id) + "'"
                             cur3.execute(comando)
 
 
@@ -1430,19 +1436,20 @@ def crearHistoriaClinica(request):
 
                         if (conteoTer>= 1):
 
-                            ordenMedicaTer = TiposOrdenesClinicas.objects.filter(nombre="TERAPIA")
+                            tipoOrdenMedicaTer = TiposOrdenesClinicas.objects.get(nombre="TERAPIA")
+                            print("tipoOrdenMedicaTer = ",tipoOrdenMedicaTer)
+                            print ("tipoOrdenMedicaTer TER = ", tipoOrdenMedicaTer.id)
 
-                            print ("consecutivo ter = ", ordenMedicaTer.consecutivo)
-                            ordenNo = ordenMedicaTer.consecutivo
-                            ordenNo += ordenNo
+                            ordenMedicaTer = OrdenesClinicas.objects.get(tipoOrden_id=tipoOrdenMedicaTer.id)
+                           
+                            ordenNo = ordenNo + 1
+                            print ("Orden Terapia No .. ", ordenNo)
                             
-                            comando = "UPDATE clinico_historia SET OrdenMedicaTer = '" + str(ordenNo) + "' WHERE id = " + str(historiaId)
+                            comando = 'UPDATE clinico_historia SET "ordenMedicaTer" = ' + "'" + str(ordenNo) + "'" + "   WHERE id = " + "'" +  str(historiaId) + "'"
                             cur3.execute(comando)
 
-                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = '" + str(ordenNo) + "'" + '  WHERE "tipoOrden_id" = ' + str(ordenMedicaTer.id)                     
+                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = " +  str(ordenNo) +  '  WHERE "tipoOrden_id" = ' + "'"  + str(ordenMedicaTer.id) + "'"
                             cur3.execute(comando)
-
-
 
                            # Fin Grabacion Terapias
 
@@ -1668,18 +1675,20 @@ def crearHistoriaClinica(request):
 
                         if (conteoNoQx>= 1):
 
-                            ordenMedicaProcNoQx = TiposOrdenesClinicas.objects.filter(nombre="PROCEDIMIENTO NOQX")
+                            tipoOrdenMedicaProcNoQx = TiposOrdenesClinicas.objects.get(nombre="PROCEDIMIENTONOQX")
+                            print("tipoOrdenMedicaProcNoQx = ",tipoOrdenMedicaProcNoQx)
+                            print ("tipoOrdenMedicaProcNoQx  = ", tipoOrdenMedicaProcNoQx.id)
 
-                            print ("consecutivo procedimeinto NOQX = ", ordenMedicaProcNoQx.consecutivo)
-                            ordenNo = ordenMedicaProcNoQx.consecutivo
-                            ordenNo += ordenNo
+                            ordenMedicaProcNoQx = OrdenesClinicas.objects.get(tipoOrden_id=tipoOrdenMedicaProcNoQx.id)
+                           
+                            ordenNo = ordenNo + 1
+                            print ("Orden Terapia No .. ", ordenNo)
                             
-                            comando = "UPDATE clinico_historia SET ordenMedicaProcNoQx = '" + str(ordenNo) + "' WHERE id = " + str(historiaId)
+                            comando = 'UPDATE clinico_historia SET "ordenMedicaProcNoQx" = ' + "'" + str(ordenNo) + "'" + "   WHERE id = " + "'" +  str(historiaId) + "'"
                             cur3.execute(comando)
 
-                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = '" + str(ordenNo) + "'" + '  WHERE "tipoOrden_id" = ' + str(ordenMedicaProcNoQx.id)                     
+                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = " +  str(ordenNo) +  '  WHERE "tipoOrden_id" = ' + "'"  + str(ordenMedicaProcNoQx.id) + "'"
                             cur3.execute(comando)
-
 
 
                              # Fin Grabacion noQx
@@ -1798,6 +1807,8 @@ def crearHistoriaClinica(request):
 
                            # Grabacion Interconsultas
 
+                        conteoInt=0
+
                         interconsultas = request.POST["interconsultas"]
                         print("interconsultas =", interconsultas)
 
@@ -1850,18 +1861,20 @@ def crearHistoriaClinica(request):
 
                         if (conteoInt >= 1):                            
 
-                            ordenMedicaInt = TiposOrdenesClinicas.objects.filter(nombre="INTERCONSULTA")
+                            tipoOrdenMedicaInt = TiposOrdenesClinicas.objects.get(nombre="INTERCONSULTA")
+                            print("tipoOrdenMedicaInt = ",tipoOrdenMedicaInt)
+                            print ("tipoOrdenMedicaInt  = ", tipoOrdenMedicaInt.id)
 
-                            print ("consecutivo interconsulta = ", ordenMedicaInt.consecutivo)
-                            ordenNo = ordenMedicaInt.consecutivo
-                            ordenNo += ordenNo
+                            ordenMedicaProcInt = OrdenesClinicas.objects.get(tipoOrden_id=tipoOrdenMedicaInt.id)
+                           
+                            ordenNo = ordenNo + 1
+                            print ("Orden interconsulta No .. ", ordenNo)
                             
-                            comando = "UPDATE clinico_historia SET ordenMedicaInt = '" + str(ordenNo) + "' WHERE id = " + str(historiaId)
+                            comando = 'UPDATE clinico_historia SET "ordenMedicaInt" = ' + "'" + str(ordenNo) + "'" + "   WHERE id = " + "'" +  str(historiaId) + "'"
                             cur3.execute(comando)
 
-                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = '" + str(ordenNo) + "'" + '  WHERE "tipoOrden_id" = ' + str(ordenMedicaInt.id)                     
+                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = " +  str(ordenNo) +  '  WHERE "tipoOrden_id" = ' + "'"  + str(ordenMedicaInt.id) + "'"
                             cur3.execute(comando)
-
 
 
                             # Fin Grabacion Interconsultas
@@ -1920,25 +1933,30 @@ def crearHistoriaClinica(request):
                             ingresoId2=ingresosPaciente.id
                             ImprimirOrdenIncapacidad(ingresoId2, historiaId)
 
-                        if (conteoInca >= 1):
+                        if (len(incapForm[0]) >1 ):
 
-                            ordenMedicaInc = TiposOrdenesClinicas.objects.filter(nombre="INCAPACIDAD")
 
-                            print ("consecutivo incapacidad = ", ordenMedicaInc.consecutivo)
-                            ordenNo = ordenMedicaInc.consecutivo
-                            ordenNo += ordenNo
+                            tipoOrdenMedicaInc = TiposOrdenesClinicas.objects.get(nombre="INCAPACIDAD")
+                            print("tipoOrdenMedicaInc = ",tipoOrdenMedicaInc)
+                            print ("tipoOrdenMedicaInc  = ", tipoOrdenMedicaInc.id)
+
+                            ordenMedicaProcInc = OrdenesClinicas.objects.get(tipoOrden_id=tipoOrdenMedicaInc.id)
+                           
+                            ordenNo = ordenNo + 1
+                            print ("Orden interconsulta No .. ", ordenNo)
                             
-                            comando = "UPDATE clinico_historia SET ordenMedicaInc = '" + str(ordenNo) + "' WHERE id = " + str(historiaId)
+                            comando = 'UPDATE clinico_historia SET "ordenMedicaInc" = ' + "'" + str(ordenNo) + "'" + "   WHERE id = " + "'" +  str(historiaId) + "'"
                             cur3.execute(comando)
 
-                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = '" + str(ordenNo) + "'" + '  WHERE "tipoOrden_id" = ' + str(ordenMedicaInc.id)                     
+                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = " +  str(ordenNo) +  '  WHERE "tipoOrden_id" = ' + "'"  + str(ordenMedicaInc.id) + "'"
                             cur3.execute(comando)
-
 
                         # Fin Grabacion incapacidades
 
 
                     # Grabacion signos
+                    
+                        print("voy para signos")
 
                         signosForm = request.POST['signos']
                         print("signosForm= ", signosForm )
@@ -2339,16 +2357,19 @@ def crearHistoriaClinica(request):
 
                         if (conteoMed >= 1):
 
-                            ordenMedicaMed = TiposOrdenesClinicas.objects.filter(nombre="MEDICAMENTO")
+                            tipoOrdenMedicaMed = TiposOrdenesClinicas.objects.get(nombre="MEDICAMENTO")
+                            print("tipoOrdenMedicaMed = ",tipoOrdenMedicaMed)
+                            print ("tipoOrdenMedicaMed  = ", tipoOrdenMedicaMed.id)
 
-                            print ("consecutivo medicamento = ", ordenMedicaMed.consecutivo)
-                            ordenNo = ordenMedicaMed.consecutivo
-                            ordenNo += ordenNo
+                            ordenMedicaProcMed = OrdenesClinicas.objects.get(tipoOrden_id=tipoOrdenMedicaMed.id)
+                           
+                            ordenNo = ordenNo + 1
+                            print ("Orden MEDICAMENTOS No .. ", ordenNo)
                             
-                            comando = "UPDATE clinico_historia SET ordenMedicaMed = '" + str(ordenNo) + "' WHERE id = " + str(historiaId)
+                            comando = 'UPDATE clinico_historia SET "ordenMedicaMed" = ' + "'" + str(ordenNo) + "'" + "   WHERE id = " + "'" +  str(historiaId) + "'"
                             cur3.execute(comando)
 
-                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = '" + str(ordenNo) + "'" + '  WHERE "tipoOrden_id" = ' + str(ordenMedicaMed.id)                     
+                            comando = "UPDATE clinico_ordenesclinicas SET consecutivo = " +  str(ordenNo) +  '  WHERE "tipoOrden_id" = ' + "'"  + str(ordenMedicaMed.id) + "'"
                             cur3.execute(comando)
 
                         # Fin rutina Facturacion

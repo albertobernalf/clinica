@@ -2786,7 +2786,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
 
         ## FIN CONTEXTO
 
-        return render(request, "contratacion/panelConveniosF.html", context)
+        return render(request, "contratacion/panelConveniosFCli.html", context)
 
 
     if (escogeModulo == 'APOYO TERAPEUTICO'):
@@ -2794,7 +2794,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
         ## Aqui contexto para solo Triage
 
         ## FIN CONTEXTO
-        return render(request, "apoyoTerapeutico/panelApoyoTerapeutico.html", context)
+        return render(request, "apoyoTerapeutico/panelApoyoTerapeuticoCli.html", context)
 
 
     if (escogeModulo == 'TARIFAS'):
@@ -2968,7 +2968,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
 
 
         ## FIN CONTEXTO
-        return render(request, "rips/PanelRipsF.html", context)
+        return render(request, "rips/PanelRipsFCli.html", context)
 
 
     if (escogeModulo == 'GLOSAS'):
@@ -3119,7 +3119,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
         # Fin combo Estado Glosas estadosRadicacion
 
 
-        return render(request, "cartera/PanelGlosasFU.html", context)
+        return render(request, "cartera/PanelGlosasFUCli.html", context)
 
 
     if (escogeModulo == 'CARTERA'):
