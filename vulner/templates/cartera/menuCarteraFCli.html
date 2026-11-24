@@ -3,14 +3,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src={% static 'mainCarteraF.js' %} defer> </script>
+    <script src={% static 'app/main/cartera/mainCarteraFCli.js' %} defer> </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% block title %} {% endblock %}
     </title>
 
     <!-- Custom css -->
     <link rel="stylesheet" type="text/css"  href = {% static 'css/login.css' %} >
- <link rel="stylesheet" type="text/css" href={% static 'css/panelGlosas.css' %} 
+ <link rel="stylesheet" type="text/css" href={% static 'app/css/cartera/panelCarteraCli.css' %} 
     <link rel="stylesheet" type="text/css"  href = {% static 'nav_sidebar.css' %} >
     <link rel="stylesheet" type="text/css"  href = {% static 'css/base.css' %} >
     <link rel="stylesheet" type="text/css"  href = {% static 'css/responsive.css' %} >
@@ -44,83 +45,43 @@
 
 
      <!-- Custom css -->
-    <link rel="stylesheet" type="text/css"  href = {% static 'css/styleTab.css' %} >
+    <link rel="stylesheet" type="text/css"  href = {% static 'app/css/cartera/styleTab.css' %} >
 
-        <script src={% static 'js/styleTab.js' %} defer> </script>
+        <script type="application/javascript" src={% static 'app/js/cartera/styleTab.js' %} defer> </script>
 
     <!-- Fin Custom css -->
 
     <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 
-    <style type="text/css">
-        thead tr th {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background-color: #ffffff;
-        }
 
-        .table-responsive {
-            height:200px;
-            overflow:scroll;
-        }
+<script>
+function RefrescarPantalla() {
+ 		var sedeSeleccionada = document.getElementById("sedeSeleccionada").value;
+        var username = document.getElementById("username").value;
+        var nombreSede = document.getElementById("nombreSede").value;
+    	var sede = document.getElementById("sede").value;
+        var username_id = document.getElementById("username_id").value;
+         var data =  {}   ;
+        data['username'] = username;
+        data['sedeSeleccionada'] = sedeSeleccionada;
+        data['nombreSede'] = nombreSede;
+        data['sede'] = sede;
+        data['sedesClinica_id'] = sede;
+        data['username_id'] = username_id;
 
-        .button {
-             border: none;
-             width: 580%;
-             height: 90%;
-             padding: 15px 32px;
-             display: inline-block;
+		var facturaId = dato3.factura_id;  // jquery
+		var glosaId = dato3.id;
 
-        }
 
-        .button1 {
-             background-color: #f44336;
-             color: white;
-             border: none;
-             width: 300%;
-             height: 50%;
-             display: inline-block;
+ 	    data = JSON.stringify(data);
 
-        }
+	alert("sede = " + sede);
 
-.contenedorSpan {
-  display: flex;
-  justify-content: space-between;
-  /* Otros estilos para el contenedor */
+         arrancaCartera(6,data);
+	 dataTableEmpresasInitialized = true;
+
 }
-.izquierda {
-  /* Estilos para el span izquierdo */
-color:blue;
- font-size:15px;
- line-height:10px;
- font-family: Calibri; 
-margin-left:10px;
- float: left;
-}
-
-.derecha {
-  /* Estilos para el span derecho */
-color:blue;
- font-size:15px; 
-line-height:10px; 
-font-family: Calibri; 
-margin-left:450px;
- float: right;
-}
-
-.masderecha {
-  /* Estilos para el span derecho */
-color:blue;
- font-size:15px; 
-line-height:10px; 
-font-family: Calibri; 
-margin-left:400px;
- float: right;
-}
-
-    </style>
-
+</script>    
 
 </head>
 
@@ -142,62 +103,55 @@ margin-left:400px;
 <input type="hidden" id="permisosDetalle" name="permisosDetalle" value = "{{PermisosDetalle}}">
 <input type="hidden" id="escogeModulo" name="escogeModulo" value = "{{EscogeModulo}}">
 
+
+
+<div id="men" name="men">
 {% block menu  %}
-<div class="marco" style="width:100%">
-       
-       <form class="form-inline my-2 my-lg-0">
-        	<div style="Text-align:right; line-height:10px;">
+  <!-- <form class="form-inline"> -->
+  <form>
+<div class="centraDiv">
+	 <span> <img src="{% static 'app/img/accesoPrincipal/ClinicaAlb2.png' %}" alt="Clinica" width="70" height="30"> </span>
 
-	<div class="contenedorSpan" style="width=100%">
+    <span> Sede: {{NombreSede}} </span>
 
-	<span class="izquierda">  {{EscogeModulo}} </span>
+    <span> Colaborador : {{Profesional}} </span>
 
-		<figcaption class="figure-caption text-center">
-	            <a  href="/retornarMen/{{Sede}}, {{Username}}, {{Documento}}, {{NombreSede}}, {{Profesional}} ">RETORNAR
-		<i class="fa-solid fa-arrow-rotate-left"></i>
-		</a> 
+    <span> Modulo :  {{EscogeModulo}}
+    </span>
 
-		  </figcaption>
+    <span>
+      <a href="/retornarMen/{{Sede}}, {{Username}}, {{Documento}}, {{NombreSede}}, {{Profesional}} ">RETORNO</a>
+        <i class="fa-solid fa-arrow-rotate-left"></i>
 
-         
-		<span class="derecha">  Sede: {{NombreSede}}  </span>
+      </span>
 
-   
-		<span class="masderecha"> Colaborador : {{Profesional}} </span>
-
-	
-         	   <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
-
-		        </form>
-
-		  
-            </div>
-         </div>
-
-
+    <input type="hidden" id="nombreSede" name="nombreSede" value="{{NombreSede}}">
+</div>
+  </form>
 {% endblock %}
+</div>
 
+  <div id="head">{% block head  %} {% endblock %} </div>
+  <div id="encabezado"> {% block encabezado  %} {% endblock %} </div>
 
-{% block head  %}
-<script>
-</script>
-{% endblock %}
-
-
-
-{% block encabezado  %}
-
-{% endblock %}
-
-
+  <div id="mensajeria">
 {% block mensajeria  %}
-
+Mensajes
+    <textarea id= "mensajes" name="mensajes" rows="1" cols="260"></textarea>
+      Notificacion
+    <textarea id= "mensajesError" name="mensajesError" rows="1" cols="260"></textarea>
+        <input type="button" id="btnRefrescar" name="btnRefrescar" value="Refrescar" onclick="RefrescarPantalla()">
+    		
 {% endblock %}
+  </div>
 
-
+<div id="contenido">
 {% block content  %}
 
 {% endblock %}
+</div>
+
+
 
 {% block totales  %}
 

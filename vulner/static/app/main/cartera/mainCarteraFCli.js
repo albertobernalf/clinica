@@ -52,10 +52,9 @@ function arrancaCartera(valorTabla,valorData)
     if (valorTabla == 1)
     {
         let dataTableOptionsCaja  ={
- dom: "<'row mb-0'<'col-sm-6'f><'col-sm-4'><'col-sm-2'B>>" + // B = Botones a la izquierda, f = filtro a la derecha
+  dom: "<'row mb-0'<'col-sm-6'B><'col-sm-3'><'col-sm-3 'f>>" + // B = Botones a la izquierda, f = filtro a la derecha
             "<'row'<'col-sm-12'tr>>" +
              "<'row mt-0'<'col-sm-5'i><'col-sm-7'p>>",
-
   buttons: [
     {
       extend: 'excelHtml5',
@@ -76,6 +75,7 @@ function arrancaCartera(valorTabla,valorData)
       className: 'btn btn-info',
     },
   ],
+  autoWidth:false,
   lengthMenu: [2, 4, 15],
            processing: true,
             serverSide: false,
@@ -162,10 +162,9 @@ function arrancaCartera(valorTabla,valorData)
     if (valorTabla == 2)
     {
         let dataTableOptionsCartera  ={
- dom: "<'row mb-0'<'col-sm-6'f><'col-sm-4'><'col-sm-2'B>>" + // B = Botones a la izquierda, f = filtro a la derecha
+  dom: "<'row mb-0'<'col-sm-6'B><'col-sm-3'><'col-sm-3 'f>>" + // B = Botones a la izquierda, f = filtro a la derecha
             "<'row'<'col-sm-12'tr>>" +
              "<'row mt-0'<'col-sm-5'i><'col-sm-7'p>>",
-
   buttons: [
     {
       extend: 'excelHtml5',
@@ -186,6 +185,7 @@ function arrancaCartera(valorTabla,valorData)
       className: 'btn btn-info',
     },
   ],
+  autoWidth:false,
   lengthMenu: [2, 4, 15],
            processing: true,
             serverSide: false,
@@ -264,10 +264,9 @@ function arrancaCartera(valorTabla,valorData)
     if (valorTabla == 3)
     {
         let dataTableOptionsPagosEmpresas  ={
- dom: "<'row mb-0'<'col-sm-6'f><'col-sm-4'><'col-sm-2'B>>" + // B = Botones a la izquierda, f = filtro a la derecha
+  dom: "<'row mb-0'<'col-sm-6'B><'col-sm-3'><'col-sm-3 'f>>" + // B = Botones a la izquierda, f = filtro a la derecha
             "<'row'<'col-sm-12'tr>>" +
              "<'row mt-0'<'col-sm-5'i><'col-sm-7'p>>",
-
   buttons: [
     {
       extend: 'excelHtml5',
@@ -288,6 +287,7 @@ function arrancaCartera(valorTabla,valorData)
       className: 'btn btn-info',
     },
   ],
+  autoWidth:false,
   lengthMenu: [2, 4, 15],
            processing: true,
             serverSide: false,
@@ -322,8 +322,6 @@ function arrancaCartera(valorTabla,valorData)
 			      previous: 'Anterior',
 		    }
 			},
-
-
            ajax: {
                  url:"/load_dataPagosEmpresas/" +  data,
                  type: "POST",
@@ -369,10 +367,9 @@ function arrancaCartera(valorTabla,valorData)
     if (valorTabla == 4)
     {
         let dataTableOptionsPagosEmpresasDetalle  ={
- dom: "<'row mb-0'<'col-sm-6'f><'col-sm-4'><'col-sm-2'B>>" + // B = Botones a la izquierda, f = filtro a la derecha
+  dom: "<'row mb-0'<'col-sm-6'B><'col-sm-3'><'col-sm-3 'f>>" + // B = Botones a la izquierda, f = filtro a la derecha
             "<'row'<'col-sm-12'tr>>" +
              "<'row mt-0'<'col-sm-5'i><'col-sm-7'p>>",
-
   buttons: [
     {
       extend: 'excelHtml5',
@@ -393,6 +390,7 @@ function arrancaCartera(valorTabla,valorData)
       className: 'btn btn-info',
     },
   ],
+autoWidth:false,
   lengthMenu: [2, 4, 15],
            processing: true,
             serverSide: false,
@@ -466,11 +464,10 @@ function arrancaCartera(valorTabla,valorData)
 
 
         let dataTableOptionsCarteraDetalle  ={
- dom: "<'row mb-0'<'col-sm-6'f><'col-sm-4'><'col-sm-2'B>>" + // B = Botones a la izquierda, f = filtro a la derecha
+  dom: "<'row mb-0'<'col-sm-6'B><'col-sm-3'><'col-sm-3 'f>>" + // B = Botones a la izquierda, f = filtro a la derecha
             "<'row'<'col-sm-12'tr>>" +
              "<'row mt-0'<'col-sm-5'i><'col-sm-7'p>>",
-
-  buttons: [
+ buttons: [
     {
       extend: 'excelHtml5',
       text: '<i class="fas fa-file-excel"></i> ',
@@ -490,6 +487,7 @@ function arrancaCartera(valorTabla,valorData)
       className: 'btn btn-info',
     },
   ],
+  autoWidth:false, 
   lengthMenu: [2, 4, 15],
            processing: true,
             serverSide: false,
@@ -556,10 +554,9 @@ function arrancaCartera(valorTabla,valorData)
     if (valorTabla == 6)
     {
         let dataTableOptionsEmpresas  ={
- dom: "<'row mb-0'<'col-sm-6'f><'col-sm-4'><'col-sm-2'B>>" + // B = Botones a la izquierda, f = filtro a la derecha
+  dom: "<'row mb-0'<'col-sm-6'B><'col-sm-3'><'col-sm-3 'f>>" + // B = Botones a la izquierda, f = filtro a la derecha
             "<'row'<'col-sm-12'tr>>" +
              "<'row mt-0'<'col-sm-5'i><'col-sm-7'p>>",
-
   buttons: [
     {
       extend: 'excelHtml5',
@@ -580,6 +577,7 @@ function arrancaCartera(valorTabla,valorData)
       className: 'btn btn-info',
     },
   ],
+  autoWidth:false,
   lengthMenu: [2, 4, 15],
            processing: true,
             serverSide: false,
@@ -763,9 +761,6 @@ window.addEventListener('load', async () => {
 			document.getElementById("fecha").value = info[0].fields.fecha;
 			 $('#usuarioEngrega_id').val(info[0].fields.usuarioEntrega_id);
 			 $('#serviciosAdministrativos_id').val(info[0].fields.serviciosAdministrativos_id);
-
-
-
 			$('#usuarioRecibe_id').val(info[0].fields.usuarioRecibe_id);
 			$('#usuarioSuperviza_id').val(info[0].fields.usuarioSuperviza_id);
 			$('#totalEfectivo').val(info[0].fields.totalEfectivo);
@@ -818,9 +813,6 @@ function GuardarCaja()
 			document.getElementById("mensajesError").value = data.Mensajes;
 			return;
 			}
-
-
-
 		var data =  {}   ;
 	        data['username'] = username;
 		data['username_id'] = username_id;

@@ -1,71 +1,25 @@
-{% extends "cartera/menuCarteraF.html" %}
+{% extends "cartera/menuCarteraFCli.html" %}
 {% load static %}
 
 {% block head %}
 
 
-<link rel="stylesheet" type="text/css" href={% static 'css/panelCartera.css' %}>
+<link rel="stylesheet" type="text/css" href={% static 'app/css/cartera/panelCarteraCli.css' %}>
 <link rel="stylesheet" type="text/css" href={% static 'css/fontawesome.css' %}>
 <link rel="stylesheet" type="text/css"  href = {% static 'css/litle.css' %} >
-<script src={% static 'js/panelTabsCartera.js' %} defer >         </script>
+<script stype="application/javascript" src={% static 'app/js/cartera/panelTabsCarteraCli.js' %} defer >         </script>
 
 
 
 <div class="marco">
     <ul class="tabs">
-   <li><a href="#Empresas"><span class="fa-solid fa-user-doctor-message"></span> <span   class="tab-text"> </span> Empresas</a></li>
-        <li><a href="#PagosEmpresas"><span class="fa-solid fa-user-doctor-message"></span> <span class="tab-text"> </span>Pagos Empresas</a></li>   
-        <li><a href="#Cartera"><span class="fa-solid fa-user-doctor-message"></span> <span class="tab-text"> </span>Cartera</a></li>   
-        <li><a href="#CarteraDetalle"><span class="fa-solid fa-user-doctor-message"></span> <span class="tab-text"> </span>Pagos Factura</a></li>   
-	 <li><a href="#Caja"><span class="fa-solid fa-user-doctor-message"></span> <span   class="tab-text"> </span> Caja</a></li>
+   <li><a href="#Empresas"> <span   class="tab-text"> </span> Empresas</a></li>
+        <li><a href="#PagosEmpresas"><span class="tab-text"> </span>Pagos Empresas</a></li>   
+        <li><a href="#Cartera"><span class="tab-text"> </span>Cartera</a></li>   
+        <li><a href="#CarteraDetalle"><span class="tab-text"> </span>Pagos Factura</a></li>   
+	 <li><a href="#Caja"><span   class="tab-text"> </span> Caja</a></li>
     </ul>
 </div>
-
-<style>
-
-.my-row-class {
-    height: 30px;
-}
-
-</style>
-<script>
-function RefrescarPantalla() {
- 		var sedeSeleccionada = document.getElementById("sedeSeleccionada").value;
-        var username = document.getElementById("username").value;
-        var nombreSede = document.getElementById("nombreSede").value;
-    	var sede = document.getElementById("sede").value;
-        var username_id = document.getElementById("username_id").value;
-         var data =  {}   ;
-        data['username'] = username;
-        data['sedeSeleccionada'] = sedeSeleccionada;
-        data['nombreSede'] = nombreSede;
-        data['sede'] = sede;
-        data['sedesClinica_id'] = sede;
-        data['username_id'] = username_id;
-
-		var facturaId = dato3.factura_id;  // jquery
-		var glosaId = dato3.id;
-
-
- 	    data = JSON.stringify(data);
-
-	alert("sede = " + sede);
-
-         arrancaCartera(6,data);
-	 dataTableEmpresasInitialized = true;
-
-               //  arrancaCartera(2,data);
-	  // dataTableCarteraInitialized = true;
-
-//     arrancaCartera(4,data);
-//	   dataTablePagosEmpresasDetalleInitialized = true;
-
-
-
-
-
-}
-</script>
 
 
 {% endblock %}
@@ -77,20 +31,9 @@ function RefrescarPantalla() {
 {% endblock %}
 
 
-{% block mensajeria %}
-<div class="marco"> 
-<div style="display: flex; gap: 10px; height:15px;width: 340px;">
- 	<input type="text" id="mensajes"      name="mensajes" style="background-color: lightgray; color: navy;" style="width: 50%;"  placeholder=""  wrap="hard" size="75px"></input>
-	<input type="text" id="mensajesError" name="mensajesError" style="background-color: lightgray; color: navy;" style="width: 50%;"  placeholder=""  wrap="hard" size="75px"></input>
-        
-</div>
- </div>
-{% endblock %}
-
-
 {% block content %}
 
-<div class="marco">
+
     <div class="secciones">
 
 
@@ -122,15 +65,12 @@ function RefrescarPantalla() {
                 <input type="hidden" id="consec" name="consec" value="">
                 <input type="hidden" id="tipoIng" name="tipoIng" value="{{tipoIng}}">
 		<input type="hidden" id="convenioId" name="convenioId" value="{{convenioId}}">
-	<input type="button" id="btnRefrescar" name="btnRefrescar" value="Refrescar" onclick="RefrescarPantalla()">
 	
             </form>
 			
-
             <!-- INICIO TABLE DE  EL DATATABLE  -->
- 	<div class="container my-2">          
-   			   <div class="row">
-                                        <table  id= "tablaEmpresas" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
+
+                                        <table  id= "tablaEmpresas" class=" display table table-striped table-sm fs-6 nowrap" >
                                            <thead>
                                             <tr>    
 						<bold>                                  
@@ -151,8 +91,6 @@ function RefrescarPantalla() {
                                             <tbody>
                                             </tbody>				
                                        </table>
-                                    </div>
-                                </div>
 
         </article>
 
@@ -161,9 +99,7 @@ function RefrescarPantalla() {
 
 <article id="Caja">
             <!-- INICIO TABLE DE  EL DATATABLE  -->
- 	<div class="container my-2">          
-   			   <div class="row">
-                                        <table  id= "tablaCaja" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
+                                        <table  id= "tablaCaja" class=" display table table-striped table-sm fs-6 nowrap" >
                                            <thead>
                                             <tr>    
 						<bold>                                  
@@ -195,8 +131,6 @@ function RefrescarPantalla() {
                                             </tbody>
  					
                                         </table>
-                                    </div>
-                                </div>
 
 
 	            <!-- Espacio Modales  Glosas-->
@@ -348,9 +282,8 @@ function RefrescarPantalla() {
 			
 
             <!-- INICIO TABLE DE  EL DATATABLE  -->
- 	<div class="container my-2">          
-   			   <div class="row">
-                                        <table  id= "tablaCartera" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
+
+                                        <table  id= "tablaCartera" class=" display table table-striped table-sm fs-6 nowrap">
                                            <thead>
                                             <tr>    
 						<bold>                                  
@@ -370,8 +303,6 @@ function RefrescarPantalla() {
                                             <tbody>
                                             </tbody>				
                                        </table>
-                                    </div>
-                                </div>
 
         </article>
 
@@ -410,11 +341,11 @@ function RefrescarPantalla() {
 			
 
             <!-- INICIO TABLE DE  EL DATATABLE  -->
- 	<div class="container my-2">          
-		<input type="button" style="height:30px;margin-left: 0 ; margin-bottom: 0;border-top-right-radius: 0;"  size="30px" id="BtnPagosEmpresas"  name="BtnPagosEmpresas" value="Adicionar" onclick= "AdicionarPagosEmpresas()" >
-
-   			   <div class="row">
-                                        <table  id= "tablaPagosEmpresas" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
+                <div class="centraDiv">
+		<input type="button" class="btn btn-info btn-sm"  id="BtnPagosEmpresas"  name="BtnPagosEmpresas" value="Crear Pago Empresa" onclick= "AdicionarPagosEmpresas()" >
+                </div>
+   			   
+                                        <table  id= "tablaPagosEmpresas" class=" display table table-striped table-sm fs-6 nowrap" >
                                            <thead>
                                             <tr>    
 						<bold>                                  
@@ -436,18 +367,16 @@ function RefrescarPantalla() {
                                             <tbody>
                                             </tbody>				
                                        </table>
-                                    </div>
-                                </div>
 
 	            <!-- Espacio Modales Pagos Empresas-->
 
             <div class="modal fade" id="crearModelPagosEmpresas" tabindex="-1" role="dialog"  style="overflow-y:scroll;" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable  modal-dialog-center" role="document" >
+                <div class="modal-dialog modal-xl modal-dialog-scrollable  modal-dialog-center" role="document" >
                     <div class="modal-content">
                         <div class="modal-header">
-	     <div  class="modal-title" id="exampleModalLabel" style="text-align:center;"><font gont-family="Times New roman" size=5">Pagos Empresas</font> </div>
+	     <div  class="modal-title" id="exampleModalLabel">Pagos Empresas</div>
                                         <button type="button" class="close" data-bs-dismiss="modal"  aria-label="Close"> <span aria-hidden="true">&times;</span>  </button>
-			<button type="button" class="btn btn-primary" id="saveBtnPagosEmpresas" onclick="GuardarPagosEmpresas()">Grabar!</button> 
+			<button type="button" class="btn btn-info btn-sm" id="saveBtnPagosEmpresas" onclick="GuardarPagosEmpresas()">Grabar!</button> 
                         </div>
 		
                         <div class="modal-body">
@@ -458,41 +387,45 @@ function RefrescarPantalla() {
                                 <input type="hidden" name="usernamePago" id="usernamePago" value="{{Username_id}}">
                                 <input type="hidden" name="sedePago" id="sedePago" value="{{Sede}}">
 
-                      <div id="flex-container-pagosEmpresas">
-				<div>
 
+
+                    <div class="centraDiv">
+                NoPago:
 			<input type="text"   id="idPago" name="idPago" placeholder="pagoId" readonly></input>
 
-
-
-	 			<select  id="empresaPago" name="empresaPago"
+	 			<select class="mi-select" id="empresaPago" name="empresaPago"
                                                     hidden>
                                                 {% for empresas in Empresas %}
                                                 <option value="{{empresas.id}}"> {{empresas.nombre}}</option>
                                                 {% endfor %}
                                             </select>
-
+                            Fecha Pago:
 					 <input type="date"  id="fechaPago" name="fechaPago" placeholder="fechaPago"></input>
+                            Forma de Pago: 
 
-
-					 <select  id="formaPago"          name="formaPago"
+					 <select  class="mi-select" id="formaPago"          name="formaPago"
                                                     required>
                                                 {% for formasPagos in FormasPagos %}
                                                 <option value="{{formasPagos.id}}"> {{formasPagos.nombre}}</option>
                                                 {% endfor %}
                                             </select>
-
-					 <select  id="tipoPago"   name="tipoPago"
+                                    Tipo Pago:
+					 <select class="mi-select" id="tipoPago"   name="tipoPago"
                                                     required>
                                                 {% for tiposPagos in TiposPagos %}
                                                 <option value="{{tiposPagos.id}}"> {{tiposPagos.nombre}}</option>
                                                 {% endfor %}
-                                            </select>
+                                            </select>   
 
+
+                                        </div>
+
+            <div class="centraDiv">
 		<input type="text"   id="valorPago" name="valorPago" placeholder="valorPago" ></input>
 		<input type="text"   id="descripcionPago" name="descripcionPago" placeholder="descripcion" ></input>
-		<input type="text"   id="radicado" name="radicado" placeholder="radicado" ></input>
-
+		<input type="text"   id="radicado" name="radicado" placeholder="No Radicado" ></input>
+                    </div>
+                    <div class="centraDiv">
 		
 					 <select  id="servicio"    name="servicio"
                                                     required>
@@ -501,21 +434,15 @@ function RefrescarPantalla() {
                                                 {% endfor %}
                                             </select>
 
-	
-
-
                                 </div>
-
-                                </div> 
-
                             </form>
 
                         </div> <!-- CIERRA BODY -->
 			<div class="modal-footer">
-
-		<textarea id="mensajesErrorModalPagosEmpresas" name="mensajesErrorModalPagosEmpresas" style="background-color: lightred; color: navy;"  rows="1" cols="60" placeholder="Mensajes..."  wrap="hard"></textarea>			
+                <div class="centraDiv">
+		Notificacion:  <textarea id="mensajesErrorModalPagosEmpresas" name="mensajesErrorModalPagosEmpresas" rows="1" cols="60" placeholder="Mensajes..."  wrap="hard"></textarea>			
 	  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar   </button>
-                      
+                      </div>
 			    </div> <!-- CIERRA FOOTER -->			
                         </div> <!-- CIERRA MODAL CONTENTE -->
                     </div> <!-- CIERRA MODAL DIALOG -->
@@ -526,12 +453,12 @@ function RefrescarPantalla() {
 	            <!-- Espacio Modales Pagos Empresas Detalle-->
 
             <div class="modal fade" id="ModelPagosEmpresasDetalle" tabindex="-1" role="dialog"  style="overflow-y:scroll;" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable  modal-dialog-center" role="document" >
+                <div class="modal-dialog modal-xl modal-dialog-scrollable  modal-dialog-center" role="document" >
                     <div class="modal-content">
                         <div class="modal-header">
-	     <div  class="modal-title" id="exampleModalLabel" style="text-align:center;"><font gont-family="Times New roman" size=5">Pagos Empresas Detalle</font> </div>
+	     <div  class="modal-title" id="exampleModalLabel">Pagos Empresas Detalle</div>
                                         <button type="button" class="close" data-bs-dismiss="modal"  aria-label="Close"> <span aria-hidden="true">&times;</span>  </button>
-			<button type="button" class="btn btn-primary" id="saveBtnPagosEmpresasDetalle" onclick="GuardarPagosEmpresasDetalle()">Grabar!</button> 
+			<button type="button" class="btn btn-info btn-sm" id="saveBtnPagosEmpresasDetalle" onclick="GuardarPagosEmpresasDetalle()">Grabar!</button> 
                         </div>
 		
                         <div class="modal-body">
@@ -541,8 +468,8 @@ function RefrescarPantalla() {
 				<input type="text" id="usernamePago_id" name="usernamePago_id" value={{Username_id}}  readonly></input>
 				<input type="text" id="sedePago" name="sedePago" value={{Sede}}  readonly></input>
 
-	                      <div id="flex-container-pagosEmpresasMuestarPago">
-				<div>
+	                      <div class="centraDiv">
+				
 				
 				PagoId:
 				<input type="text" id="empresaPagoMuestra" name="empresaPagoMuestra" placeholder="empresaPagoMuestra"  readonly></input>
@@ -552,39 +479,33 @@ function RefrescarPantalla() {
 				<input type="text" id="descripcionPagoMuestra" name="descripcionPagoMuestra" placeholder="descripcionPagoMuestra"   readonly></input>
 				Radicado Pago
 				<input type="text" id="radicadoPagoMuestra" name="radicadoPagoMuestra" placeholder="radicadoPago"  readonly></input>
-					
-
-				</div>
+									
 				</div>
 
 
-
-                      <div id="flex-container-pagosEmpresasDetalle">
-				<div>
-
-
+                     <div class="centraDiv">
+				
 		<input type="text"   id="valorPagoDetalle" name="valorPagoDetalle" placeholder="valorPago" ></input>
 		<input type="text"   id="facturaPago" name="facturaPago" placeholder="Factura a abonar" ></input>
 		<input type="text"   id="radicadoFactura" name="radicadoFactura" placeholder="radicadoFactura" ></input>
 
 		
-					 <select  id="servicioDetalle"    name="servicioDetalle"
+					 <select  class="mi-select" id="servicioDetalle"    name="servicioDetalle"
                                                     required>
                                                 {% for serviciosAdministrativos in ServiciosAdministrativos %}
                                                 <option value="{{serviciosAdministrativos.id}}"> {{serviciosAdministrativos.nombre}}</option>
                                                 {% endfor %}
                                             </select>
                                 </div>
-                                </div> 
+
 
                             </form>
 
 			<!--A Aqui viene el Datatable de las facturas relacionadas con el pago -->
 
 
-		<div class="container my-2">          
-   			   <div class="row">
-                                        <table  id= "tablaPagosEmpresasDetalle" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
+
+                                        <table  id= "tablaPagosEmpresasDetalle" class=" display table table-striped table-sm fs-6 nowrap" >
                                            <thead>
                                             <tr>    
 						<bold>                                  
@@ -600,18 +521,17 @@ function RefrescarPantalla() {
                                             <tbody>
                                             </tbody>				
                                        </table>
-                                    </div>
-                                </div>
-
 
 			<!-- FIN DATATABLE -->
 
                         </div> <!-- CIERRA BODY -->
 			<div class="modal-footer">
 
-		<textarea id="mensajesErrorModalPagosEmpresasDetalle" name="mensajesErrorModalPagosEmpresasDetalle" style="background-color: lightred; color: navy;"  rows="1" cols="60" placeholder="Mensajes..."  wrap="hard"></textarea>			
+                <div class="centraDiv">
+
+		<textarea id="mensajesErrorModalPagosEmpresasDetalle" name="mensajesErrorModalPagosEmpresasDetalle"  rows="1" cols="60" placeholder="Mensajes..."  wrap="hard"></textarea>			
 	  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar   </button>
-                      
+                      </div>
 			    </div> <!-- CIERRA FOOTER -->			
                         </div> <!-- CIERRA MODAL CONTENTE -->
                     </div> <!-- CIERRA MODAL DIALOG -->
@@ -626,9 +546,8 @@ function RefrescarPantalla() {
 
 <article id="CarteraDetalle">
             <!-- INICIO TABLE DE  EL DATATABLE  -->
- 	<div class="container my-2">          
-   			   <div class="row">
-                                        <table  id= "tablaCarteraDetalle" class=" display table table-striped table-sm fs-6 nowrap" style="width: 100%";>
+
+                                        <table  id= "tablaCarteraDetalle" class=" display table table-striped table-sm fs-6 nowrap">
                                            <thead>
                                             <tr>    
 						<bold>                                  
@@ -649,9 +568,6 @@ function RefrescarPantalla() {
                                             </tbody>
  					
                                         </table>
-                                    </div>
-                                </div>
-
 
 	            <!-- Espacio Modales  Glosas-->
 
@@ -663,7 +579,7 @@ function RefrescarPantalla() {
 
     
     </div>
-</div>
+
 
 {% endblock %}
 
@@ -672,11 +588,7 @@ function RefrescarPantalla() {
 
 {% block footer %}
 
-<div class="marco">
-    <ul class="tabs">
 
-    </ul>
-</div>
 
 {% endblock %}
 

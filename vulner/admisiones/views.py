@@ -2935,7 +2935,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
 
 
         ## FIN CONTEXTO
-        return render(request, "tarifarios/PanelTarifariosF.html", context)
+        return render(request, "tarifarios/PanelTarifariosFCli.html", context)
 
 
     if (escogeModulo == 'RIPS'):
@@ -3317,7 +3317,7 @@ def escogeAcceso(request, Sede, Username, Profesional, Documento, NombreSede, es
 
 
 
-        return render(request, "cartera/PanelCarteraF.html", context)
+        return render(request, "cartera/PanelCarteraFCli.html", context)
 
 
     if (escogeModulo == 'ENFERMERIA'):
